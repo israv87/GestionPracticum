@@ -6,6 +6,8 @@
     font-family: "Parrafos";
     src: url("../fonts/OpenSans-CondLight.ttf"), url("../fonts/OpenSans-CondLight.eot"), url("../fonts/OpenSans-CondLight.woff"), url("../fonts/OpenSans-CondLight.woff2"), url("../fonts/OpenSans-CondLight.svg");
 }
+
+
 :root{
     --first-color: #eaab00;
     --second-color: #003f72;
