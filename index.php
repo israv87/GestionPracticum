@@ -42,6 +42,7 @@
                 echo $errorLogin;
             }
         ?>
+        
             <div class="group-material-login">
               <input type="text" id="user" name="user" class="material-login-control" required="" maxlength="70">
               <span class="highlight-login"></span>
