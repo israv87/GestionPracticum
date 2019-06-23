@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="Assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="Assets/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="Assets/Admin/css/AdminLTE.min.css">
     <link rel="stylesheet" href="Assets/jvectormap/jquery-jvectormap.css">
@@ -22,12 +22,6 @@
     <link rel="stylesheet" href="Assets/bootstrap-daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="Assets/plugins/timepicker/bootstrap-timepicker.min.css">
     <link rel="stylesheet" href="Assets/Admin/css/skins/_all-skins.min.css">
- 
-
-
-
-
-    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/modernizr.js"></script>

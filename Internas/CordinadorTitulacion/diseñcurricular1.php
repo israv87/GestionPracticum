@@ -40,7 +40,7 @@
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset nav-lateral-list-menu">
                 <ul class="list-unstyled">
-                    <li><a href="../CordinadorTitulacion.php"><i class=></i>&nbsp;&nbsp; Resumen</a></li>
+                    <li><a href="../cordinadorTitulacion.php"><i class=></i>&nbsp;&nbsp; Resumen</a></li>
                     <li>
                     <li>
                         <div class="dropdown-menu-button"><i class=></i>&nbsp;&nbsp; Planificación de actividades <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw icon-sub-menu"></i></div>
