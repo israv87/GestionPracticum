@@ -5,22 +5,19 @@
 <html lang="es">
 <head>
     <title>Inicio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="Shortcut Icon" type="image/x-icon" href="../assets/icons/book.ico" />
-    <script src="../../js/sweet-alert.min.js"></script>
-    <link rel="stylesheet" href="../../css/sweet-alert.css">
-    <link rel="stylesheet" href="../../css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../js/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="../../js/modernizr.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="../../js/main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
     <div class="navbar-lateral full-reset">
@@ -231,20 +228,12 @@
             <div class="footer-copyright full-reset all-tittles">UTPL</div>
         </footer>   
     </div>
- <!-- jQuery 3 -->
-<script src="../../Assets/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="../../Assets/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../../Assets/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../Assets/Admin/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../Assets/Admin/js/demo.js"></script>
-<!-- CK Editor -->
-<script src="../../Assets/ckeditor/ckeditor.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="../../Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+
+
+
+
+
 <script>
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor

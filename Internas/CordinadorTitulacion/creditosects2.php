@@ -7,20 +7,14 @@
     <title>Créditos ECTS 2</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="Shortcut Icon" type="image/x-icon" href="../../assets/icons/book.ico" />
-    <script src="../../js/sweet-alert.min.js"></script>
-    <link rel="stylesheet" href="../../css/sweet-alert.css">
-    <link rel="stylesheet" href="../../css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../js/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="../../js/modernizr.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="../../js/main.js"></script>
+  
+
+
+
+
+
+
+  
 </head>
 <body>
     <div class="navbar-lateral full-reset">
@@ -265,34 +259,13 @@
             <div class="footer-copyright full-reset all-tittles">UTPL</div>
         </footer>   
     </div>
-   <script src="../../Assets/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="../../Assets/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Select2 -->
-<script src="../../Assets/select2/dist/js/select2.full.min.js"></script>
-<!-- InputMask -->
-<script src="../../Assets/plugins/input-mask/jquery.inputmask.js"></script>
-<script src="../../Assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="../../Assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
-<!-- date-range-picker -->
-<script src="../../Assets/moment/min/moment.min.js"></script>
-<script src="../../Assets/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap datepicker -->
-<script src="../../Assets/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- bootstrap color picker -->
-<script src="../../Assets/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-<!-- bootstrap time picker -->
-<script src="../../Assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
-<!-- SlimScroll -->
-<script src="../../Assets/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- iCheck 1.0.1 -->
-<script src="../../Assets/plugins/iCheck/icheck.min.js"></script>
-<!-- FastClick -->
-<script src="../../Assets/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+
+
+
+
+
+
+
 <!-- Page script -->
 <script>
   $(function () {
