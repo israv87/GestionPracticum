@@ -9,9 +9,9 @@ class DB{
 
     public function __construct(){
         $this->host     = 'localhost';
-        $this->db       = 'compras';
+        $this->db       = 'gestion_practicum_utpl';
         $this->user     = 'root';
-        $this->password = "123!\"·QWE";
+        $this->password = "";
         $this->charset  = 'utf8mb4';
     }
 

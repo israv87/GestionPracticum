@@ -9,7 +9,19 @@ $user = new User();
 if(isset($_SESSION['user'])){
     //echo "hay sesion";
     $user->setUser($userSession->getCurrentUser());
-    include_once 'vistas/home.php';
+    
+    if($user->getRol()==1){
+        include_once 'Internas/Estudiantes/Estudiantes.php';
+    }else if($user->getRol()==2){
+        include_once 'Internas/TutorExterno/TutorExterno.php';
+    }else if($user->getRol()==3){
+        include_once 'Internas/TutorAcademico/TutorAcademico.php';
+    }else if($user->getRol()==4){
+        include_once 'Internas/CordinadorTitulacion/CordinadorTitulacion.php';
+    }else if($user->getRol()==5){
+        include_once 'Internas/Administrador/Admin.php';
+    }
+   
 
 }else if(isset($_POST['username']) && isset($_POST['password'])){
     
@@ -22,15 +34,28 @@ if(isset($_SESSION['user'])){
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
 
-        include_once 'vistas/home.php';
+        if($user->getRol()==1){
+            include_once 'Internas/Estudiantes/Estudiantes.php';
+        }else if($user->getRol()==2){
+            include_once 'Internas/TutorExterno/TutorExterno.php';
+        }else if($user->getRol()==3){
+            include_once 'Internas/TutorAcademico/TutorAcademico.php';
+        }else if($user->getRol()==4){
+            include_once 'Internas/CoordinadorTitulacion/CoordinadorTitulacion.php';
+        }else if($user->getRol()==5){
+            include_once 'Internas/Administrador/Admin.php';
+        }
+
     }else{
         //echo "No existe el usuario";
         $errorLogin = "Nombre de usuario y/o password incorrecto";
-        include_once 'vistas/login.php';
+        include_once 'Internas/login.php';
+       
     }
 }else{
     //echo "login";
-    include_once 'vistas/login.php';
+    include_once 'Internas/login.php';
+   
 }
 
 

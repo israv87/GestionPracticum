@@ -5,20 +5,11 @@
 <html lang="es">
 <head>
     <title>Estudiantes</title>
+    <?php
+ require 'includes/EstructurasHTML/links.php';
+ 
+ ?>
 
-   
-
-
-
-
-
-
-
-
-
-
-
-   
 </head>
 <body>
 
@@ -35,7 +26,12 @@
                 <figure>
                     <img src="../assets/img/logo.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
-             <h3 style="line-height: 55px; cursor: pointer;  margin-left: 3em;"> Cecilia Sanchez</h3> 
+             <h4 style="line-height: 55px; cursor: pointer;  margin-left: 3em;">  
+             <?php echo $user->getPNombre()?> 
+             <?php echo $user->getSNombre()?> 
+             <?php echo $user->getPApellido()?> 
+             <?php echo $user->getMApellido();?>
+             </h4> 
 
                
             </div>
@@ -249,7 +245,9 @@
             <div class="footer-copyright full-reset all-tittles">UTPL</div>
         </footer>   
     </div>
- 
+    <?php
+ require 'includes/EstructurasHTML/ScriptsFooter.php';
+ ?>
 <!-- daterangepicker -->
 </body>
 </html>

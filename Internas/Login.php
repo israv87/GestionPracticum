@@ -14,20 +14,20 @@
            <i class="zmdi zmdi-account-circle zmdi-hc-5x"></i>
        </p>
        <h4 class="text-center all-tittles" style="margin-bottom: 30px;">inicia sesión en tu cuenta</h4>
-       <form action="scripts/login.php" method="POST">
+       <form action="" method="POST">
         <?php
             if(isset($errorLogin)){
                 echo $errorLogin;
             }
         ?>
             <div class="group-material-login">
-              <input type="text" id="user" name="user" class="material-login-control" required="" maxlength="70">
+              <input type="text" id="user" name="username" class="material-login-control" required="" maxlength="70">
               <span class="highlight-login"></span>
               <span class="bar-login"></span>
               <label><i class="zmdi zmdi-account"></i> &nbsp; Usuario</label>
             </div><br>
             <div class="group-material-login">
-              <input  type="password" id="pass" name="pass"  class="material-login-control" required="" maxlength="70">
+              <input  type="password" id="pass" name="password"  class="material-login-control" required="" maxlength="70">
               <span class="highlight-login"></span>
               <span class="bar-login"></span>
               <label><i class="zmdi zmdi-lock"></i> &nbsp; Contraseña</label>
