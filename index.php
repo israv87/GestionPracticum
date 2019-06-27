@@ -21,6 +21,7 @@ if(isset($_SESSION['user'])){
     }else if($user->getRol()==5){
         include_once 'Internas/Administrador/Admin.php';
     }
+    
    
 
 }else if(isset($_POST['username']) && isset($_POST['password'])){
