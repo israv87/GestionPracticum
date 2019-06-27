@@ -21,6 +21,7 @@ html, body {
     font-size: 16px;
     font-family: "Parrafos" !important;
     background-color: #fff;
+    position: relative;
 }
 .media-hover{padding: 7px; border-radius: 4px;}
 .media-hover:hover{ background-color: #F5F5F5; }
@@ -256,7 +257,7 @@ select.material-control-login:hover{
 
 .navbar-lateral{
     width: 300px;
-    background-image: url('../assets/img/utpl-lateral.jpg');
+    background-image: url('../../assets/imagenes/utpl-lateral.jpg');
     height: 100%;
     position: absolute;
     top: 0;
