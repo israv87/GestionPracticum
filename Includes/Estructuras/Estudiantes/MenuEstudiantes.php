@@ -1,6 +1,6 @@
 <ul class="list-unstyled full-reset">
     <figure>
-        <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
+        <img src="assets/Imagenes/Template/avatar.png" alt="user-picture" class="img-responsive img-circle center-box">
     </figure>
     <li style="color:#fff; cursor:default;">
         <span class="all-tittles">
@@ -10,9 +10,8 @@
             <?php echo $user->getMApellido();?>
         </span>
     </li>
-
-    <li class="tooltips-general exit-system-button" data-href="../includes/logout.php" data-placement="bottom"
-        title="Salir del sistema"><a href="../includes/logout.php"></a>
+    <li class="tooltips-general exit-system-button" data-href="Includes/Database/logout.php"  data-placement="bottom"
+        title="Salir del sistema"><a href="Includes/Database/logout.php"></a>
         <i class="zmdi zmdi-power"></i>
     </li>
     <li class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom"

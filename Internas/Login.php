@@ -4,7 +4,7 @@
 <head>
     <title>Inicio de sesión</title>
  <?php
- require 'includes/EstructurasHTML/links.php';
+ require 'includes/Estructuras/links.html';
  ?>  
 </head>
 <body>

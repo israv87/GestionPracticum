@@ -8,7 +8,11 @@ class User extends DB{
     private $m_apellido;
     private $username;
     private $u_rol;
-
+    private $pe_proyecto2;
+    private $Actividad;
+    private $Act;
+    private $Fechafin;
+    private $Porcentaje;
 
     public function userExists($user, $pass){
         $md5pass = md5($pass);
@@ -36,9 +40,24 @@ class User extends DB{
         }
         
     }
+    public function SetProyectoEstudiante($user){
+        $query1 = $this->connect()->prepare('SELECT PrimerNombre,SegundoNombre,apellido_paterno,apellido_materno, NombreProyecto 
+        from estudiantes, proyectos, proyecto_estudiante, usuarios 
+        where idEstudiante_pe=idestudiante and idproyectos = idProyectos_pe and idEstudiante = idusuario and usuario = :user ');
+            $query1->execute(['user' => $user]);
+            
+            foreach ($query1 as $currentUser1) {
+                $this->pe_proyecto2 = $currentUser1['NombreProyecto'];
 
+            }
+        }
+
+        public function SetActividadesEstudiante(){
+           
+
+
+            }   
     
-
 
     public function getPNombre(){
         return $this->p_nombre;
@@ -55,6 +74,23 @@ class User extends DB{
     public function getRol(){
         return $this->u_rol;
     }
+    public function getPE_Proyecto2(){
+        return $this->pe_proyecto2;
+    }
+    public function getActividad(){
+        return $this->Actividad;
+    }
+
+
 }
+
+
+ 
+
+
+
+
+    
+
 
 ?>

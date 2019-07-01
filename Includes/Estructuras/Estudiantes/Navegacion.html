@@ -1,0 +1,32 @@
+<script>
+    $(document).ready(function() {
+        $("#resumen").click(function() {
+            $("#res").show();
+            $("#asis,#inf,#comp,#asig,#inc,#pry").hide();
+        });
+        $("#asistencia").click(function() {
+            $("#asis").show();
+            $("#res,#inf,#comp,#asig,#inc,#pry").hide();
+        });
+        $("#informe").click(function() {
+            $("#inf").show();
+            $("#res,#asis,#comp,#asig,#inc,#pry").hide();
+        });
+        $("#compromiso").click(function() {
+            $("#comp").show();
+            $("#res,#asis,#inf,#asig,#inc,#pry").hide();
+        });
+        $("#asignacion").click(function() {
+            $("#asig").show();
+            $("#res,#asis,#inf,#comp,#inc,#pry").hide();
+        });
+        $("#incidencias").click(function() {
+            $("#inc").show();
+            $("#res,#asis,#inf,#comp,#asig,#pry").hide();
+        });
+        $("#proyectos").click(function() {
+            $("#pry").show();
+            $("#res,#asis,#inf,#comp,#asig,#inc").hide();
+        });
+    });
+</script>
