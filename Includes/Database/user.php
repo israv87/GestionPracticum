@@ -10,7 +10,7 @@ class User extends DB{
     private $u_rol;
     private $pe_proyecto2;
     private $Actividad;
-    private $Act;
+    private $NivelGP;
     private $Fechafin;
     private $Porcentaje;
 
@@ -113,17 +113,51 @@ class User extends DB{
                     echo $c;
                     }   
 
-                    function SetGP($user,$c=0){
-                        $query4 = $this->connect()->prepare('SELECT Porcentaje from estudiantes, proyectos, proyecto_estudiante, usuarios,actividadesproyecto
-                        where fk_idEstudiante_pe=idestudiante and idproyectos = fk_idProyectos_pe 
-                        and idEstudiante = idusuario and usuario = :user');
-                        $query4->execute(['user' => $user]);
-            
-                        foreach ($query4 as $currentUser4) {
-                            $c++;
+                function SetTipoGP(){
+                        $query5 = $this->connect()->prepare('SELECT TipoGP from tipo_gp');
+                        $query5->execute();
+                        echo '
+                        <select class="form-control">';
+
+                        foreach ($query5 as $currentUser5) {
+                            echo '
+                        <option>'.$currentUser5['TipoGP'].'</option>
+                                        ';    
                         }
-                        echo $c;
+
+                       echo'</select>';
                         }  
+
+                function SetCiclo(){
+                            $query6 = $this->connect()->prepare('SELECT ciclo from ciclos');
+                            $query6->execute();
+                            
+                            echo '<select class="form-control">';
+    
+                            foreach ($query6 as $currentUser6) {
+                                $Ciclo=$currentUser6['ciclo'];
+                                echo '
+                            <option>'.$Ciclo.' Ciclo </option>';    
+                            }
+    
+                           echo'</select>';
+                            }  
+
+
+              function SetNivelGP(){
+                                $query7 = $this->connect()->prepare('SELECT NivelGP from nivel_gp');
+                                $query7->execute();
+                                
+                                echo '<select class="form-control">';
+        
+                                foreach ($query7 as $currentUser7) {
+                                    $NivelGP=$currentUser7['NivelGP'];
+                                    echo '
+                                <option> GESTION PRODUCTIVA / PRÁCTICUM '.$NivelGP.' </option>';    
+                                }
+                               echo'</select>';
+                                }        
+            
         
 
 

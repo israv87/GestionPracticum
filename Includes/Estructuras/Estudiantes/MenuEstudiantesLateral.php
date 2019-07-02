@@ -5,7 +5,7 @@
 <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset" style="padding: 10px 0; color:#fff;">
                 <figure>
-                    <img src="assets/imagenes/template/logo.png" alt="Biblioteca" class="img-responsive center-box"
+                    <img src="assets/imagenes/template/user01.png" alt="Biblioteca" class="img-responsive center-box"
                         style="width:55%;">
                 </figure>
                 <h4 style="line-height: 20px; cursor: pointer;  margin-left: 1em;">

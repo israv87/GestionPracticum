@@ -8,13 +8,14 @@
         include_once 'Includes/Estructuras/Estudiantes/Navegacion.html';
     ?>
 </head>
+
 <body>
     <!--llamadas a los menu lateral y superior-->
     <div class="navbar-lateral full-reset">
         <div class="visible-xs font-movile-menu mobile-menu-button"></div>
         <div class="full-reset container-menu-movile nav-lateral-scroll">
             <?php include_once 'Includes/Estructuras/Estudiantes/MenuEstudiantesLateral.php';
-            ?> 
+            ?>
         </div>
     </div>
     <div class="content-page-container full-reset custom-scroll-containers">
@@ -47,34 +48,34 @@
                                 <div class="widget-user-image">
                                     <h3 class="widget-user-username">Proyecto Asignado:</h3>
                                     <h3>
-                                <?php echo $user->getPE_Proyecto2()?>
-                                </h3>
+                                        <?php echo $user->getPE_Proyecto2()?>
+                                    </h3>
                                 </div>
                                 <!-- /.widget-user-image -->
-                                
-                                
+
+
                             </div>
                             <div class="box-footer no-padding">
                                 <ul class="nav nav-stacked">
-                                  
-                                
-                                    
+
+
+
                                     <li>
-                                        <a href=    "#">Actividades Completadas 
-                                        
-                                                                      
+                                        <a href="#">Actividades Completadas
+
+
                                             <span class="pull-right badge bg-blue"><?php
                                            
                                             $user->ContActividadesFaltantes($userSession->getCurrentUser());
                                                     
                                             ?>/
-                                            <?php
+                                                <?php
                                             $user->ContActividadesCompletadas($userSession->getCurrentUser());                                            
                                             ?>
                                             </span>
                                         </a>
                                     </li>
-                                    
+
                                     <li><a href="#">Horas Trabajadas <span
                                                 class="pull-right badge bg-aqua">28</span></a>
                                     </li>
@@ -125,7 +126,7 @@
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer text-black">
-                            <?php   
+                                <?php   
                                    $user->SetActividadesEstudiante($userSession->getCurrentUser());
                                             ?>
                                 <!-- /.row -->
@@ -168,35 +169,22 @@
                             </table>
 
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-3">
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <form role="form">
                                     <!-- text input -->
                                     <div class="form-group">
                                         <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
-                                        <input type="text" class="form-control" placeholder="Sistemas Informáticos y Computación"readonly>
+                                        <input type="text" class="form-control"
+                                            placeholder="Sistemas Informáticos y Computación" readonly>
                                         <label>REGISTRO Y CONTROL DE ASISTENCIA DE:</label>
-                                        <select class="form-control">
-                                            <option>Gestión Productiva</option>
-                                            <option>Practicum</option>
-                                        </select>
+                                        <?php  $user->SetTipoGP();?>
                                         <label>PRÁCTICAS PREPROFESIONALES</label>
-                                        <input type="text" class="form-control" placeholder="(Ciclo/Nivel) ...">
+                                        <?php  $user->SetCiclo();?>
                                         <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
-                                        <select class="form-control">
-                                            <option>GP 1.1</option>
-                                            <option>GP 1.2</option>
-                                            <option>GP 1.3</option>
-                                            <option>GP 2.1</option>
-                                            <option>GP 2.1</option>
-                                            <option>GP 3.1</option>
-                                            <option>GP 3.2</option>
-                                            <option>PRACTICUM 4.1</option>
-                                            <option>PRACTICUM 4.1</option>
-                                        </select>
+                                        <?php  $user->SetNivelGP();?>
                                     </div>
-
                                 </form>
                             </div>
                             <!-- /.box-body -->
@@ -205,19 +193,85 @@
                         <div class="col-sm-6">
 
                             <div class="box-header">
+                                <h3 class="box-title">Actividades</h3>
+                            </div>
+                            <div class="box-body">
+
+                                <div class="form-group">
+                                    
+
+                                    <div id="listas">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                            <label>Ingrese Las Actividades Realizadas</label>
+                                            <input type="text" class="form-control" placeholder="Enter ..."name="campo[]">
+                                            <input type="button" id="add_field" value="Agregar">
+                                            </div>
+                                            <div class="col-sm-6">
+                                            <label>Seleccione la fecha y Hora de trabajo:</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-clock-o"></i>
+                                                    </div>
+                                                    <input type="text" class="form-control pull-right" id="reservationtime">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                var campos_max = 3; //max de 10 campos
+
+                                var x = 0;
+                                $('#add_field').click(function(e) {
+                                    e.preventDefault(); //prevenir novos clicks
+                                    if (x < campos_max) {
+                                        $('#listas').append('<div>\
+                                        <div class="row">\
+                                            <div class="col-sm-6">\
+                                            <label>Ingrese Las Actividades Realizadas</label>\
+                                            <input type="text" class="form-control" placeholder="Enter ..."name="campo[]">\
+                                            <input type="button" id="add_field" value="Agregar">\
+                                            </div>\
+                                            <div class="col-sm-6">\
+                                            <label>Seleccione la fecha y Hora de trabajo:</label>\
+                                                <div class="input-group">\
+                                                    <div class="input-group-addon">\
+                                                        <i class="fa fa-clock-o"></i>\
+                                                    </div>\
+                                                    <input type="text" class="form-control pull-right" id="reservationtime">\
+                                                </div>\
+                                            </div>\
+                                        </div>\
+                                    </div>\
+                                <br>\
+                                <input type="button"  class="remover_campo id="add_field" value="Remover">\
+                                <br>\
+                                </div>');
+                                        x++;
+                                    }
+                                });
+                                // Remover o div anterior
+                                $('#listas').on("click", ".remover_campo", function(e) {
+                                    e.preventDefault();
+                                    $(this).parent('div').remove();
+                                    x--;
+                                });
+                                </script>
+                                <!-- /.form group -->
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+
+                        <div class="col-sm-3">
+
+                            <div class="box-header">
                                 <h3 class="box-title">Horario de Trabajo</h3>
                             </div>
                             <div class="box-body">
 
                                 <div class="form-group">
-                                    <label>Seleccione la fecha y Hora de trabajo:</label>
-
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-clock-o"></i>
-                                        </div>
-                                        <input type="text" class="form-control pull-right" id="reservationtime">
-                                    </div>
+                                    
                                     <label>Total de Horas Trabajadas:</label>
                                     <input type="text" class="form-control" placeholder="# Horas">
                                     <table style="margin-top: 5%;width: 50%;">
@@ -240,6 +294,7 @@
                             </div>
                             <!-- /.box-body -->
                         </div>
+
                     </div>
                 </div>
                 <div class="row">
@@ -247,7 +302,6 @@
                         <div class="box">
                             <div class="box-header">
                                 <h3 class="box-title">Informes de Asistencias</h3>
-
                                 <div class="box-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
                                         <input type="text" name="table_search" class="form-control pull-right"

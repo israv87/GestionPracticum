@@ -1,6 +1,6 @@
 <ul class="list-unstyled full-reset">
     <figure>
-        <img src="assets/Imagenes/Template/avatar.png" alt="user-picture" class="img-responsive img-circle center-box">
+        <img src="assets/Imagenes/Template/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
     </figure>
     <li style="color:#fff; cursor:default;">
         <span class="all-tittles">
