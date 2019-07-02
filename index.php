@@ -9,9 +9,12 @@ $user = new User();
 
 if(isset($_SESSION['user'])){
     //echo "hay sesion";
-    $user->SetProyectoEstudiante($userSession->getCurrentUser());
+    
+    
     $user->setUser($userSession->getCurrentUser());
-   
+    $user->SetProyectoEstudiante($userSession->getCurrentUser());
+    
+    
     if($user->getRol()==1){
         include_once 'Internas/Estudiantes.php';
     }else if($user->getRol()==2){

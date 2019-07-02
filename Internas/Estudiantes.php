@@ -60,10 +60,17 @@
                                 
                                     
                                     <li>
-                                        <a href="#">Actividades Completadas <?php
-                                        echo "gola}}";?>
-                                            <span class="pull-right badge bg-blue">5 /
-                                                10
+                                        <a href=    "#">Actividades Completadas 
+                                        
+                                                                      
+                                            <span class="pull-right badge bg-blue"><?php
+                                           
+                                            $user->ContActividadesFaltantes($userSession->getCurrentUser());
+                                                    
+                                            ?>/
+                                            <?php
+                                            $user->ContActividadesCompletadas($userSession->getCurrentUser());                                            
+                                            ?>
                                             </span>
                                         </a>
                                     </li>
@@ -118,62 +125,9 @@
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer text-black">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <!-- Progress bars -->
-                                        <div class="clearfix">
-                                           
-                                            <span class="pull-left">Actividad #1</span>
-                                            
-                                            <small
-                                                class="pull-right">Termina:
-                                                29/04/2019</small>
-                                            <small class="pull-right">Inicia: 15/04/2019</small>
-
-                                        </div>
-                                        <small class="pull-right">Progreso</small>
-                                        <div class="progress xs">
-                                            <div class="progress-bar progress-bar-yellow" style="width: 90%;"></div>
-                                        </div>
-
-                                        <div class="clearfix">
-                                            <span class="pull-left">Actividad #2</span>
-                                            <small class="pull-right">Inicia: 30/04/2019</small>
-
-                                        </div>
-                                        <small class="pull-right">Progreso</small>
-                                        <div class="progress xs">
-                                            <div class="progress-bar progress-bar-yellow" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-sm-6">
-                                        <div class="clearfix">
-                                            <span class="pull-left">Actividad #3</span><small
-                                                class="pull-right">Termina:
-                                                20/05/2019</small>
-                                            <small class="pull-right">Inicia: 07/05/2019</small>
-
-                                        </div>
-                                        <small class="pull-right">Progreso</small>
-                                        <div class="progress xs">
-                                            <div class="progress-bar progress-bar-yellow" style="width: 60%;"></div>
-                                        </div>
-
-                                        <div class="clearfix">
-                                            <span class="pull-left">Actividad #4</span><small
-                                                class="pull-right">Termina:
-                                                30/05/2019</small>
-                                            <small class="pull-right">Inicia: 21/05/2019</small>
-
-                                        </div>
-                                        <small class="pull-right">Progreso</small>
-                                        <div class="progress xs">
-                                            <div class="progress-bar progress-bar-yellow" style="width: 40%;"></div>
-                                        </div>
-                                    </div>
-                                    <!-- /.col -->
-                                </div>
+                            <?php   
+                                   $user->SetActividadesEstudiante($userSession->getCurrentUser());
+                                            ?>
                                 <!-- /.row -->
                             </div>
                         </div>
@@ -221,9 +175,12 @@
                                     <!-- text input -->
                                     <div class="form-group">
                                         <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
-                                        <input type="text" class="form-control" placeholder="Carrera ...">
+                                        <input type="text" class="form-control" placeholder="Sistemas Informáticos y Computación"readonly>
                                         <label>REGISTRO Y CONTROL DE ASISTENCIA DE:</label>
-                                        <input type="text" class="form-control" placeholder="GP/PRACTICUM ...">
+                                        <select class="form-control">
+                                            <option>Gestión Productiva</option>
+                                            <option>Practicum</option>
+                                        </select>
                                         <label>PRÁCTICAS PREPROFESIONALES</label>
                                         <input type="text" class="form-control" placeholder="(Ciclo/Nivel) ...">
                                         <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
