@@ -13,6 +13,7 @@ if(isset($_SESSION['user'])){
     
     $user->setUser($userSession->getCurrentUser());
     $user->SetProyectoEstudiante($userSession->getCurrentUser());
+    $user->setInstitucionEstudainte($userSession->getCurrentUser());
     
     
     if($user->getRol()==1){
@@ -37,6 +38,7 @@ if(isset($_SESSION['user'])){
     $user = new User();
     if($user->userExists($userForm, $passForm)){
         //echo "Existe el usuario";
+        
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
 

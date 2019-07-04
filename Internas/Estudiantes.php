@@ -198,22 +198,24 @@
                             <div class="box-body">
 
                                 <div class="form-group">
-                                    
+
 
                                     <div id="listas">
                                         <div class="row">
                                             <div class="col-sm-6">
-                                            <label>Ingrese Las Actividades Realizadas</label>
-                                            <input type="text" class="form-control" placeholder="Enter ..."name="campo[]">
-                                            <input type="button" id="add_field" value="Agregar">
+                                                <label>Ingrese Las Actividades Realizadas</label>
+                                                <input type="text" class="form-control" placeholder="Enter ..."
+                                                    name="campo[]">
+                                                <input type="button" id="add_field" value="Agregar">
                                             </div>
                                             <div class="col-sm-6">
-                                            <label>Seleccione la fecha y Hora de trabajo:</label>
+                                                <label>Seleccione la fecha y Hora de trabajo:</label>
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-clock-o"></i>
                                                     </div>
-                                                    <input type="text" class="form-control pull-right" id="reservationtime">
+                                                    <input type="text" class="form-control pull-right"
+                                                        id="reservationtime">
                                                 </div>
                                             </div>
                                         </div>
@@ -231,7 +233,6 @@
                                             <div class="col-sm-6">\
                                             <label>Ingrese Las Actividades Realizadas</label>\
                                             <input type="text" class="form-control" placeholder="Enter ..."name="campo[]">\
-                                            <input type="button" id="add_field" value="Agregar">\
                                             </div>\
                                             <div class="col-sm-6">\
                                             <label>Seleccione la fecha y Hora de trabajo:</label>\
@@ -244,7 +245,6 @@
                                             </div>\
                                         </div>\
                                     </div>\
-                                <br>\
                                 <input type="button"  class="remover_campo id="add_field" value="Remover">\
                                 <br>\
                                 </div>');
@@ -271,7 +271,7 @@
                             <div class="box-body">
 
                                 <div class="form-group">
-                                    
+
                                     <label>Total de Horas Trabajadas:</label>
                                     <input type="text" class="form-control" placeholder="# Horas">
                                     <table style="margin-top: 5%;width: 50%;">
@@ -285,6 +285,14 @@
                                                     class="btn btn-block btn-default bg-yellow">Borrar</button>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                <button type="button"
+                                                    class="btn btn-block btn-default bg-blue">Enviar</button>
+                                            </td>
+
+                                        </tr>
+
                                     </table>
                                 </div>
                                 <?php
@@ -316,54 +324,9 @@
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body table-responsive no-padding">
-                                <table class="table table-hover">
-                                    <tr>
-                                        <th>Codigo</th>
-                                        <th>Titulo</th>
-                                        <th>Fecha</th>
-                                        <th>Detalle</th>
-                                        <th>Archivo</th>
-                                        <th>Validado</th>
-                                        <th>Calificado</th>
-                                    </tr>
-                                    <tr>
-                                        <td>REG0154</td>
-                                        <td>Semana 1</td>
-                                        <td>12-04-2019</td>
-                                        <td>Estudio del caso y analisis de la aplicacion en que se va a trabajar</td>
-                                        <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
-                                        <td><span class="label label-success">Verificado</span></td>
-                                        <td><span class="label label-success">Calificado</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>REG0162</td>
-                                        <td>Semana 2</td>
-                                        <td>22-04-2019</td>
-                                        <td>Desarrollo de aplicacion</td>
-                                        <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
-                                        <td><span class="label label-danger">Cancelado</span></td>
-                                        <td><span class="label label-danger">Cancelado</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>REG0163</td>
-                                        <td>Semana 2</td>
-                                        <td>22-04-2019</td>
-                                        <td>Desarrollo de aplicacion</td>
-                                        <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
-                                        <td><span class="label label-success">Verificado</span></td>
-                                        <td><span class="label label-warning">Pendiente</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>REG0175</td>
-                                        <td>Semana 2</td>
-                                        <td>22-04-2019</td>
-                                        <td>Apliacacion de las metodologias adecuadas </td>
-                                        <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
-                                        <td><span class="label label-warning">Pendiente</span></td>
-                                        <td><span class="label label-warning">Pendiente</span></td>
-                                    </tr>
+                                <?php  $user->RegistrosEntregados($userSession->getCurrentUser()); ?>
 
-                                </table>
+
                             </div>
                             <!-- /.box-body -->
                         </div>
@@ -387,6 +350,7 @@
                 <div class="container">
                     <div class="page-header">
                         <h1 class="all-tittles">Estudiantes <small>Informe Bimestral</small></h1>
+
                     </div>
                 </div>
 
@@ -423,23 +387,14 @@
                                     <!-- text input -->
                                     <div class="form-group">
                                         <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
-                                        <input type="text" class="form-control" placeholder="Carrera ...">
+                                        <input type="text" class="form-control"
+                                            placeholder="Sistemas Informáticos y Computación" readonly>
                                         <label>INFORME BIMESTRAL DE:</label>
-                                        <input type="text" class="form-control" placeholder="GP/PRACTICUM ...">
+                                        <?php  $user->SetTipoGP();?>
                                         <label>PRÁCTICAS PREPROFESIONALES</label>
-                                        <input type="text" class="form-control" placeholder="(Ciclo/Nivel) ...">
+                                        <?php  $user->SetCiclo();?>
                                         <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
-                                        <select class="form-control">
-                                            <option>GP 1.1</option>
-                                            <option>GP 1.2</option>
-                                            <option>GP 1.3</option>
-                                            <option>GP 2.1</option>
-                                            <option>GP 2.1</option>
-                                            <option>GP 3.1</option>
-                                            <option>GP 3.2</option>
-                                            <option>PRACTICUM 4.1</option>
-                                            <option>PRACTICUM 4.1</option>
-                                        </select>
+                                        <?php  $user->SetNivelGP();?>
                                         <label>BIMESTRE:</label>
                                         <select class="form-control">
                                             <option>Primero</option>
@@ -459,9 +414,7 @@
                                                 </td>
                                             </tr>
                                         </table>
-
                                     </div>
-
                                 </form>
                             </div>
                             <!-- /.box-body -->
@@ -572,10 +525,16 @@
                                             <option>Doctor</option>
                                         </select>
                                         <label>Coordinador de la titulacion de:</label>
-                                        <input type="text" class="form-control" placeholder="Carrera ...">
+                                        <input type="text" class="form-control" placeholder="Nombre del Cordinador">
                                         <label>Yo:</label>
-                                        <input type="text" class="form-control" placeholder="Juan Perez ...">
-
+                                        <h4>
+                                            <input type="text" class="form-control" placeholder="<?php
+                                        echo $user->getPNombre();echo" ";
+                                         echo $user->getSNombre();echo" ";
+                                          echo $user->getPApellido();echo" ";
+                                         echo $user->getMApellido();echo" ";
+                                        ?>" readonly>
+                                        </h4>
                                     </div>
 
                                 </form>
@@ -587,29 +546,22 @@
                         <div class="col-sm-6">
 
                             <form role="form">
-                                <label>Estudiante de la carrera:</label>
-                                <input type="text" class="form-control" placeholder="Carrera ...">
+                                <label>Estudiante de la carrera de:</label>
+                                <input type="text" class="form-control"
+                                    placeholder="Sistemas Informáticos y Computación" readonly>
                                 <label>Practica pro profesional del ciclo:</label>
-                                <input type="text" class="form-control" placeholder="(Ciclo/Nivel) ...">
+                                <?php  $user->SetCiclo();?>
+
                                 <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
-                                <select class="form-control">
-                                    <option>GP 1.1</option>
-                                    <option>GP 1.2</option>
-                                    <option>GP 1.3</option>
-                                    <option>GP 2.1</option>
-                                    <option>GP 2.1</option>
-                                    <option>GP 3.1</option>
-                                    <option>GP 3.2</option>
-                                    <option>PRACTICUM 4.1</option>
-                                    <option>PRACTICUM 4.1</option>
-                                </select>
+                                <?php  $user->SetNivelGP();?>
                                 <label>Institucion o dependencia:</label>
-                                <input type="text" class="form-control" placeholder="Cordinacion de la titulacion ...">
+                                <input type="text" class="form-control"
+                                    placeholder="<?php echo $user->getInstitucion();?>" readonly>
                                 <table style="margin-top: 5%;width: 50%;">
                                     <tr>
                                         <td>
                                             <button type="button"
-                                                class="btn btn-block btn-default bg-blue">Generar</button>
+                                                class="btn btn-block btn-default bg-blue">Enviar</button>
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-block btn-default bg-yellow">Borrar
@@ -642,14 +594,12 @@
                             <table style="height: 100px;">
                                 <tbody>
                                     <tr>
-
                                         <td class="align-middle"><img src="assets/imagenes/utpl_logo1.png"
                                                 style="width: 90%;"></td>
                                         <td class="align-middle">
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                            <h5>Formuladrio para la carta de compromiso</h5>
+                                            <h5>Formulario para la carta de compromiso</h5>
                                         </td>
-
                                     </tr>
                                 </tbody>
                             </table>
@@ -663,22 +613,27 @@
                                         <label>CUIDAD:</label>
                                         <input type="text" class="form-control" placeholder="Loja ...">
                                         <label>Fecha:</label>
-
                                         <div class="input-group date">
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
                                             <input type="text" class="form-control pull-right" id="datepicker2">
                                         </div>
-
                                         <select class="form-control">
                                             <option>Magister</option>
                                             <option>Doctor</option>
                                         </select>
                                         <label>Coordinador de la titulacion de:</label>
-                                        <input type="text" class="form-control" placeholder="Carrera ...">
+                                        <input type="text" class="form-control" placeholder="Nombre del Cordinador">
                                         <label>Yo:</label>
-                                        <input type="text" class="form-control" placeholder="GP/PRACTICUM ...">
+                                        <h4>
+                                            <input type="text" class="form-control" placeholder="<?php
+                                        echo $user->getPNombre();echo" ";
+                                         echo $user->getSNombre();echo" ";
+                                          echo $user->getPApellido();echo" ";
+                                         echo $user->getMApellido();echo" ";
+                                        ?>" readonly>
+                                        </h4>
                                     </div>
                                     <?php
                                     include 'Includes/Estructuras/date.html';
@@ -690,28 +645,20 @@
                         <div class="col-sm-6">
                             <form role="form">
                                 <label>Estudiante de la carrera:</label>
-                                <input type="text" class="form-control" placeholder="Carrera ...">
+                                <input type="text" class="form-control"
+                                    placeholder="Sistemas Informáticos y Computación" readonly>
                                 <label>Practica pro profesional del ciclo:</label>
-                                <input type="text" class="form-control" placeholder="(Ciclo/Nivel) ...">
+                                <?php  $user->SetCiclo();?>
                                 <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
-                                <select class="form-control">
-                                    <option>GP 1.1</option>
-                                    <option>GP 1.2</option>
-                                    <option>GP 1.3</option>
-                                    <option>GP 2.1</option>
-                                    <option>GP 2.1</option>
-                                    <option>GP 3.1</option>
-                                    <option>GP 3.2</option>
-                                    <option>PRACTICUM 4.1</option>
-                                    <option>PRACTICUM 4.1</option>
-                                </select>
+                                <?php  $user->SetNivelGP();?>
                                 <label>Institucion o dependencia:</label>
-                                <input type="text" class="form-control" placeholder="Cordinacion de la titulacion ...">
+                                <input type="text" class="form-control"
+                                    placeholder="<?php echo $user->getInstitucion();?>" readonly>
                                 <table style="margin-top: 5%;width: 50%;">
                                     <tr>
                                         <td>
                                             <button type="button"
-                                                class="btn btn-block btn-default bg-blue">Generar</button>
+                                                class="btn btn-block btn-default bg-blue">Enviar</button>
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-block btn-default bg-yellow">Borrar
@@ -719,6 +666,7 @@
                                         </td>
                                     </tr>
                                 </table>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -744,46 +692,29 @@
                             <table style="height: 100px;">
                                 <tbody>
                                     <tr>
-
                                         <td class="align-middle"><img src="assets/imagenes/utpl_logo1.png"
                                                 style="width: 90%;"></td>
                                         <td class="align-middle">
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                            <h5>Formulario de resgistro de incidencias.</h5>
+                                            <h5>Formulario de resgistro de incidencias</h5>
                                         </td>
 
                                     </tr>
                                 </tbody>
                             </table>
-
                         </div>
                         <div class="col-sm-6">
-
-
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <form role="form">
                                     <!-- text input -->
                                     <div class="form-group">
                                         <label>Incidencia:</label>
-                                        <input type="text" class="form-control" placeholder="GP/PRACTICUM ...">
+                                        <input type="text" class="form-control" placeholder="Titulo ...">
                                         <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
-                                        <select class="form-control">
-                                            <option>GP 1.1</option>
-                                            <option>GP 1.2</option>
-                                            <option>GP 1.3</option>
-                                            <option>GP 2.1</option>
-                                            <option>GP 2.1</option>
-                                            <option>GP 3.1</option>
-                                            <option>GP 3.2</option>
-                                            <option>PRACTICUM 4.1</option>
-                                            <option>PRACTICUM 4.1</option>
-                                        </select>
+                                        <?php  $user->SetNivelGP();?>
                                         <label>Tipo de incidencia:</label>
-                                        <select class="form-control">
-                                            <option>Perosnal</option>
-                                            <option>Academica</option>
-                                        </select>
+                                        <?php  $user->getIncidencia();?>
                                         <label for="exampleInputFile">Anexos</label>
                                         <input type="file" id="exampleInputFile">
                                         <table style="margin-top: 5%;width: 50%;">
@@ -829,7 +760,7 @@
                                     <form>
                                         <textarea id="editor2" name="editor2" rows="10" cols="80">
                                            Describa aqui la o las incidencias.
-                    </textarea>
+                                        </textarea>
                                     </form>
                                     <script>
                                     $(function() {
@@ -867,7 +798,6 @@
                             <table style="height: 100px;">
                                 <tbody>
                                     <tr>
-
                                         <td class="align-middle"><img src="assets/imagenes/utpl_logo1.png"
                                                 style="width: 90%;"></td>
                                         <td class="align-middle">
@@ -878,7 +808,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-
                         </div>
                         <div class="col-sm-12">
 
@@ -888,91 +817,9 @@
                                 </div>
                                 <!-- /.box-header -->
                                 <div class="box-body">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Empresa</th>
-                                                <th>Convenio</th>
-                                                <th>Dependencia</th>
-                                                <th>Encargado</th>
-                                                <th>Responsable Ciencias de la Computacion</th>
-                                                <th>Email del Encargado</th>
-                                                <th>Telefono</th>
-                                                <th>Nombre del Proyecto</th>
-                                                <th>Plazas Totales</th>
-                                                <th>Plazas Ocupadas</th>
-                                                <th>Plazas para la GP2.2</th>
-                                                <th>Estado</th>
-                                                <th>Postulacion</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>UTPL</td>
-                                                <td>Si</td>
-                                                <td>Titulación de Arquitectura</td>
-                                                <td>Xavier Burneo</td>
-                                                <td>Fernanda Soto</td>
-                                                <td>xeburneo@utpl.edu.ec</td>
-                                                <td>0992998641</td>
-                                                <td>Sitio web Titulación de Arquitectura</td>
-                                                <td>2</td>
-                                                <td>0</td>
-                                                <td>1</td>
-                                                <th><span class="label label-success">Disponible</span></th>
-                                                <td><button type="button"
-                                                        class="btn btn-block btn-default bg-blue">Postular</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>UTPL</td>
-                                                <td>Si</td>
-                                                <td>Titulación de Arquitectura</td>
-                                                <td>Xavier Burneo</td>
-                                                <td>Fernanda Soto</td>
-                                                <td>xeburneo@utpl.edu.ec</td>
-                                                <td>0992998641</td>
-                                                <td>Sitio web Titulación de Arquitectura</td>
-                                                <td>3</td>
-                                                <td>3</td>
-                                                <td>2</td>
-                                                <th><span class="label label-danger">Ocupada</span></th>
-                                                <td><button type="button"
-                                                        class="btn btn-block btn-default bg-blue">Postular</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>UTPL</td>
-                                                <td>Si</td>
-                                                <td>Titulación de Arquitectura</td>
-                                                <td>Xavier Burneo</td>
-                                                <td>Fernanda Soto</td>
-                                                <td>xeburneo@utpl.edu.ec</td>
-                                                <td>0992998641</td>
-                                                <td>Sitio web Titulación de Arquitectura</td>
-                                                <td>3</td>
-                                                <td>0</td>
-                                                <td>2</td>
-                                                <th><span class="label label-success">Disponible</span></th>
-                                                <td><button type="button"
-                                                        class="btn btn-block btn-default bg-blue">Postular</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>UTPL</td>
-                                                <td>Si</td>
-                                                <td>Titulación de Arquitectura</td>
-                                                <td>Xavier Burneo</td>
-                                                <td>Fernanda Soto</td>
-                                                <td>xeburneo@utpl.edu.ec</td>
-                                                <td>0992998641</td>
-                                                <td>Sitio web Titulación de Arquitectura</td>
-                                                <td>3</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <th><span class="label label-warning">Disponible</span></th>
-                                                <td><button type="button"
-                                                        class="btn btn-block btn-default bg-blue">Postular</button></td>
-                                            </tr>
-                                            </tfoot>
-                                    </table>
+                                    
+                                <?php  $user->PostulacionProyecto($userSession->getCurrentUser()); ?>
+
                                 </div>
                                 <!-- /.box-body -->
                             </div>
