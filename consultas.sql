@@ -34,4 +34,4 @@ INSERT INTO registro_aistencias (CodRegistro,Titulo, fk_idEstudiante,Fecha,Horas
      SELECT (select concat('REG00',MAX(idRegistroAistencias)+1 ) from registro_aistencias),'semana4',
      (select idEstudiante from estudiantes, usuarios where idusuario=fk_idUsuario_Est and usuario="csanchez"),current_date(),'4', 
      'Entregado a Tiempo',LOAD_FILE('C:/Users/Isra/Desktop/semana.pdf');
- 1
+ 

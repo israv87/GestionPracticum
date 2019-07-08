@@ -173,8 +173,8 @@
                         <div class="col-sm-3">
                             <!-- /.box-header -->
                             <div class="box-body">
-                            <?php  $user->InsertRegistroAsistencia(); ?>
-                                <form action="" method="post" >
+                         
+                                <form action="Includes/Database/insert.php" method="post" >
                                   
                                     <div class="form-group">
                                         
