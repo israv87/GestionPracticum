@@ -6,11 +6,13 @@
 <head>
     <title>Inicio</title>
 
-¨ 
-<?php
-include 'Includes/Estructuras/links.html';
-?>
+    
 
+
+
+<?php
+include 'includes/estructuras/links.html';
+?>
 
 
 
@@ -22,12 +24,12 @@ include 'Includes/Estructuras/links.html';
         <div class="full-reset container-menu-movile nav-lateral-scroll">
             <div class="logo full-reset all-tittles">
                 <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                Tutor Academicotyuy
+                Tutor Academico
             </div>
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset" style="padding: 10px 0; color:#fff;">
                 <figure>
-                    <img src="../../assets/img/institution.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
+                    <img src="assets/imagenes/template/institution.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
                 <p class="text-center" style="padding-top: 15px;">TutorAcademico</p>
             </div>
@@ -52,7 +54,7 @@ include 'Includes/Estructuras/links.html';
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="../../assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="assets/imagenes/template/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
