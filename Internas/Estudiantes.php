@@ -145,6 +145,7 @@
             ************
         -->
         <div id="asis" style="display: none;">
+        
             <div class="container-fluid 2" style="margin: 20px 0;">
                 <div class="container">
                     <div class="page-header">
@@ -172,9 +173,11 @@
                         <div class="col-sm-3">
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <form role="form">
-                                    <!-- text input -->
+                            <?php  $user->InsertRegistroAsistencia(); ?>
+                                <form action="" method="post" >
+                                  
                                     <div class="form-group">
+                                        
                                         <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
                                         <input type="text" class="form-control"
                                             placeholder="Sistemas Informáticos y Computación" readonly>
@@ -184,13 +187,24 @@
                                         <?php  $user->SetCiclo();?>
                                         <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
                                         <?php  $user->SetNivelGP();?>
+                                        <input type="text" class="form-control" placeholder="Titulo .." name="titulo">
+                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
                                     </div>
                                 </form>
+                              
                             </div>
                             <!-- /.box-body -->
                         </div>
 
                         <div class="col-sm-6">
+                            <div class="box-header">
+                                <h3 class="box-title">Titulo</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Titulo .." name="titulo">
+                                </div>
+                            </div>
 
                             <div class="box-header">
                                 <h3 class="box-title">Actividades</h3>
@@ -198,7 +212,7 @@
                             <div class="box-body">
 
                                 <div class="form-group">
-
+                                        
 
                                     <div id="listas">
                                         <div class="row">
@@ -274,25 +288,18 @@
 
                                     <label>Total de Horas Trabajadas:</label>
                                     <input type="text" class="form-control" placeholder="# Horas">
+                                  
                                     <table style="margin-top: 5%;width: 50%;">
                                         <tr>
                                             <td>
-                                                <button type="button"
-                                                    class="btn btn-block btn-default bg-blue">Enviar</button>
+                                                <button type="submit"
+                                                    class="btn btn-block btn-default bg-blue" >Enviar</button>
+                                                    
                                             </td>
-                                            <td>
-                                                <button type="button"
-                                                    class="btn btn-block btn-default bg-yellow">Borrar</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <button type="button"
-                                                    class="btn btn-block btn-default bg-blue">Enviar</button>
-                                            </td>
+                                            
 
                                         </tr>
-
+                                        
                                     </table>
                                 </div>
                                 <?php
@@ -316,7 +323,7 @@
                                             placeholder="Search">
 
                                         <div class="input-group-btn">
-                                            <button type="submit" class="btn btn-default"><i
+                                            <button  class="btn btn-default"><i
                                                     class="fa fa-search"></i></button>
                                         </div>
                                     </div>
@@ -325,6 +332,8 @@
                             <!-- /.box-header -->
                             <div class="box-body table-responsive no-padding">
                                 <?php  $user->RegistrosEntregados($userSession->getCurrentUser()); ?>
+                              
+                                
 
 
                             </div>
@@ -335,6 +344,8 @@
                 </div>
             </div>
         </div>
+
+       
         <!--************
             ************
             ************

@@ -23,7 +23,9 @@ class User extends DB
     private $ocupado;
     private $disponible;
     private $botonOD;
+
     
+
     public function userExists($user, $pass)
     {
         $md5pass = md5($pass);
@@ -360,6 +362,48 @@ class User extends DB
         </table>';
     }
 
+    public function InsertRegistroAsistencia()
+    {
+        echo '1';
+        if(isset($_POST['Submit'])) {	
+            $titulo = $_POST['titulo'];
+            echo '2';
+               
+            // checking empty fields
+            if(empty($titulo ) ) {
+                echo '3';
+                if(empty($titulo )) {
+                    echo '231ewr2';
+                    echo "<font color='red'>titulo  field is empty.</font><br/>";
+                }
+                echo '4';
+                
+                //link to the previous page
+          
+            } else { 
+                echo '5';
+                // if all the fields are filled (not empty) 
+                    
+                //insert data to database		
+                $sql = "INSERT INTO registro_aistencias(Titulo) VALUES('$titulo')";
+                $query = $this->connect()->prepare($sql);
+                        
+                $query->bindparam(':titulo', $titulo);
+                $query->execute();
+                
+                // Alternative to above bindparam and execute
+                // $query->execute(array(':name' => $name, ':email' => $email, ':age' => $age));
+                
+                //display success message
+                echo "<font color='green'>Data added successfully.";
+                echo "<br/><a href='index.php'>View Result</a>";
+            }
+            echo '6';
+        }
+        
+        
+    }
+    
 
 
 
