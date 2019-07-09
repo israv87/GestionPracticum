@@ -23,7 +23,7 @@ if(isset($_SESSION['user'])){
     }else if($user->getRol()==3){
         include_once 'Internas/TutorAcademico.php';
     }else if($user->getRol()==4){
-        include_once 'Internas/CordinadorTitulacion.php';
+        include_once 'Internas/CoordinadorTitulacion.php';
     }else if($user->getRol()==5){
         include_once 'Internas/Admin.php';
     }
