@@ -178,7 +178,7 @@ class User extends DB
     }
     public function RegistrosEntregados($user)
     {
-        $query8 = $this->connect()->prepare('SELECT CodRegistro as "Codigo",Titulo,Fecha,Observacion, Validacion, Calificacion FROM registro_aistencias, estudiantes, usuarios 
+        $query8 = $this->connect()->prepare('SELECT CodRegistro as "Codigo",Titulo,Fecha,Observacion, HorasTrabajadas,Validacion, Calificacion FROM registro_aistencias, estudiantes, usuarios 
                                     where  fk_idEstudiante = idEstudiante and idestudiante = idusuario and usuario = :user');
         $query8->execute(['user' => $user]);
 
@@ -188,6 +188,7 @@ class User extends DB
                                         <th>Titulo</th>
                                         <th>Fecha</th>
                                         <th>Observación</th>
+                                        <th>Horas Trabajadas</th>
                                         <th>Archivo</th>
                                         <th>Validacion</th>
                                         <th>Calificion</th>
@@ -214,6 +215,7 @@ class User extends DB
                                         <td>' . $currentUser8['Titulo'] . '</td>
                                         <td>' . $currentUser8['Fecha'] . '</td>
                                         <td>' . $currentUser8['Observacion'] . '</td>
+                                        <td>' . $currentUser8['HorasTrabajadas'] . '</td>
                                         <td><a href="#"><img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;"></a></td>
                                         <td>' . $validado . '</td>
                                         <td>' . $Calificado . '</td>
@@ -361,49 +363,6 @@ class User extends DB
         echo '</tfoot>
         </table>';
     }
-
-    public function InsertRegistroAsistencia()
-    {
-        echo '1';
-        if(isset($_POST['Submit'])) {	
-            $titulo = $_POST['titulo'];
-            echo '2';
-               
-            // checking empty fields
-            if(empty($titulo ) ) {
-                echo '3';
-                if(empty($titulo )) {
-                    echo '231ewr2';
-                    echo "<font color='red'>titulo  field is empty.</font><br/>";
-                }
-                echo '4';
-                
-                //link to the previous page
-          
-            } else { 
-                echo '5';
-                // if all the fields are filled (not empty) 
-                    
-                //insert data to database		
-                $sql = "INSERT INTO registro_aistencias(Titulo) VALUES('$titulo')";
-                $query = $this->connect()->prepare($sql);
-                        
-                $query->bindparam(':titulo', $titulo);
-                $query->execute();
-                
-                // Alternative to above bindparam and execute
-                // $query->execute(array(':name' => $name, ':email' => $email, ':age' => $age));
-                
-                //display success message
-                echo "<font color='green'>Data added successfully.";
-                echo "<br/><a href='index.php'>View Result</a>";
-            }
-            echo '6';
-        }
-        
-        
-    }
-    
 
 
 
