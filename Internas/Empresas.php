@@ -36,15 +36,11 @@ include '../includes/estructuras/links.html';
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset nav-lateral-list-menu">
                 <ul class="list-unstyled">
-                    <li><a href="#"><i class=></i>&nbsp;&nbsp; Resumen</a></li>
-                    <li>
-                    <li>
-                        <div class="dropdown-menu-button"><i class=></i>&nbsp;&nbsp; Empresas <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw icon-sub-menu"></i></div>
-                        <ul class="list-unstyled">
-                            <li><a href="Empresas/postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
-                            <li><a href="Empresas/Estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de proyecto</a></li>
-                        </ul>
-                    </li>
+                <li><a href="Empresas/postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
+                <li><a href="Empresas/Estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de proyecto</a></li>
+                        
+                           
+                     
                 </ul>
             </div>
         </div>
