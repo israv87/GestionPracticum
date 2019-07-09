@@ -1,0 +1,37 @@
+<script>
+    var campos_max = 3; //max de 10 campos
+
+    var x = 0;
+    $('#add_field').click(function(e) {
+        e.preventDefault(); //prevenir novos clicks
+        if (x < campos_max) {
+            $('#listas').append('<div>\
+            <div class="row">\
+                <div class="col-sm-6">\
+                <label>Ingrese Las Actividades Realizadas</label>\
+                <input type="text" class="form-control" placeholder="Enter ..."name="campo[]">\
+                </div>\
+                <div class="col-sm-6">\
+                <label>Seleccione la fecha y Hora de trabajo:</label>\
+                    <div class="input-group">\
+                        <div class="input-group-addon">\
+                            <i class="fa fa-clock-o"></i>\
+                        </div>\
+                        <input type="text" class="form-control pull-right" id="reservationtime">\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    <input type="button"  class="remover_campo id="add_field" value="Remover">\
+    <br>\
+    </div>');
+            x++;
+        }
+    });
+    // Remover o div anterior
+    $('#listas').on("click", ".remover_campo", function(e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x--;
+    });
+</script>

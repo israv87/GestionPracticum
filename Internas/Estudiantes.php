@@ -170,15 +170,16 @@
                             </table>
 
                         </div>
-                        <div class="col-sm-3">
+                        
                             <!-- /.box-header -->
                             <div class="box-body">
                          
-                                <form action="Includes/Database/insert.php" method="post" >
+                                <form action="Includes/Database/db_Estudiantes/insert.php" method="post" >
                                   
                                     <div class="form-group">
-                                        
-                                        <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
                                         <input type="text" class="form-control"
                                             placeholder="Sistemas Informáticos y Computación" readonly>
                                         <label>REGISTRO Y CONTROL DE ASISTENCIA DE:</label>
@@ -187,34 +188,21 @@
                                         <?php  $user->SetCiclo();?>
                                         <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
                                         <?php  $user->SetNivelGP();?>
-                                        <input type="text" class="form-control" placeholder="Titulo .." name="titulo">
-                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
-                                    </div>
-                                </form>
-                              
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="box-header">
-                                <h3 class="box-title">Titulo</h3>
-                            </div>
-                            <div class="box-body">
-                                <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Titulo .." name="titulo">
-                                </div>
-                            </div>
-
-                            <div class="box-header">
-                                <h3 class="box-title">Actividades</h3>
-                            </div>
-                            <div class="box-body">
-
-                                <div class="form-group">
-                                        
-
-                                    <div id="listas">
+                                            </div>
+                                            <div class="col-sm-6">
+                                            
+                                            <div class="box-header">
+                                                    <h3 class="box-title">Titulo</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Titulo .." name="titulo">
+                                                    </div>
+                                                </div>
+                                                <div class="box-header">
+                                                    <h3 class="box-title">Actividades</h3>
+                                                </div>
+                                                <div id="listas">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <label>Ingrese Las Actividades Realizadas</label>
@@ -234,7 +222,31 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                                   
+                                    
+                                            </div>
+                                            <div class="col-md-3">
+                                             <div class="box-header">
+                                                <h3 class="box-title">Horario de Trabajo</h3>
+                                            </div>
+                                                            <label>Total de Horas Trabajadas:</label>
+                                                    <input type="text" class="form-control" placeholder="# Horas" name="horas">
+                                                    <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
+                                                    <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
+                                                    <button type="button" class="btn btn-block btn-default bg-red" >Generar PDF</button>
+                                            </div>
+                                        </div>
+
+
+                                        </div>
+                                </form>
+                              
+                            </div>
+                            <!-- /.box-body -->
+                    
+                            <?php
+                            include 'Includes/Estructuras/ScriptCalendarioHora.html';
+                            ?>
                                 <script>
                                 var campos_max = 3; //max de 10 campos
 
@@ -251,7 +263,7 @@
                                             <div class="col-sm-6">\
                                             <label>Seleccione la fecha y Hora de trabajo:</label>\
                                                 <div class="input-group">\
-                                                    <div class="input-group-addon">\
+                                                    <diva class="input-group-addon">\
                                                         <i class="fa fa-clock-o"></i>\
                                                     </div>\
                                                     <input type="text" class="form-control pull-right" id="reservationtime">\
@@ -273,45 +285,9 @@
                                 });
                                 </script>
                                 <!-- /.form group -->
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-
-                        <div class="col-sm-3">
-
-                            <div class="box-header">
-                                <h3 class="box-title">Horario de Trabajo</h3>
-                            </div>
-                            <div class="box-body">
-
-                                <div class="form-group">
-
-                                    <label>Total de Horas Trabajadas:</label>
-                                    <input type="text" class="form-control" placeholder="# Horas">
-                                  
-                                    <table style="margin-top: 5%;width: 50%;">
-                                        <tr>
-                                            <td>
-                                                <button type="submit"
-                                                    class="btn btn-block btn-default bg-blue" >Enviar</button>
-                                                    
-                                            </td>
-                                            
-
-                                        </tr>
-                                        
-                                    </table>
-                                </div>
-                                <?php
-                            include 'Includes/Estructuras/ScriptCalendarioHora.html';
-                            ?>
-                                <!-- /.form group -->
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-
-                    </div>
-                </div>
+                           
+                                
+                 
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="box">
@@ -611,6 +587,7 @@
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
                                             <h5>Formulario para la carta de compromiso</h5>
                                         </td>
+                        
                                     </tr>
                                 </tbody>
                             </table>
