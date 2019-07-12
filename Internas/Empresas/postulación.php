@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="Shortcut Icon" type="image/x-icon" href="../../assets/icons/book.ico" />
     <script src="../../js/sweet-alert.min.js"></script>
-    <link rel="stylesheet" href="../../css/sweet-alert.css">
-    <link rel="stylesheet" href="../../css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../Assets/css/sweet-alert.css">
+    <link rel="stylesheet" href="../Assets/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../Assets/css/normalize.css">
+    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../Assets/css/style.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../js/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="../../js/modernizr.js"></script>
@@ -33,14 +33,14 @@
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset" style="padding: 10px 0; color:#fff;">
                 <figure>
-                    <img src="../../assets/img/institution.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
+                    <img src="../../assets/imagenes/template/institution.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
                 <p class="text-center" style="padding-top: 15px;">Empresas</p>
             </div>
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset nav-lateral-list-menu">
                 <ul class="list-unstyled">
-                    <li><a href="../Empresas.php"><i class=></i>&nbsp;&nbsp; Resumen</a></li>
+                    <li><a href="Internas/Empresas.php"><i class=></i>&nbsp;&nbsp; Resumen</a></li>
                     <li>
                         <div class="dropdown-menu-button"><i class=></i>&nbsp;&nbsp; Empresas <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw icon-sub-menu"></i></div>
                         <ul class="list-unstyled">
@@ -56,7 +56,7 @@
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="../../assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="../../assets/imagenes/template/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>

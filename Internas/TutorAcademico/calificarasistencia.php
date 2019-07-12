@@ -24,7 +24,7 @@
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset" style="padding: 10px 0; color:#fff;">
                 <figure>
-                    <img src="../../assets/img/user.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
+                    <img src="../../assets/imagemes/template/user.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
                 <p class="text-center" style="padding-top: 15px;">Tutor Academico</p>
             </div>
