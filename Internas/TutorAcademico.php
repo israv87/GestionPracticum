@@ -5,11 +5,6 @@
 <html lang="es">
 <head>
     <title>Inicio</title>
-
-    
-
-
-
 <?php
 include 'includes/estructuras/links.html';
 ?>
@@ -28,10 +23,7 @@ include 'includes/estructuras/links.html';
             $("#portafolio,#informe_consolidado").hide();
         });
     });
-</script>
-
-
-    
+</script>    
 </head>
 <body>
     <div class="navbar-lateral full-reset">
