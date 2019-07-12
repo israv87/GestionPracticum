@@ -35,7 +35,7 @@
                     <li>
                       
                             <li><a href="#"><i class=></i>&nbsp;&nbsp; Postulacion</a></li>
-                            <li><a href="estadodeproyecto.php"><i class=></i>&nbsp;&nbsp; Informe consolidado</a></li>
+                            <li><a href="estadode[].php"><i class=></i>&nbsp;&nbsp; Informe consolidado</a></li>
 
                        
                     </li>
