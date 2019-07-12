@@ -5,13 +5,6 @@
 <html lang="es">
 <head>
     <title>Convenios</title>
-
-    
-
-
-
-
-    
 </head>
 <body>
     <div class="navbar-lateral full-reset">
