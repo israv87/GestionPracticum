@@ -25,8 +25,6 @@
                ?>
         </nav>
 
-
-
         <!--************
             ************
             ************
@@ -35,6 +33,18 @@
             ************
             ************
         -->
+
+
+
+
+
+
+
+
+
+
+
+
         <div id="res">
             <!-- Content Header (Page header) -->
             <section class="content-header">
@@ -188,7 +198,7 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-}
+
 
 
         <!--************
@@ -201,230 +211,385 @@
         -->
 
         <div id="asis" style="display: none;">
-       
+
             <div class="container-fluid">
                 <div class="container">
                     <div class="page-header">
                         <h1 class="all-tittles">Estudiantes <small>Reporte de Asistencia</small></h1>
-                    </div> 
+                    </div>
                 </div>
-               
+
                 <div class="row">
                     <div class="box box-warning">
                         <div class="box-header with-border">
-                         <div class="col-md-2">
-                             <script>
-                                $('#bt').click(function() {
-                            $.ajax({
-                                url: 'Includes/Database/db_Estudiantes/insertRegistro.php',
-                                type: 'POST',
-                                data: {
-                                    validacion: 0,
-                                },
-                                success: function(msg) {
-                                    alert('Email Sent');
-                                }               
-                            });
-                        });
-                             </script>
-                           
-                             <button type="Submit" id="bt" class="btn btn-block btn-default bg-blue">
-                                 <i class="fa fa-plus-square"></i> 
-                                 Crear nuevo reporte</button>
-                          
-                            </div> 
-                         <div class="col-md-10"></div>  
-                        
+                            <div class="col-md-2">
 
-                        <div id="form"  style="display: none;" >
-                            <table style="height: 100px;">
-                            <div class="col-md-1"></div>
-                                <tbody>
-                                    <tr>
-                                        <td class="align-middle"><img src="assets/imagenes/utpl_logo1.png"
-                                                style="width: 90%;"></td>
-                                        <td class="align-middle">
-                                            <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                            <h5>Registro de asistencias de practicas pre profesionales</h5>
-                                        </td>
+                                <script>
+                                $(document).ready(function() {
+                                    $("#bt").click(function() {
+                                        $("#form").show();
+                                        $("#bt").hide();
+                                    });
+                                });
+                                </script>
+                                <button type="button" id="bt" class="btn btn-block btn-default bg-blue">
+                                    <i class="fa fa-plus-square"></i>
+                                    Crear nuevo reporte</button>
 
-                                    </tr>
-                                </tbody>
-                            </table> <!-- /.box-header -->
-                            <div class="box-body">
-                                <!-- /.box-header < method="post" action="Includes/Database/db_Estudiantes/insert.php">-->
-                                <style type="text/css">
-                                #register_form fieldset:not(:first-of-type) {
-                                    display: none;
-                                }
-                                </style>
-                                <div class="container">
-                                    
-                                    <form id="register_form" novalidate action="form_action.php" method="post">
-                                  
-                                        <fieldset>
-                                            <div class="col-sm-6">
-                                                <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Sistemas Informáticos y Computación" readonly>
-                                                <label>REGISTRO Y CONTROL DE ASISTENCIA DE:</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                                <label>PRÁCTICAS PREPROFESIONALES</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
-                                                <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label>Periodo Academico :</label>
-                                                <select class="form-control">
-                                                    <option>Abril 2019 - Agosto 2019</option>
-                                                </select>
-                                                <label>Institucion:</label>
-                                                <input type="text" class="form-control" placeholder="UTPL" readonly>
-                                                <label>Dependencia</label>
-                                                <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                <label>Tutor Externo :</label>
-                                               
-                                            </div>
-                                            <input type="text" class="form-control"
-                                                    placeholder="Fernanda Maricela Soto Guerrero" readonly>
-                                                    <input type="submit" class="next-form btn btn-block btn-default bg-green"
-                                                style="width:20%; " value="Siguiente" />
-                                        </fieldset>
-                                       
-                                        <fieldset>
-                                            <div class="box-header">
-                                                <h3 class="box-title">Titulo</h3>
-                                            </div>
-                                            <div class="box-body">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Titulo .."
-                                                        name="titulo">
+                            </div>
+                            <div class="col-md-10"></div>
+
+
+                            <div id="form" style="display:none;">
+                                <table style="height: 100px;">
+                                    <div class="col-md-1"></div>
+                                    <tbody>
+                                        <tr>
+                                            <td class="align-middle"><img src="assets/imagenes/utpl_logo1.png"
+                                                    style="width: 90%;"></td>
+                                            <td class="align-middle">
+                                                <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                                <h5>Registro de asistencias de practicas pre profesionales</h5>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table> <!-- /.box-header -->
+                                <div class="box-body">
+                                    <!-- /.box-header < method="post" action="Includes/Database/db_Estudiantes/insert.php">-->
+                                    <style type="text/css">
+                                    #register_form fieldset:not(:first-of-type) {
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="container">
+
+                                        <form id="register_form" novalidate action="form_action.php" method="post">
+
+                                            <fieldset>
+                                                <div class="col-sm-6">
+                                                    <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Sistemas Informáticos y Computación" readonly>
+                                                    <label>REGISTRO Y CONTROL DE ASISTENCIA DE:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
+                                                    <label>PRÁCTICAS PREPROFESIONALES</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
+                                                    <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
                                                 </div>
-                                            </div>
-                                            <div class="box-header">
-                                                <h3 class="box-title">Actividades</h3>
-                                            </div>
-                                            <div id="listas">
+                                                <div class="col-sm-6">
+                                                    <label>Periodo Academico :</label>
+                                                    <select class="form-control">
+                                                        <option>Abril 2019 - Agosto 2019</option>
+                                                    </select>
+                                                    <label>Institucion:</label>
+                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
+                                                    <label>Dependencia</label>
+                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
+                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
+                                                    <label>Tutor Externo :</label>
+
+                                                </div>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Fernanda Maricela Soto Guerrero" readonly>
+                                                <input type="submit"
+                                                    class="next-form btn btn-block btn-default  bg-light-blue"
+                                                    style="width:20%; " value="Siguiente" />
+                                            </fieldset>
+
+                                            <fieldset>
+                                                <div class="box-header">
+                                                    <h3 class="box-title">Titulo del Reporte</h3>
+                                                </div>
+                                                <div class="box-body">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="Titulo .."
+                                                            name="titulo">
+                                                    </div>
+                                                </div>
+
+
                                                 <div class="row">
+
                                                     <div class="col-sm-6">
+                                                        <div class="box-header">
+                                                            <h3 class="box-title">Actividades</h3>
+                                                        </div>
                                                         <label>Ingrese Las Actividades Realizadas</label>
-                                                        <input type="text" class="form-control" placeholder="Enter ..."
-                                                            name="campo[]">
-                                                        <input type="button" id="add_field" value="Agregar">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="box-header">
+                                                            <h3 class="box-title">Fecha</h3>
+                                                        </div>
+                                                        <label>Seleccione la fecha de trabajo
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="box-header">
+                                                            <h3 class="box-title">Horas</h3>
+                                                        </div>
+                                                        <label>Ingrese las Horas trabajadas
+                                                        </label>
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <label>Seleccione la fecha y Hora de
-                                                            trabajo:</label>
+                                                        <input type="text" class="form-control" placeholder="Enter ..."
+                                                            name="campo_0">
+                                                    </div>
+                                                    <div class="col-sm-4">
                                                         <div class="input-group">
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-clock-o"></i>
                                                             </div>
                                                             <input type="text" class="form-control pull-right"
-                                                                id="reservationtime">
+                                                                id="datepicker" name="Fecha_Act_0">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2">
+
+
+                                                        <input type="text" class="form-control" placeholder="# Horas"
+                                                            name="horas_0">
+                                                    </div>
+
+
+                                                    <div class="col-sm-12" style="margin-top:1em">
+                                                        <div id="div1" class="question">
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Enter ..." name="campo_1">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-addon">
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control pull-right" id="datepicker" name="Fecha_Act_1">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+
+
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="# Horas" name="horas_1">
+                                                            </div>
                                                         </div>
                                                     </div>
 
+
+
+
+                                                    <div class="col-sm-12" style="margin-top:1em">
+                                                        <div id="div2" class="question">
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Enter ..." name="campo_2">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-addon">
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control pull-right" id="datepicker" name="Fecha_Act_2">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="# Horas" name="horas_2">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+                                                    <div class="col-sm-12" style="margin-top:1em">
+                                                        <div id="div3" class="question">
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Enter ..." name="campo_3">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-addon">
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control pull-right" id="datepicker" name="Fecha_Act_2">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="# Horas" name="horas_3">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12" style="margin-top:1em">
+                                                        <div id="div4" class="question">
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Enter ..." name="campo_4">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-addon">
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control pull-right" id="datepicker" name="Fecha_Act_4">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+
+
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="# Horas" name="horas_4">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12" style="margin-top:1em">
+                                                        <div id="div5" class="question">
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Enter ..." name="campo_5">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-addon">
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                    </div>
+                                                                    <input type="text" class="form-control pull-right" id="datepicker" name="Fecha_Act_5">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+
+
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="# Horas" name="horas_5">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12" style="margin-top:1em">
+                                                        <div class="col-sm-3">
+
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <button class="btn btn-block btn-default bg-red"
+                                                                type="button" onclick="GetSelectedItem()"
+                                                                id="next">Agregar Actividad</button>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <button class="btn btn-block btn-default bg-muted"
+                                                                type="button" onclick="GetSelectedItem()" id="b">Borrar
+                                                                Actividad</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <input type="button" name="previous" class="previous-form btn btn-default"
-                                                value="Previous" />
-                                            <input type="button" name="next" class="next-form btn btn-info"
-                                                value="Next" />
+                                                <input type="button" name="previous" style="width:20%; "
+                                                    class="btn btn-block btn-default bg-yellow" value="Regresar" />
+                                                <input type="submit" name="submit"
+                                                    class="btn btn-block btn-default bg-green" style="width:20%; "
+                                                    value="Enviar" />
+                                            </fieldset>
+                                        </form>
 
-                                            <input type="button" name="previous" class="previous-form btn btn-default"
-                                                value="Previous" />
-                                            <input type="button" name="next" class="next-form btn btn-info"
-                                                value="Next" />
-                                        </fieldset>
-                                        <fieldset>
-                                            <div class="box-header">
-                                                <h3 class="box-title">Horario de Trabajo</h3>
-                                            </div>
-                                            <label>Total de Horas Trabajadas:</label>
-                                            <input type="text" class="form-control" placeholder="# Horas" name="horas">
-                                            <button type="Submit"
-                                                class="btn btn-block btn-default bg-blue">Enviar</button>
-                                            <button type="button"
-                                                class="btn btn-block btn-default bg-yellow">Borrar</button>
-                                            <button type="button" class="btn btn-block btn-default bg-red">Generar
-                                                PDF</button>
-
-                                            <input type="button" name="previous" class="previous-form btn btn-default"
-                                                value="Previous" />
-                                            <input type="submit" name="submit" class="submit btn btn-success"
-                                                value="Submit" />
-                                        </fieldset>
-                                    </form>
-                                    
-                                </div>
-                                <script type="text/javascript">
-                                $(document).ready(function() {
-                                    var form_count = 1,
-                                        previous_form, next_form, total_forms;
-                                    total_forms = $("fieldset").length;
-                                    $(".next-form").click(function() {
-                                        previous_form = $(this).parent();
-                                        next_form = $(this).parent().next();
-                                        next_form.show();
-                                        previous_form.hide();
-                                        setProgressBarValue(++form_count);
-                                    });
-                                    $(".previous-form").click(function() {
-                                        previous_form = $(this).parent();
-                                        next_form = $(this).parent().prev();
-                                        next_form.show();
-                                        previous_form.hide();
-                                        setProgressBarValue(--form_count);
-                                    });
-                                    setProgressBarValue(form_count);
-
-                                    function setProgressBarValue(value) {
-                                        var percent = parseFloat(100 / total_forms) * value;
-                                        percent = percent.toFixed();
-                                        $(".progress-bar1")
-                                            .css("width", percent + "%")
-                                            .html(percent + "%");
-                                    }
-                                    // Handle form submit and validation
-                                    $("#register_form").submit(function(event) {
-                                        var error_message = '';
-                                        if (!$("#email").val()) {
-                                            error_message += "Ingrese Un Titulo";
-                                        }
-                                        if (!$("#password").val()) {
-                                            error_message += "<br>Seleccione una A";
-                                        }
-                                        if (!$("#mobile").val()) {
-                                            error_message += "<br>Please Fill Mobile Number";
-                                        }
-                                        // Display error if any else submit form
-                                        if (error_message) {
-                                            $('.alert-success').removeClass('hide').html(error_message);
-                                            return false;
-                                        } else {
-                                            return true;
-                                        }
-                                    });
-                                });
-                                </script>
-
-                            </div>
-                            <div class="progress">
-                                        <div class="progress-bar1 progress-bar1-striped active" role="progressbar"
-                                            aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                        </div>
-                            
+                                    <script type="text/javascript">
+                                    $(document).ready(function() {
+                                        var form_count = 1,
+                                            previous_form, next_form, total_forms;
+                                        total_forms = $("fieldset").length;
+                                        $(".next-form").click(function() {
+                                            previous_form = $(this).parent();
+                                            next_form = $(this).parent().next();
+                                            next_form.show();
+                                            previous_form.hide();
+                                            setProgressBarValue(++form_count);
+                                        });
+                                        $(".previous-form").click(function() {
+                                            previous_form = $(this).parent();
+                                            next_form = $(this).parent().prev();
+                                            next_form.show();
+                                            previous_form.hide();
+                                            setProgressBarValue(--form_count);
+                                        });
+                                        setProgressBarValue(form_count);
+
+                                        function setProgressBarValue(value) {
+                                            var percent = parseFloat(100 / total_forms) * value;
+                                            percent = percent.toFixed();
+                                            $(".progress-bar1")
+                                                .css("width", percent + "%")
+                                                .html(percent + "%");
+                                        }
+                                        // Handle form submit and validation
+                                        $("#register_form").submit(function(event) {
+                                            var error_message = '';
+                                            if (!$("#email").val()) {
+                                                error_message += "Ingrese Un Titulo";
+                                            }
+                                            if (!$("#password").val()) {
+                                                error_message += "<br>Seleccione una A";
+                                            }
+                                            if (!$("#mobile").val()) {
+                                                error_message += "<br>Please Fill Mobile Number";
+                                            }
+                                            // Display error if any else submit form
+                                            if (error_message) {
+                                                $('.alert-success').removeClass('hide').html(
+                                                    error_message);
+                                                return false;
+                                            } else {
+                                                return true;
+                                            }
+                                        });
+                                    });
+                                    </script>
+                                    <script>
+                                    var qCount = 1;
+
+                                    $('.question').hide();
+
+                                    $('#next').click(function() {
+
+                                        $('#div' + qCount).show();
+                                        qCount = qCount + 1;
+
+                                        if (qCount == 6) {
+                                            qCount = 1;
+                                        }
+                                    });
+
+
+                                    $('#b').click(function() {
+
+                                        $('#div' + qCount).hide();
+                                        qCount = qCount + 1;
+
+                                        if (qCount == 6) {
+                                            qCount = 1;
+                                        }
+                                    });
+                                    </script>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar1 progress-bar1-striped active" role="progressbar"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
 
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    
+
                                     <div class="box">
                                         <div class="box-header">
                                             <h3 class="box-title">Informes de Asistencias</h3>
