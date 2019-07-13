@@ -14,7 +14,7 @@
 <script src="assets/componentes/jquery-knob/dist/jquery.knob.min.js"></script>
 <script src="assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script src="assets/js/pages/dashboard.js"></script>
-
+<script src="assets/componentes/fullcalendar/dist/fullcalendar.min.js"></script>
 <script src="assets/componentes/bootstrap/dist/js/bootstrap.min.js"></script>
 
 

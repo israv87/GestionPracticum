@@ -23,6 +23,10 @@ class User extends DB
     private $ocupado;
     private $disponible;
     private $botonOD;
+    private $stgp2;
+    private $ciclo2;
+    private $paralelo2;
+    private $nivel2;
 
     
 
@@ -65,40 +69,64 @@ class User extends DB
     }
     function SetActividadesEstudiante($user, $c = 0, $i = 0)
     {
-        $query2 = $this->connect()->prepare('SELECT Actividad, FechaInicio,FechaFin,Porcentaje
+        $query2 = $this->connect()->prepare('SELECT idActPry,Actividad, FechaInicio,FechaFin,Porcentaje
             from estudiantes, proyectos, proyecto_estudiante, usuarios,actividadesproyecto
             where fk_idEstudiante_pe=idestudiante and idproyectos = fk_idProyectos_pe 
             and idEstudiante = idusuario and usuario = :user');
         $query2->execute(['user' => $user]);
 
-        echo '    <table>
-        <tr>';
+        echo '    <div class="box">
+        <div class="box-body">
+          <table class="table table-bordered">
+          <tr>
+          <th style="width: 10px">#</th>
+          <th>Actividad</th>
+          <th>Fecha de Inicio</th>
+          <th>Fecha de Finalización</th>
+          <th>Progreso</th>
+          <th style="width: 40px">%</th>
+        </tr>';
         foreach ($query2 as $currentUser2) {
-            $i++;
             $Porcentaje = $currentUser2['Porcentaje'];
-            echo '<td>
-                <div class="row">
-                        <div class="col-sm-12">
-                             <div class="clearfix">
-                                    <h4><span class="pull-left">' . $currentUser2['Actividad'] . '</span></h4><br>
-                                    <medium ">Inicia:' . $currentUser2['FechaInicio'] . '</medium><br>
-                                <medium ">Termina: ' . $currentUser2['FechaFin'] . '</medium><br>
-                            </div>
-                            <small class="pull-Leftt">Progreso</small><br>
-                            <div class="progress xs">
-                                <div class="progress-bar progress-bar-yellow" style="width:' . $Porcentaje . '%;"></div>
-                            </div>
-                          </div>
-                        </div>
-                    </td>';
-            if ($i == 2) { // three items in a row. Edit this to get more or less items on a row
-                echo '</tr><tr ">';
-                $i = 0;
-            }
+            echo '
+            
+              <tr>
+              <td>'.$currentUser2['idActPry'].'</td>
+              <td>'.$currentUser2['Actividad'].'</td>
+              <td>'.$currentUser2['FechaInicio'].'</td>
+              <td>'.$currentUser2['FechaFin'].'</td>
+              <td>
+                  <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-primary"
+                          style="width: ' . $Porcentaje . '%"></div>
+                  </div>
+              </td>
+              <td><span class="badge bg-red">'. $Porcentaje .'%</span></td>
+          </tr>
+              
+              
+
+
+                                            
+                                            
+                                            
+                                        ';
+            
             $c++;
         }
-        echo '    </tr>
-        </table>';
+        echo '   </table>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer clearfix">
+          <ul class="pagination pagination-sm no-margin pull-right">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+        </div>
+      </div>';
         return $c;
     }
 
@@ -144,7 +172,52 @@ class User extends DB
 
         echo '</select>';
     }
+    public function SetTipoGP2($user)
+    {
+        $query5 = $this->connect()->prepare('SELECT TipoGP from estudiantes, Tipo_Gp, usuarios,TipoGP_Nivel,nivel_gp
+        where fk_TipoGpNV = idTipoGp and fkNivelGPNV = idNivelGP
+        and fk_idNivelGP_Est=idNivelGP and  idNivelGP = fk_idNivelGP_Est and fk_idUsuario_Est = idUsuario and usuario =:user');
+        $query5->execute(['user' => $user]);
+  
+                      
 
+        foreach ($query5 as $currentUser5) {
+            $this->stgp2 = $currentUser5['TipoGP'] ;
+        }
+
+     
+    }
+    public function SetNivel2($user)
+    {
+        $query5 = $this->connect()->prepare('SELECT NivelGP from estudiantes, usuarios, nivel_gp
+        where  idNivelGP= fk_idNivelGP_Est  and fk_idUsuario_Est = idUsuario and usuario =:user');
+        $query5->execute(['user' => $user]);
+  
+                      
+
+        foreach ($query5 as $currentUser5) {
+            $this->nivel2 = $currentUser5['NivelGP'] ;
+        }
+
+     
+    }
+    public function SetCiclo2($user)
+    {
+        $query5 = $this->connect()->prepare('SELECT CicloNombre from estudiantes, ciclos, usuarios
+        where fk_idCiclo_Est = idCiclo  and fk_idUsuario_Est = idUsuario and usuario =:user');
+        $query5->execute(['user' => $user]);
+  
+                      
+
+        foreach ($query5 as $currentUser5) {
+            $this->ciclo2 = $currentUser5['CicloNombre'] ;
+        }
+
+     
+    }
+
+
+   
     public function SetCiclo()
     {
         $query6 = $this->connect()->prepare('SELECT ciclo from ciclos');
@@ -162,6 +235,21 @@ class User extends DB
     }
 
 
+
+    public function SetParalelo2($user)
+    {
+        $query5 = $this->connect()->prepare(' SELECT Paralelo from estudiantes, paralelos, usuarios
+        where fk_idParalelo_Est = idParalelo  and fk_idUsuario_Est = idUsuario and usuario =:user');
+        $query5->execute(['user' => $user]);
+  
+                      
+
+        foreach ($query5 as $currentUser5) {
+            $this->paralelo2 = $currentUser5['Paralelo'] ;
+        }
+
+     
+    }
     public  function SetNivelGP()
     {
         $query7 = $this->connect()->prepare('SELECT NivelGP from nivel_gp');
@@ -216,7 +304,7 @@ class User extends DB
                                         <td>' . $currentUser8['Fecha'] . '</td>
                                         <td>' . $currentUser8['Observacion'] . '</td>
                                         <td>' . $currentUser8['HorasTrabajadas'] . '</td>
-                                        <td><a href="#"><img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;"></a></td>
+                                        <td><a href="includes/Estructuras/Estudiantes/AsistenciaPDF.php"><img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;"></a></td>
                                         <td>' . $validado . '</td>
                                         <td>' . $Calificado . '</td>
                                     </tr> 
@@ -267,13 +355,13 @@ class User extends DB
         $query12->execute();
 
         $query13 = $this->connect()->prepare('SELECT NivelGp FROM estudiantes, nivel_gp, usuarios
-         where fk_idNivelGP=idNivelgp and fk_idUsuario_Est= idusuario and usuario = :user');
+         where fk_idNivelGP_Est=idNivelgp and fk_idUsuario_Est= idusuario and usuario = :user');
         $query13->execute(['user' => $user]);
 
         $query14 = $this->connect()->prepare(' SELECT NopPlaza,ocupado, disponible FROM proyecto_plaza_nivel, estudiantes, usuarios, nivel_gp, proyectos, proyecto_estudiante
         where fk_pry_nv = idproyectos and fk_idProyectos_pe = idproyectos 
         and fk_idEstudiante_pe=idestudiante and fk_idUsuario_Est = idusuario 
-        and fk_idNivelGP = idNivelGp and usuario = :user');
+        and fk_idNivelGP_Est = idNivelGp and usuario = :user');
       
         $query14->execute(['user' => $user]);
         
@@ -400,4 +488,21 @@ class User extends DB
     {
         return $this->Institucion;
     }
+    public function getTipoGp2()
+    {
+        return $this->stgp2;
+    }
+    public function getCiclo2()
+    {
+        return $this->ciclo2;
+    }
+    public function getParalelo2()
+    {
+        return $this->paralelo2;
+    }
+    public function getNivel2()
+    {
+        return $this->nivel2;
+    }
 }
+

@@ -4,34 +4,184 @@
     var x = 0;
     $('#add_field').click(function(e) {
         e.preventDefault(); //prevenir novos clicks
+
         if (x < campos_max) {
-            $('#listas').append('<div>\
-            <div class="row">\
-                <div class="col-sm-6">\
-                <label>Ingrese Las Actividades Realizadas</label>\
-                <input type="text" class="form-control" placeholder="Enter ..."name="campo[]">\
-                </div>\
-                <div class="col-sm-6">\
-                <label>Seleccione la fecha y Hora de trabajo:</label>\
-                    <div class="input-group">\
-                        <div class="input-group-addon">\
-                            <i class="fa fa-clock-o"></i>\
-                        </div>\
-                        <input type="text" class="form-control pull-right" id="reservationtime">\
-                    </div>\
-                </div>\
-            </div>\
-        </div>\
-    <input type="button"  class="remover_campo id="add_field" value="Remover">\
+            switch (x) {
+                case 0:
+                    $('#listas').append('<div>\
+                    <div class="row">\
+                                                    <div class="col-sm-4">\
+                                                        <div class="row">\
+                                                            <div class="col-sm-12">\
+                                                                <label>Ingrese Las Actividades Realizadas</label>\
+                                                            </div>\
+                                                            <div class="col-sm-12" name="campo[]">\
+                                                                <input type="text" class="form-control" placeholder="Enter ..." name="campo0>">\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                    <div class="col-sm-4">\
+                                                        <div class="row">\
+                                                            <div class="col-sm-12">\
+                                                                <label>Seleccione la fecha en la que se trabajó</label>\
+                                                            </div>\
+                                                            <div class="col-sm-12">\
+                                                                <div class="input-group date">\
+                                                                    <div class="input-group-addon">\
+                                                                        <i class="fa fa-calendar"></i>\
+                                                                    </div>\
+                                                                    <input type="text" class="form-control pull-right" id="datepicker"  name="fecha_act0">\
+                                                                </div>\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                    <div class="col-sm-4">\
+                                                        <label>Digite las Horas Trabajadas:</label>\
+                                                        <input type="text" class="form-control" placeholder="# Horas" name="horas0">\
+                                                    </div>\
+                                                </div>\
+                                                <input type="button" class="btn btn-block btn-default bg-red remover_campo id="add_field " style="width:30%" value="Remover">\
     <br>\
     </div>');
-            x++;
+                    x++;
+                    $('#listas').on("click", ".remover_campo", function(e) {
+                        e.preventDefault();
+                        $(this).parent('div').remove();
+                        x--;
+                    });
+                    break;
+                case 1:
+                    $('#listas').append('<div>\
+                    <div class="row">\
+                                                    <div class="col-sm-4">\
+                                                        <div class="row">\
+                                                            <div class="col-sm-12">\
+                                                                <label>Ingrese Las Actividades Realizadas</label>\
+                                                            </div>\
+                                                            <div class="col-sm-12" name="campo[]">\
+                                                                <input type="text" class="form-control" placeholder="Enter ..." name="campo1>">\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                    <div class="col-sm-4">\
+                                                        <div class="row">\
+                                                            <div class="col-sm-12">\
+                                                                <label>Seleccione la fecha en la que se trabajó</label>\
+                                                            </div>\
+                                                            <div class="col-sm-12">\
+                                                                <div class="input-group date">\
+                                                                    <div class="input-group-addon">\
+                                                                        <i class="fa fa-calendar"></i>\
+                                                                    </div>\
+                                                                    <input type="text" class="form-control pull-right" id="datepicker"  name="fecha_act1">\
+                                                                </div>\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                    <div class="col-sm-4">\
+                                                        <label>Digite las Horas Trabajadas:</label>\
+                                                        <input type="text" class="form-control" placeholder="# Horas" name="horas1">\
+                                                    </div>\
+                                                </div>\
+                                                <input type="button" class="btn btn-block btn-default bg-red remover_campo id="add_field " style="width:30%" value="Remover">\
+    <br>\
+    </div>');
+                    x++;
+                    $('#listas').on("click", ".remover_campo", function(e) {
+                        e.preventDefault();
+                        $(this).parent('div').remove();
+                        x--;
+                    });
+                    break;
+                case 2:
+                    $('#listas').append('<div>\
+                    <div class="row">\
+                                                    <div class="col-sm-4">\
+                                                        <div class="row">\
+                                                            <div class="col-sm-12">\
+                                                                <label>Ingrese Las Actividades Realizadas</label>\
+                                                            </div>\
+                                                            <div class="col-sm-12" name="campo[]">\
+                                                                <input type="text" class="form-control" placeholder="Enter ..." name="campo2>">\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                    <div class="col-sm-4">\
+                                                        <div class="row">\
+                                                            <div class="col-sm-12">\
+                                                                <label>Seleccione la fecha en la que se trabajó</label>\
+                                                            </div>\
+                                                            <div class="col-sm-12">\
+                                                                <div class="input-group date">\
+                                                                    <div class="input-group-addon">\
+                                                                        <i class="fa fa-calendar"></i>\
+                                                                    </div>\
+                                                                    <input type="text" class="form-control pull-right" id="datepicker"  name="fecha_act2">\
+                                                                </div>\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                    <div class="col-sm-4">\
+                                                        <label>Digite las Horas Trabajadas:</label>\
+                                                        <input type="text" class="form-control" placeholder="# Horas" name="horas2">\
+                                                    </div>\
+                                                </div>\
+                                                <input type="button" class="btn btn-block btn-default bg-red remover_campo id="add_field " style="width:30%" value="Remover">\
+    <br>\
+    </div>');
+                    x++;
+                    $('#listas').on("click", ".remover_campo", function(e) {
+                        e.preventDefault();
+                        $(this).parent('div').remove();
+                        x--;
+                    });
+                    break;
+                case 3:
+                    $('#listas').append('<div>\
+                    <div class="row">\
+                                                    <div class="col-sm-4">\
+                                                        <div class="row">\
+                                                            <div class="col-sm-12">\
+                                                                <label>Ingrese Las Actividades Realizadas</label>\
+                                                            </div>\
+                                                            <div class="col-sm-12" name="campo[]">\
+                                                                <input type="text" class="form-control" placeholder="Enter ..." name="campo3>">\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                    <div class="col-sm-4">\
+                                                        <div class="row">\
+                                                            <div class="col-sm-12">\
+                                                                <label>Seleccione la fecha en la que se trabajó</label>\
+                                                            </div>\
+                                                            <div class="col-sm-12">\
+                                                                <div class="input-group date">\
+                                                                    <div class="input-group-addon">\
+                                                                        <i class="fa fa-calendar"></i>\
+                                                                    </div>\
+                                                                    <input type="text" class="form-control pull-right" id="datepicker"  name="fecha_act3">\
+                                                                </div>\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                    <div class="col-sm-4">\
+                                                        <label>Digite las Horas Trabajadas:</label>\
+                                                        <input type="text" class="form-control" placeholder="# Horas" name="horas3">\
+                                                    </div>\
+                                                </div>\
+                                                <input type="button" class="btn btn-block btn-default bg-red remover_campo id="add_field " style="width:30%" value="Remover">\
+    <br>\
+    </div>');
+                    x++;
+                    $('#listas').on("click", ".remover_campo", function(e) {
+                        e.preventDefault();
+                        $(this).parent('div').remove();
+                        x--;
+                    });;
+            }
+
+
         }
     });
     // Remover o div anterior
-    $('#listas').on("click", ".remover_campo", function(e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-    });
 </script>
