@@ -27,6 +27,7 @@ class User extends DB
     private $ciclo2;
     private $paralelo2;
     private $nivel2;
+    private $idRegistroPDF;
 
     
 
@@ -266,7 +267,7 @@ class User extends DB
     }
     public function RegistrosEntregados($user)
     {
-        $query8 = $this->connect()->prepare('SELECT CodRegistro as "Codigo",Titulo,Fecha,Observacion, HorasTrabajadas,Validacion, Calificacion FROM registro_aistencias, estudiantes, usuarios 
+        $query8 = $this->connect()->prepare('SELECT idRegistroAistencias,CodRegistro as "Codigo",Titulo,Fecha,Observacion, HorasTrabajadas,Validacion, Calificacion FROM registro_aistencias, estudiantes, usuarios 
                                     where  fk_idEstudiante = idEstudiante and idestudiante = idusuario and usuario = :user');
         $query8->execute(['user' => $user]);
 
@@ -284,6 +285,7 @@ class User extends DB
 
 
         foreach ($query8 as $currentUser8) {
+            $idRegistroPDF = $currentUser8['idRegistroAistencias'];
             $Validadcion = $currentUser8['Validacion'];
             $Calificacion = $currentUser8['Calificacion'];
             if ($Validadcion == 1) {
@@ -304,7 +306,10 @@ class User extends DB
                                         <td>' . $currentUser8['Fecha'] . '</td>
                                         <td>' . $currentUser8['Observacion'] . '</td>
                                         <td>' . $currentUser8['HorasTrabajadas'] . '</td>
-                                        <td><a href="includes/Estructuras/Estudiantes/AsistenciaPDF.php"><img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;"></a></td>
+                                        <td><a href="includes/Estructuras/Estudiantes/AsistenciaPDF.php?idReg='.$idRegistroPDF.'" target="_blank">
+                                                 <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
+                                            </a>
+                                        </td>
                                         <td>' . $validado . '</td>
                                         <td>' . $Calificado . '</td>
                                     </tr> 
@@ -452,6 +457,38 @@ class User extends DB
         </table>';
     }
 
+
+
+
+    public function CartasCompromiso($user)
+    {
+        $query8 = $this->connect()->prepare('SELECT idCartaCom,CodCartaCompromiso as "Codigo",Fecha FROM cartacompromiso, estudiantes, usuarios 
+        where  fk_idEstudiante_comp = idEstudiante and idestudiante = idusuario and usuario = :user');
+        $query8->execute(['user' => $user]);
+
+        echo '<table class="table table-hover">
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Fecha</th>
+                                        <th>Archivo</th>
+                                    </tr>';
+
+
+        foreach ($query8 as $currentUser8) {
+            $idCompromisoPDF = $currentUser8['idCartaCom'];
+            echo '
+                                    <tr>
+                                        <td>' . $currentUser8['Codigo'] . '</td>
+                                        <td>' . $currentUser8['Fecha'] . '</td>
+                                        <td><a href="includes/Estructuras/Estudiantes/AsistenciaPDF.php?idCom='.$idCompromisoPDF.'" target="_blank">
+                                                 <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
+                                            </a>
+                                        </td>
+                                    </tr> 
+                                    ';
+        }
+        echo '</table>';
+    }
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-07-2019 a las 16:40:12
+-- Tiempo de generación: 15-07-2019 a las 20:46:27
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -62,6 +62,8 @@ CREATE TABLE `actividades_registro` (
   `Actividad` varchar(45) DEFAULT NULL,
   `fk_idRegistroAistencias` int(11) NOT NULL,
   `Fecha` date DEFAULT NULL,
+  `HEntrada` time DEFAULT NULL,
+  `HSalida` time DEFAULT NULL,
   `HorasTrabajadas` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -69,11 +71,72 @@ CREATE TABLE `actividades_registro` (
 -- Volcado de datos para la tabla `actividades_registro`
 --
 
-INSERT INTO `actividades_registro` (`idActividades_Registro`, `Actividad`, `fk_idRegistroAistencias`, `Fecha`, `HorasTrabajadas`) VALUES
-(1, 'Analisas de la solucion', 1, '0000-00-00', NULL),
-(2, 'Consulta de Liberias', 1, NULL, NULL),
-(3, 'Panteamiento de una propuesta', 1, NULL, NULL),
-(4, 'Analisas de base de datos', 1, NULL, NULL);
+INSERT INTO `actividades_registro` (`idActividades_Registro`, `Actividad`, `fk_idRegistroAistencias`, `Fecha`, `HEntrada`, `HSalida`, `HorasTrabajadas`) VALUES
+(2, 'Consulta de Liberias', 1, '2019-04-05', '10:00:00', '12:00:00', 2),
+(3, 'Panteamiento de una propuesta', 1, '2019-04-06', '15:00:00', '17:00:00', 2),
+(4, 'Analisas de base de datos', 1, '2019-04-08', '16:00:00', '17:00:00', 1),
+(5, 'Analsiis de mapa', 2, '2019-04-14', '09:00:00', '11:00:00', 2),
+(6, 'ASnalissis de codigo', 2, '2019-04-15', '10:00:00', '11:00:00', 1),
+(7, 'Analissi de based e datos', 2, '2019-04-16', '12:00:00', '13:00:00', 1),
+(8, 'Diseño de solucion', 3, '2019-04-22', '10:00:00', '11:00:00', 1),
+(9, 'Modelado de base de datos', 3, '2019-04-24', '07:00:00', '08:00:00', 1),
+(10, 'Creacion de base de datos', 3, '2019-04-25', '16:00:00', '17:00:00', 1),
+(11, 'Analiss de codigo', 4, '2019-05-02', '20:00:00', '21:00:00', 1),
+(12, 'Analisis de calses y estructura', 4, '2019-05-04', '18:30:00', '19:30:00', 1),
+(13, 'Buscar partes faltantes', 4, '2019-05-05', '10:00:00', '11:00:00', 1),
+(14, 'Codificacion modulo estudiantes', 5, '2019-05-14', '10:00:00', '12:00:00', 2),
+(15, 'Codificacion modulo empresas', 5, '2019-05-12', '15:00:00', '17:00:00', 2),
+(16, 'Codificacion modulo tutor academico', 5, '2019-05-11', '08:00:00', '09:00:00', 1),
+(17, 'Análisis de la solucion', 5, '2019-05-18', '07:00:00', '08:00:00', 1),
+(18, 'Plantenamiento de Objetivos', 1, '2019-04-04', '16:00:00', '18:00:00', 2),
+(19, 'Analisis de requerimientos', 6, '2019-04-01', '18:00:00', '20:00:00', 2),
+(20, 'Creacionde base de datos', 2, '2019-04-04', '20:00:00', '21:00:00', 1),
+(21, 'Analisis de la Solucion', 2, '2019-04-01', '10:00:00', '11:00:00', 1),
+(22, 'levantamiento de datros', 16, '2019-04-06', '10:00:00', '12:00:00', 2),
+(23, 'levantamiento de datros', 23, '2019-04-06', '10:00:00', '12:00:00', 2),
+(24, 'AnÃ¡lisis de bases de datos', 24, '2019-06-12', '15:00:00', '17:00:00', 2),
+(25, 'Planteamiento de la solucion', 24, '2019-07-12', '17:00:00', '18:00:00', 1),
+(26, 'Analisis de requeriemientos', 24, '2019-08-12', '16:00:00', '18:00:00', 2),
+(27, 'DiseÃ±o de base de datos', 24, '2019-09-12', '17:00:00', '19:00:00', 2),
+(28, 'Codificacion', 24, '2019-10-12', '15:00:00', '18:00:00', 3),
+(29, 'levantamiento de datros', 24, '2019-04-06', '10:00:00', '12:00:00', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cartacompromiso`
+--
+
+CREATE TABLE `cartacompromiso` (
+  `idCartaCom` int(11) NOT NULL,
+  `CodCartaCompromiso` varchar(7) DEFAULT NULL,
+  `Fecha` date DEFAULT NULL,
+  `Año` year(4) DEFAULT NULL,
+  `fk_idCordinador_comp` int(11) DEFAULT NULL,
+  `fk_idEstudiante_comp` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cartacompromiso`
+--
+
+INSERT INTO `cartacompromiso` (`idCartaCom`, `CodCartaCompromiso`, `Fecha`, `Año`, `fk_idCordinador_comp`, `fk_idEstudiante_comp`) VALUES
+(1, 'CMP0001', '2019-04-01', 2019, 1, 1),
+(2, 'CMP0002', '2019-05-06', 2019, 1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carta_asig`
+--
+
+CREATE TABLE `carta_asig` (
+  `idCARTA_ASIG` int(11) NOT NULL,
+  `CodCartaAsig` varchar(7) DEFAULT NULL,
+  `Fecha` date DEFAULT NULL,
+  `Año` year(4) DEFAULT NULL,
+  `fk_est_asig` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -352,7 +415,7 @@ INSERT INTO `dependencias` (`idDependencia`, `Dependencia`) VALUES
 (14, 'TAW'),
 (15, 'Área Técnica'),
 (16, 'Dirección de Vinculación con la Sociedad'),
-(17, 'Departamento de Ciencias de la Computación y Electrónica. Sección Electrónica y Telecomunicaciones.'),
+(17, 'Departamento de Ciencias de la Computacióny Electrónica Sección Electrónica y Telecomunicaciones.'),
 (18, 'Bbilioteca'),
 (19, 'UGTI - Infraestructura de TI'),
 (20, 'TAW-Arquitectura'),
@@ -915,7 +978,7 @@ CREATE TABLE `registro_aistencias` (
   `Titulo` varchar(45) DEFAULT NULL,
   `Fecha` date DEFAULT NULL,
   `Observacion` varchar(50) DEFAULT NULL,
-  `Validacion` int(11) DEFAULT NULL,
+  `Validacion` int(11) DEFAULT 0,
   `Calificacion` double DEFAULT 0,
   `HorasTrabajadas` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -925,11 +988,11 @@ CREATE TABLE `registro_aistencias` (
 --
 
 INSERT INTO `registro_aistencias` (`idRegistroAistencias`, `CodRegistro`, `fk_idEstudiante`, `Titulo`, `Fecha`, `Observacion`, `Validacion`, `Calificacion`, `HorasTrabajadas`) VALUES
-(1, 'REG0001', 1, 'Semana 1', '2019-04-07', 'Entregado a Tiempo', 1, 1, 4),
-(2, 'REG0002', 1, 'Semana 2', '2019-04-15', 'Entregado a Tiempo', 1, 1, 5),
-(3, 'REG0003', 1, 'Semana 3', '2019-04-21', 'Entregado a Tiempo', 1, 0, 6),
-(4, 'REG0004', 1, 'Semana 4', '2019-05-02', 'Entregado a Tiempo', 0, 0, 4),
-(5, 'REG0005', 2, 'Semana 1', '2019-04-05', 'Entregado a Tiempo', 1, 1, 3),
+(1, 'REG0001', 1, 'Semana 1', '2019-04-07', 'Entregado a Tiempo', 1, 1, 6),
+(2, 'REG0002', 1, 'Semana 2', '2019-04-15', 'Entregado a Tiempo', 1, 1, 4),
+(3, 'REG0003', 1, 'Semana 3', '2019-04-21', 'Entregado a Tiempo', 1, 0, 3),
+(4, 'REG0004', 1, 'Semana 4', '2019-05-02', 'Entregado a Tiempo', 0, 0, 3),
+(5, 'REG0005', 2, 'Semana 1', '2019-04-05', 'Entregado a Tiempo', 1, 1, 5),
 (6, 'REG0006', 2, 'Semana 2', '2019-04-13', 'Entregado a Tiempo', 1, 1, 7),
 (7, 'REG0007', 2, 'Semana 3', '2019-04-20', 'Entregado a Tiempo', 0, 1, 3),
 (8, 'REG0008', 2, 'Semana 4', '2019-05-03', 'Demora', 0, 0, 2),
@@ -940,8 +1003,9 @@ INSERT INTO `registro_aistencias` (`idRegistroAistencias`, `CodRegistro`, `fk_id
 (13, 'REG0013', 4, 'Semana 1', '2019-04-07', 'Entregado a Tiempo', 1, 1, 6),
 (14, 'REG0014', 4, 'Semana 2', '2019-04-06', 'Entregado a Tiempo', 1, 1, 5),
 (15, 'REG0015', 4, 'Semana 3', '2019-04-15', 'Entregado a Tiempo', 1, 1, 4),
-(16, 'REG0016', 2, 'semana4', '2019-07-08', 'Entregado a Tiempo', 0, 0, 4),
-(17, 'REG0017', 1, NULL, '2019-07-12', NULL, 0, 0, NULL);
+(16, 'REG0016', 2, 'Semana 4', '2019-07-08', 'Entregado a Tiempo', 0, 0, 4),
+(23, 'REG0017', 1, 'semana 5', '2019-07-15', NULL, 0, 0, NULL),
+(24, 'REG0024', 1, 'Informe de la semana 5', '2019-07-15', 'Entregado a tiempo', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1301,6 +1365,21 @@ ALTER TABLE `actividadesproyecto`
 ALTER TABLE `actividades_registro`
   ADD PRIMARY KEY (`idActividades_Registro`),
   ADD KEY `fk_Actividades_Registro_Registro_Aistencias1` (`fk_idRegistroAistencias`);
+
+--
+-- Indices de la tabla `cartacompromiso`
+--
+ALTER TABLE `cartacompromiso`
+  ADD PRIMARY KEY (`idCartaCom`),
+  ADD KEY `fk_est` (`fk_idEstudiante_comp`),
+  ADD KEY `fk_cord` (`fk_idCordinador_comp`);
+
+--
+-- Indices de la tabla `carta_asig`
+--
+ALTER TABLE `carta_asig`
+  ADD PRIMARY KEY (`idCARTA_ASIG`),
+  ADD KEY `fk_est_asig` (`fk_est_asig`);
 
 --
 -- Indices de la tabla `ciclos`
@@ -1682,7 +1761,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `actividades_registro`
 --
 ALTER TABLE `actividades_registro`
-  MODIFY `idActividades_Registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idActividades_Registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de la tabla `cartacompromiso`
+--
+ALTER TABLE `cartacompromiso`
+  MODIFY `idCartaCom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `carta_asig`
+--
+ALTER TABLE `carta_asig`
+  MODIFY `idCARTA_ASIG` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `ciclos`
@@ -1892,7 +1983,7 @@ ALTER TABLE `rediseño_curricular_2`
 -- AUTO_INCREMENT de la tabla `registro_aistencias`
 --
 ALTER TABLE `registro_aistencias`
-  MODIFY `idRegistroAistencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idRegistroAistencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `rgeneral`
@@ -1981,6 +2072,13 @@ ALTER TABLE `actividadesproyecto`
 --
 ALTER TABLE `actividades_registro`
   ADD CONSTRAINT `fk_Actividades_Registro_Registro_Aistencias1` FOREIGN KEY (`fk_idRegistroAistencias`) REFERENCES `registro_aistencias` (`idRegistroAistencias`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `cartacompromiso`
+--
+ALTER TABLE `cartacompromiso`
+  ADD CONSTRAINT `fk_cord` FOREIGN KEY (`fk_idCordinador_comp`) REFERENCES `coordinador_titulacion` (`idCoordinadorTitulacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_est` FOREIGN KEY (`fk_idEstudiante_comp`) REFERENCES `estudiantes` (`idEstudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `ciclos_nivelgp`
