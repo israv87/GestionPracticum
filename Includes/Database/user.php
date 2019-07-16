@@ -462,9 +462,9 @@ class User extends DB
 
     public function CartasCompromiso($user)
     {
-        $query8 = $this->connect()->prepare('SELECT idCartaCom,CodCartaCompromiso as "Codigo",Fecha FROM cartacompromiso, estudiantes, usuarios 
+        $query12 = $this->connect()->prepare('SELECT idCartaCom,CodCartaCompromiso as "Codigo",Fecha FROM cartacompromiso, estudiantes, usuarios 
         where  fk_idEstudiante_comp = idEstudiante and idestudiante = idusuario and usuario = :user');
-        $query8->execute(['user' => $user]);
+        $query12->execute(['user' => $user]);
 
         echo '<table class="table table-hover">
                                     <tr>
@@ -474,13 +474,13 @@ class User extends DB
                                     </tr>';
 
 
-        foreach ($query8 as $currentUser8) {
-            $idCompromisoPDF = $currentUser8['idCartaCom'];
+        foreach ($query12 as $currentUser12) {
+            $idCompromisoPDF = $currentUser12['idCartaCom'];
             echo '
                                     <tr>
-                                        <td>' . $currentUser8['Codigo'] . '</td>
-                                        <td>' . $currentUser8['Fecha'] . '</td>
-                                        <td><a href="includes/Estructuras/Estudiantes/AsistenciaPDF.php?idCom='.$idCompromisoPDF.'" target="_blank">
+                                        <td>' . $currentUser12['Codigo'] . '</td>
+                                        <td>' . $currentUser12['Fecha'] . '</td>
+                                        <td><a href="includes/Estructuras/Estudiantes/CartaCompromisoPDF.php?idCom='.$idCompromisoPDF.'" target="_blank">
                                                  <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
                                             </a>
                                         </td>

@@ -302,6 +302,12 @@
                                                     class="next-form btn btn-block btn-default  bg-light-blue"
                                                     style="width:20%; " value="Siguiente" />
                                             </fieldset>
+
+
+
+
+
+                                            
                                             <fieldset>
                                                 <div class="box-header">
                                                     <h3 class="box-title">Titulo del Reporte</h3>
@@ -348,17 +354,18 @@
                                                         </label>
                                                     </div>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control" placeholder="Enter ..."
+                                                        <input type="text" class="form-control" placeholder="Actividad ..."
                                                             name="Actividad_0">
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-clock-o"></i>
+
+                                                    
+                                                    <div class="input-group input-append date" id="datePicker0">
+                                                                <input type="text" class="form-control" name="Fecha_Act_0" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                                                             </div>
-                                                            <input type="text" class="form-control pull-right"
-                                                                id="datepicker" name="Fecha_Act_0">
-                                                        </div>
+
+                                                    
                                                     </div>
                                                     <div class="col-sm-2">
 
@@ -395,13 +402,12 @@
                                                                     placeholder="Enter ..." name="Actividad_1">
                                                             </div>
                                                             <div class="col-sm-2">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-addon">
-                                                                        <i class="fa fa-clock-o"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control pull-right"
-                                                                        id="datepicker" name="Fecha_Act_1">
-                                                                </div>
+                                                                 
+                                                    <div class="input-group input-append date" id="datePicker1">
+                                                                <input type="text" class="form-control" name="Fecha_Act_1" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+                                                    
                                                             </div>
                                                             <div class="col-sm-2">
                                                                 <div class="clearfix">
@@ -444,13 +450,12 @@
                                                                     placeholder="Enter ..." name="Actividad_2">
                                                             </div>
                                                             <div class="col-sm-2">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-addon">
-                                                                        <i class="fa fa-clock-o"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control pull-right"
-                                                                        id="datepicker" name="Fecha_Act_2">
-                                                                </div>
+                                                                 
+                                                    <div class="input-group input-append date" id="datePicker2">
+                                                                <input type="text" class="form-control" name="Fecha_Act_2" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+
                                                             </div>
                                                             <div class="col-sm-2">
                                                                 <div class="clearfix">
@@ -493,14 +498,12 @@
                                                                         name="Actividad_3">
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon">
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                        </div>
-                                                                        <input type="text"
-                                                                            class="form-control pull-right"
-                                                                            id="datepicker" name="Fecha_Act_3">
-                                                                    </div>
+                                                                   
+                                                                        <div class="input-group input-append date" id="datePicker3">
+                                                                                    <input type="text" class="form-control" name="Fecha_Act_3" />
+                                                                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                                                </div>
+
                                                                 </div>
                                                                 <div class="col-sm-2">
 
@@ -543,14 +546,12 @@
                                                                             placeholder="Enter ..." name="Actividad_4">
                                                                     </div>
                                                                     <div class="col-sm-2">
-                                                                        <div class="input-group">
-                                                                            <div class="input-group-addon">
-                                                                                <i class="fa fa-clock-o"></i>
-                                                                            </div>
-                                                                            <input type="text"
-                                                                                class="form-control pull-right"
-                                                                                id="datepicker" name="Fecha_Act_4">
-                                                                        </div>
+                                                                         
+                                                    <div class="input-group input-append date" id="datePicker4">
+                                                                <input type="text" class="form-control" name="Fecha_Act_4" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+
                                                                     </div>
                                                                     <div class="col-sm-2">
 
@@ -594,14 +595,12 @@
                                                                                 name="Actividad_5">
                                                                         </div>
                                                                         <div class="col-sm-2">
-                                                                            <div class="input-group">
-                                                                                <div class="input-group-addon">
-                                                                                    <i class="fa fa-clock-o"></i>
-                                                                                </div>
-                                                                                <input type="text"
-                                                                                    class="form-control pull-right"
-                                                                                    id="datepicker" name="Fecha_Act_5">
-                                                                            </div>
+                                                                             
+                                                    <div class="input-group input-append date" id="datePicker5">
+                                                                <input type="text" class="form-control" name="Fecha_Act_5" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+
                                                                         </div>
                                                                         <div class="col-sm-2">
                                                                             <div class="clearfix">
@@ -961,25 +960,29 @@
                                                     <input type="text" class="form-control"
                                                         placeholder="Loja" readonly>
                                                     <label>Fecha:</label>  
+  
+                                                            <div class="input-group input-append date" id="datePicker6">
+                                                                <input type="text" class="form-control" name="date" placeholder="2019-04-01"  />
+                                                                <span class="input-group-addon add-on" >
+                                                                <span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+                                                        
+                                                    
+                                                    <label>Estudiante:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="" readonly>
-                                                       
-                                                    <label>Ciudad:</label>
+                                                        placeholder=" <?php 
+                                                        echo $user->getPNombre();
+                                                        echo $user->getSNombre();
+                                                        echo $user->getPApellido();
+                                                        echo $user->getMApellido();
+                                                        ?>
+                                                     " readonly >
+                                                    <label>Carrera:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Loja" readonly>
-                                                    <label>Fecha:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
+                                                        placeholder="Sistemas Informáticos y Computación" readonly>
                                                    
                                                 </div>
                                                 <div class="col-sm-4">
-                                                     <label>Estudiante</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
-                                                        
-                                                    <label>Carrera :</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
                                                     <label>Periodo Academico :</label>
                                                     <select class="form-control">
                                                     <option>Abril 2019 - Agosto 2019</option>
@@ -987,28 +990,29 @@
                                                     <label>Institucion:</label>
                                                     <input type="text" class="form-control" placeholder="UTPL" readonly>
                                                     <label>Dependencia</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    
+                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y Electrónica,Sección Departamental de Ingeniería de Software" readonly>
+                                                <label>Fecha de Incio de prácticas :</label>
+                                                <div class="input-group input-append date" id="datePicker6">
+                                                                <input type="text" class="form-control" name="date" placeholder="2019-04-01"  />
+                                                                <span class="input-group-addon add-on" >
+                                                                <span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+                                                        
                                                 </div>
                                                 <div class="col-sm-4">
-                                                <label>Fecha de Incio de prácticas :</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
+                                                
                                                     <label>Horas a Cumplir :</label>
-                                                    <select class="form-control">
-                                                    <option>Tutor Externo:</option>
-                                                    </select>
+                                                    <input type="text" class="form-control" placeholder="Horas" readonly>
                                                     <label>Tutor Académico:</label>
-                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
+                                                    <input type="text" class="form-control" placeholder="Tutor" readonly>
                                                     <label>Ciclo</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    <label>Nivel de GP/Prácticum:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
+                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
+                                                        <label>Nivel de GP/Prácticum:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
                                                 </div>
-                                                <input type="button"
+                                                <input type="submit"
                                                     class="next-form btn btn-block btn-default  bg-green"
                                                     style="width:20%; " value="Guardar" />
                                     </form>
@@ -1115,9 +1119,12 @@
                                                     <input type="text" class="form-control"
                                                         placeholder="" readonly>
                                                        
-                                                    <label>Ciudad:</label>
+                                                    <label>Estudiante:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Loja" readonly>
+                                                        placeholder=" <?php echo $user->getPNombre()?>
+                                                        <?php echo $user->getSNombre()?>
+                                                        <?php echo $user->getPApellido()?>
+                                                        <?php echo $user->getMApellido();?>" readonly>
                                                     <label>Fecha:</label>
                                                     <input type="text" class="form-control"
                                                         placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
@@ -1157,9 +1164,9 @@
                                                 Electrónica,Sección Departamental de Ingeniería de Software" readonly>
                                                     <label>Nivel de GP/Prácticum:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
-                                                </div>
-                                                <input type="button"
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
+                                                 </div>
+                                                <input type="submit"
                                                     class="next-form btn btn-block btn-default  bg-green"
                                                     style="width:20%; " value="Guardar" />
                                     </form>
@@ -1353,6 +1360,57 @@
                 </div>
             </div>
         </div>
+        <script>
+$(document).ready(function() {
+    $('#datePicker0')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+    $('#datePicker1')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker2')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker3')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker4')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker5')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker6')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker7')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker8')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker9')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker10')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+
+     
+   
+});
+</script>
         <?php
     include 'Includes/Estructuras/Estudiantes/BotonesMenu.php';
     include 'Includes/Estructuras/Footer.php';

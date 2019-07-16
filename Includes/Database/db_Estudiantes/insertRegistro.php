@@ -38,18 +38,16 @@ if (empty($_POST['Actividad_0'])) {
     values(
     (SELECT MAX(idRegistroAistencias) FROM registro_aistencias, estudiantes, usuarios
     where fk_idEstudiante= idestudiante and fk_idusuario_est=idusuario and usuario = :us),
-    :Actividad_0,:fecha_0,:HIn_0,:Hout_0,:horas_0);');
+    :Actividad_0,:Fecha_Act_0,:HIn_0,:Hout_0,:horas_0);');
 
 $Actividad_0 = $_POST['Actividad_0'];
 $HIn_0= $_POST['HIn_0'];
 $Hout_0= $_POST['Hout_0'];
 $horas_0= $_POST['horas_0'];
 $Fecha_Act_0 = $_POST['Fecha_Act_0'];
-$var_0 = $Fecha_Act_0;
-$fecha_0= date('Y-m-d', strtotime($var_0));
 
 $sth3->bindParam(':Actividad_0', $Actividad_0);
-$sth3->bindParam(':fecha_0', $fecha_0);
+$sth3->bindParam(':Fecha_Act_0', $Fecha_Act_0);
 $sth3->bindParam(':Hout_0', $Hout_0);
 $sth3->bindParam(':HIn_0', $HIn_0);
 $sth3->bindParam(':horas_0', $horas_0);
