@@ -224,7 +224,7 @@ a:focus {
 
 .main-header #navbar-search-input.form-control:focus,
 .main-header #navbar-search-input.form-control:active {
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: red;
     background: rgba(255, 255, 255, 0.9)
 }
 
@@ -1393,11 +1393,11 @@ a:focus {
 .form-control {
     border-radius: 0;
     box-shadow: none;
-    border-color: #d2d6de
+    border-color: #6182c5
 }
 
 .form-control:focus {
-    border-color: #3c8dbc;
+    border-color: #f3b43e;
     box-shadow: none
 }
 

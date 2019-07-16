@@ -22,8 +22,8 @@
                     <li><a id="resumen"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Resumen</a></li>
                     <li><a id="asistencia"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>&nbsp;&nbsp; Reporte de
                             Asistencia</a></li>
-                    <li><a id="informe"><i class="zmdi zmdi-truck zmdi-hc-fw"></i>&nbsp;&nbsp; Informe
-                            Bimestral</a></li>
+                   <!-- <li><a id="informe"><i class="zmdi zmdi-truck zmdi-hc-fw"></i>&nbsp;&nbsp; Informe
+                            Bimestral</a></li>-->
                     <li><a id="compromiso"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Carta
                             de Compromiso</a></li>
                     <li><a id="asignacion"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i>&nbsp;&nbsp;

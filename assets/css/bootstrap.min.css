@@ -3118,7 +3118,7 @@ output {
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #555;
+    color: rgb(17, 114, 226);
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
@@ -3138,7 +3138,8 @@ output {
 }
 
 .form-control::-moz-placeholder {
-    color: #999;
+    color: rgb(10, 75, 150);
+    font-weight: inherit;
     opacity: 1
 }
 
@@ -3154,8 +3155,8 @@ output {
 .form-control[readonly],
 fieldset[disabled] .form-control {
     cursor: not-allowed;
-    background-color: #eee;
-    opacity: 1
+    background-color: rgb(241, 238, 225);
+    opacity: 0.8;
 }
 
 textarea.form-control {
