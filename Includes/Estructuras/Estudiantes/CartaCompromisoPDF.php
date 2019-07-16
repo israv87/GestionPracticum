@@ -110,8 +110,9 @@ $idCom = $_GET['idCom'];
 
     $objData = new  Database();
     
-    $sth = $objData->prepare(" Select Fecha from cartacompromiso where idCartaCom=(select MAX(idCartaCom) from cartacompromiso,estudiantes,usuarios
-    where idusuario=fk_idUsuario_Est and usuario= "gsolano") ;") ;
+    $sth = $objData->prepare(" SELECT Fecha from cartacompromiso 
+    where idCartaCom=(select MAX(idCartaCom) from cartacompromiso,estudiantes,usuarios
+    where idusuario=fk_idUsuario_Est and usuario=:us )") ;
 
     $sth->execute(['us' => $us]);
 
@@ -120,40 +121,111 @@ $idCom = $_GET['idCom'];
 
     $sth2->execute(['us' => $us]);
 
+     
+   
+    $sth3 = $objData->prepare("SELECT concat(PrimerNombre,' ', SegundoNombre,' ', apellido_paterno,' 
+    ',apellido_materno,' ') As 'estudiante' 
+    FROM estudiantes,usuarios where fk_idUsuario_Est = idusuario and usuario=:us") ;
+       
 
-    $fecha = "2018-07-30T20:55:20";
-    $fechaEntera = strtotime($fecha);
-    $anio = date("Y", $fechaEntera);
-    $mes = date("m", $fechaEntera);
-    $dia = date("d", $fechaEntera);
-     
-    $hora = date("H", $fechaEntera);
-    $minutos = date("i", $fechaEntera);
-    $segundos = date("s", $fechaEntera);
-     
-    #Notar que es lo mismo que hacer
-    # date("Y-m-d H:i:s")
-     
-    echo "$anio-$mes-$dia $hora:$minutos:$segundos";
+    $sth3->execute(['us' => $us]);
 
+  
 
     
     // Logo
     $this->Image('../../../Assets/imagenes/utpl_logo.png',10,8,70);
     // Arial bold 15
-    $this->SetFont('Arial','',12);
+    $this->SetFont('Arial','',14);
     // Movernos a la derecha
     $this->Cell(10);
     // Título
     $this->Cell(170,30,'',0,1,'c');
     $this->Cell(10);
-    $this->CellFitScale(100,6,utf8_decode('Loja,'),1,0,'c');
-    $this->SetFont('Arial','',12);
-    $this->CellFitScale(100,6,utf8_decode('Sistemas Informáticos y Computación'),1,1,'c');
-    $this->Cell(45);
+    $this->CellFitScale(35,6,utf8_decode('Loja,'),0,0,'c');
+      
+    foreach ($sth as $currentUserPDF1) {
+    $fecha =$currentUserPDF1['Fecha'];
+    $fechaEntera = strtotime($fecha);
+    $anio = date("Y", $fechaEntera);
+    $mes = date("m", $fechaEntera);
+    $dia = date("d", $fechaEntera);
+    $this->CellFitScale(8,6,$dia,0,0,'c');
+    $this->CellFitScale(8,6,utf8_decode('de'),0,0,'c');
+
+
+    $monthNum  =$mes;
+
+switch($monthNum)
+{   
+    case 1:
+    $monthNameSpanish = "Enero";
+    $this->CellFitScale(15,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 2:
+    $monthNameSpanish = "Febrero";
+    $this->CellFitScale(20,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 3:
+    $monthNameSpanish = "Marzo";
+    $this->CellFitScale(15,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 4:
+    $monthNameSpanish = "Abril";
+    $this->CellFitScale(12,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 5:
+    $monthNameSpanish = "Mayo";
+    $this->CellFitScale(15,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 6:
+    $monthNameSpanish = "Junio";
+    $this->CellFitScale(15,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 7:
+    $monthNameSpanish = "Julio";
+$this->CellFitScale(13,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 8:
+    $monthNameSpanish = "Agosto";
+$this->CellFitScale(17,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 9:
+    $monthNameSpanish = "Septiembre";
+$this->CellFitScale(27,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 10:
+    $monthNameSpanish = "Octubre";
+$this->CellFitScale(20,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 11:
+    $monthNameSpanish = "Noviembre";
+    $this->CellFitScale(26,6,$monthNameSpanish,0,0,'c'); 
+    break;
+    case 12:
+    $monthNameSpanish = "Diciembre";
+    $this->CellFitScale(25,6,$monthNameSpanish,0,0,'c');
+    break;
+}
+}
+    $this->CellFitScale(9,6,utf8_decode('del'),0,0,'c');
+    $this->CellFitScale(25,6,$anio,0,1,'c'); 
+    
+    
+    $this->Cell(10);
+
+    $this->CellFitScale(25,6,utf8_decode('Señor (a)'),0,1,'c');
+    $this->Cell(10);
+    
+    foreach ($sth3 as $currentUserPDF1) {
+        $this->CellFitScale(200,6,utf8_decode($currentUserPDF1['estudiante']),0,1,'c');      
+    }
+    $this->Cell(15,6,utf8_decode(''),0,1,'c');
     $this->SetFont('Arial','B',12);
-    $this->CellFitScale(100,6,utf8_decode('REGISTRO Y CONTROL DE ASISTENCIA DE:'),1,0,'c');
-    $this->SetFont('Arial','',12);
+    $this->Cell(10);
+    $this->CellFitScale(200,6,utf8_decode('ESTUDIANTE DE LA TITULACION DE SISTEMAS INFORMÁTICOS Y COMPUTACIÓN'),0,1,'c');      
+    $this->Cell(15,20,utf8_decode(''),1,1,'c');
+
 
        
 }

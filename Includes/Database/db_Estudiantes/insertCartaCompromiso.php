@@ -15,8 +15,8 @@ $us=$userSession->getCurrentUser();
 
 $sth1 = $objData->prepare('INSERT INTO cartacompromiso (CodCartaCompromiso, fk_idEstudiante_comp,Fecha,Año) 
 SELECT (select concat("CMP00",MAX(idCartaCom)+1 ) from cartacompromiso),
-(select idEstudiante from estudiantes, usuarios where idusuario=fk_idUsuario_Est and usuario= :us),
-current_date(),2019');
+(select idEstudiante from estudiantes, usuarios where idusuario=fk_idUsuario_Est 
+and usuario= :us),current_date(),2019');
 $sth1->bindParam(':us', $us);
 $sth1->execute();
 
