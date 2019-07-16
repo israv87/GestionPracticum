@@ -88,3 +88,34 @@ include '../../includes/estructuras/links.html';
                             </table>
 
                         </div>
+                    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Codigo Proyecto</th>
+            
+            <th>Proyecto</th>
+            <th>Convenio </th>
+            <th>Codigo de convenio</th>
+            <th>Dependencia</th>
+            <th>Encargado</th>
+            <th>Numero de estudiantes</th>
+            <th>Estado</th>
+        </tr>
+        <tr>
+            <td>PRO001</td>
+            <td>Proyecto ASCENDERE </td>
+            <td>Vigente </td>
+            <td>CNV001</td>
+            <td>Dirección de Innovación, Formación y Evaluación Docente </td>
+            <td> Maria Isabel Loaiza </td>
+            <td> 2 </td>
+          <td>  <span class="label label-success">Validado</span> <td/>
+
+
+</tr>
+    </thead>
+    <tbody>
+
+        </tfoot>
+        </table>';
+    }
