@@ -86,9 +86,115 @@ include 'includes/estructuras/links.html';
 <div id="portafolio">
 <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Tutor Académico <small>PortafoliO</small></h1>
+              <h1 class="all-tittles">Tutor Académico <small>Portafolio</small></h1>
             </div>
         </div>
+        <div class="row">
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <div class="col-md-2">
+
+                                <script>
+                                $(document).ready(function() {
+                                    $("#bt_comp").click(function() {
+                                        $("#form_comp").show();
+                                        $("#bt_comp").hide();
+                                    });
+                                });
+                                </script>
+                                <button type="button" id="bt_comp" class="btn btn-block btn-default bg-blue">
+                                    <i class="fa fa-plus-square"></i>
+                                   Nueva Carta de Compromiso</button>
+
+                            </div>
+                            <div class="col-md-10">
+                                .
+                            </div>
+                            <div id="form_comp" style="display:none;">
+                                <table style="height: 100px;">
+                                    <div class="col-md-1"></div>
+                                    <tbody>
+                                        <tr>
+                                            <td class="align-middle"><img src="assets/imagenes/utpl_logo1.png"
+                                                    style="width: 90%;"></td>
+                                            <td class="align-middle">
+                                                <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                                <h5>Formulario de creacion de la carta de compromiso para la Gestion Productiva / Prcticum Agignada </h5>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table> <!-- /.box-header -->
+                                <div class="box-body">
+                                    <!-- /.box-header < method="post" action="Includes/Database/db_Estudiantes/insert.php">-->
+                                    <style type="text/css">
+                                    #register_form fieldset:not(:first-of-type) {
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="container">
+
+                                        <form action="Includes/Database/db_Estudiantes/insertCartaCompromiso.php" method="post">
+                                                <div class="col-sm-4">
+                                                    <label>Ciudad:</label>
+                                                
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Loja" readonly>
+                                                    <label>Fecha:</label>  
+                                                    <input type="text" class="form-control"
+                                                        placeholder="" readonly>
+                                                       
+                                                    <label>Ciudad:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Loja" readonly>
+                                                    <label>Fecha:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
+                                                   
+                                                </div>
+                                                <div class="col-sm-4">
+                                                     <label>Estudiante</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
+                                                        
+                                                    <label>Carrera :</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
+                                                    <label>Periodo Academico :</label>
+                                                    <select class="form-control">
+                                                    <option>Abril 2019 - Agosto 2019</option>
+                                                    </select>
+                                                    <label>Institucion:</label>
+                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
+                                                    <label>Dependencia</label>
+                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
+                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
+                                                    
+                                                </div>
+                                                <div class="col-sm-4">
+                                                <label>Fecha de Incio de prácticas :</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
+                                                    <label>Horas a Cumplir :</label>
+                                                    <select class="form-control">
+                                                    <option>Tutor Externo:</option>
+                                                    </select>
+                                                    <label>Tutor Académico:</label>
+                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
+                                                    <label>Ciclo</label>
+                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
+                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
+                                                    <label>Nivel de GP/Prácticum:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
+                                                </div>
+                                                <input type="button"
+                                                    class="next-form btn btn-block btn-default  bg-green"
+                                                    style="width:20%; " value="Guardar" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
        
         <div class="container-fluid"  style="margin: 20px 0;">
 
@@ -108,6 +214,7 @@ include 'includes/estructuras/links.html';
                 </div>
               </div>
             </div>
+            
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">

@@ -396,7 +396,7 @@ class User extends DB
     
 
         echo '<table id="example1" class="table table-bordered table-striped">
-        thead>
+        <thead>
         <tr>
             <th>Codigo</th>
             <th>Empresa</th>

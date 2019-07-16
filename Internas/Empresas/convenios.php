@@ -34,7 +34,7 @@ include '../../includes/estructuras/links.html';
                 <ul class="list-unstyled">
                 <li><a href="#"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
                 <li><a href="estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de Proyectos</a></li>
-                <li><a href="convenios"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
+                <li><a href="convenios.php"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
             </ul>
             </div>
         </div>
@@ -46,7 +46,7 @@ include '../../includes/estructuras/links.html';
                    <img src="../../assets/imagenes/template/user06.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
-                    <span class="all-tittles">Postulación</span>
+                    <span class="all-tittles">Convenios</span>
                 </li>
                 <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                     <i class="zmdi zmdi-power"></i>
@@ -68,7 +68,7 @@ include '../../includes/estructuras/links.html';
 </body>
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Empresas<small>Postulación</small></h1>
+              <h1 class="all-tittles">Empresas<small>Convenio</small></h1>
             </div>
         </div>
         <div class="row">
@@ -81,49 +81,11 @@ include '../../includes/estructuras/links.html';
                                                 style="width: 90%;"></td>
                                         <td class="align-middle">
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                            <h5>Postulacion Empresas</h5>
+                                            <h5>Convenio Empresas</h5>
                                         </td>
 
                                     </tr>
                                 </tbody>
                             </table>
 
-                        </div>
-                        <div class="col-sm-6">
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <form role="form">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Nombre de la Empresa / Institución</label>
-                                        <input type="text" class="form-control" placeholder="Empresa ...">
-                                        <label>¿Mantiene su empresa un convenio con la carrera de Sistemas Informáticos y Computación de la UTPL?</label>
-                                        <select class= "form-control">
-                                        <option>Si</option>
-                                            <option>No</option>
-                                        </select>
-                                        <label>Nombre de la dependencia</label>
-                                        <input type="text" class="form-control" placeholder="Dependencia ...">
-                                        <label>Nombre y Apellido del Encargado</label>
-                                        <input type="text" class="form-control" placeholder="Encargado ...">
-                                        
-                                        <label>E-mail del encargado del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Email ...">
-                                        <label>Telefono del encargado del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Telefono ...">
-                                        <label>Nombre del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Proyecto ...">
-                                        <label>Seleccione el número de estudiantes requeridos</label>
-                                        <select class= "form-control">
-                                        <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                        <label>Por favor, indique las actividades a desarrollarse o entregables esperados del proyecto con un cronograma tentativo de octubre 2018 a febrero 2019. <br> Por ejemplo:
-<br>  1. Levantamiento de requerimientos - Del 8 al 19 de octubre
- <br> 2. Diseño de solución arquitectónica - Del 22 al 31 de octubre</label>
-                                        <input type="text" class="form-control" placeholder="Actividades ...">
-                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
-                                                    <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
-
+                  
