@@ -91,8 +91,8 @@ window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\
             <style type="text/css">a {cursor:pointer;}</style>
                 <ul class="list-unstyled">
                     <li><a id="resumen"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Resumen</a></li>
-                    <li><a id="creditosects1"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>&nbsp;&nbsp; Créditos ECTS1</a></li>
-                    <li><a id="creditosects2"><i class="zmdi zmdi-truck zmdi-hc-fw"></i>&nbsp;&nbsp; Créditos ECTS2</a></li>
+                    <li><a id="creditosects1"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>&nbsp;&nbsp; Créditos ECTS-ECTS 1C</a></li>
+                    <li><a id="creditosects2"><i class="zmdi zmdi-truck zmdi-hc-fw"></i>&nbsp;&nbsp; Créditos UTPL-ECTS 1C</a></li>
                     <li><a id="rediseñocurricular1"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Rediseño Curricular 1</a></li>
                     <li><a id="rediseñocurricular2"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i>&nbsp;&nbsp; Rediseño Curricular 2</a></li>
                     <li><a id="convenios"><i class="zmdi zmdi-trending-up zmdi-hc-fw"></i>&nbsp;&nbsp; Convenios</a></li>
@@ -251,7 +251,7 @@ window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\
         --> <div id="c1" style="display: none;">
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Créditos ECTS 1<small></small></h1>
+              <h1 class="all-tittles">Créditos ECTS-ECTS 1C<small></small></h1>
             </div>
         </div>
         <div class="row">
@@ -394,7 +394,7 @@ window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\
         --><div id="c2" style="display: none;">
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Créditos ECTS 2<small></small></h1>
+              <h1 class="all-tittles">Créditos UTPL-ECTS 1C<small></small></h1>
             </div>
         </div>
         <div class="row">
