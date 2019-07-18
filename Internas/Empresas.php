@@ -38,7 +38,7 @@ include '../includes/estructuras/links.html';
                 <ul class="list-unstyled">
                 <li><a href="Empresas/postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
                 <li><a href="Empresas/Estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de proyecto</a></li>
-                <li><a href="Empresas/convenios.php"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
+         
                         
                            
                      
@@ -50,7 +50,7 @@ include '../includes/estructuras/links.html';
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="../assets/imagenes/template/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="../assets/imagenes/template/institution.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
@@ -73,6 +73,7 @@ include '../includes/estructuras/links.html';
             </ul>
         </nav>
     </div>  
+
     <div class="modal fade " tabindex="-1" role="dialog" id="ModalHelp">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">

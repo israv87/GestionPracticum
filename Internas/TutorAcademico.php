@@ -56,7 +56,7 @@ include 'includes/estructuras/links.html';
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="assets/imagenes/template/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="assets/imagenes/template/institu.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
@@ -89,112 +89,7 @@ include 'includes/estructuras/links.html';
               <h1 class="all-tittles">Tutor Académico <small>Portafolio</small></h1>
             </div>
         </div>
-        <div class="row">
-                    <div class="box box-warning">
-                        <div class="box-header with-border">
-                            <div class="col-md-2">
-
-                                <script>
-                                $(document).ready(function() {
-                                    $("#bt_comp").click(function() {
-                                        $("#form_comp").show();
-                                        $("#bt_comp").hide();
-                                    });
-                                });
-                                </script>
-                                <button type="button" id="bt_comp" class="btn btn-block btn-default bg-blue">
-                                    <i class="fa fa-plus-square"></i>
-                                   Nueva Carta de Compromiso</button>
-
-                            </div>
-                            <div class="col-md-10">
-                                .
-                            </div>
-                            <div id="form_comp" style="display:none;">
-                                <table style="height: 100px;">
-                                    <div class="col-md-1"></div>
-                                    <tbody>
-                                        <tr>
-                                            <td class="align-middle"><img src="assets/imagenes/utpl_logo1.png"
-                                                    style="width: 90%;"></td>
-                                            <td class="align-middle">
-                                                <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                                <h5>Formulario de creacion de la carta de compromiso para la Gestion Productiva / Prcticum Agignada </h5>
-                                            </td>
-
-                                        </tr>
-                                    </tbody>
-                                </table> <!-- /.box-header -->
-                                <div class="box-body">
-                                    <!-- /.box-header < method="post" action="Includes/Database/db_Estudiantes/insert.php">-->
-                                    <style type="text/css">
-                                    #register_form fieldset:not(:first-of-type) {
-                                        display: none;
-                                    }
-                                    </style>
-                                    <div class="container">
-
-                                        <form action="Includes/Database/db_Estudiantes/insertCartaCompromiso.php" method="post">
-                                                <div class="col-sm-4">
-                                                    <label>Ciudad:</label>
-                                                
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Loja" readonly>
-                                                    <label>Fecha:</label>  
-                                                    <input type="text" class="form-control"
-                                                        placeholder="" readonly>
-                                                       
-                                                    <label>Ciudad:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Loja" readonly>
-                                                    <label>Fecha:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                                   
-                                                </div>
-                                                <div class="col-sm-4">
-                                                     <label>Estudiante</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
-                                                        
-                                                    <label>Carrera :</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                                    <label>Periodo Academico :</label>
-                                                    <select class="form-control">
-                                                    <option>Abril 2019 - Agosto 2019</option>
-                                                    </select>
-                                                    <label>Institucion:</label>
-                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
-                                                    <label>Dependencia</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    
-                                                </div>
-                                                <div class="col-sm-4">
-                                                <label>Fecha de Incio de prácticas :</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
-                                                    <label>Horas a Cumplir :</label>
-                                                    <select class="form-control">
-                                                    <option>Tutor Externo:</option>
-                                                    </select>
-                                                    <label>Tutor Académico:</label>
-                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
-                                                    <label>Ciclo</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    <label>Nivel de GP/Prácticum:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
-                                                </div>
-                                                <input type="button"
-                                                    class="next-form btn btn-block btn-default  bg-green"
-                                                    style="width:20%; " value="Guardar" />
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+        
        
         <div class="container-fluid"  style="margin: 20px 0;">
 
@@ -304,7 +199,7 @@ include 'includes/estructuras/links.html';
                         <tbody>
                           <tr>                             
                             
-                            <td class="align-middle"><img src="../../assets/img/utpl_logo1.png" style="width: 90%;" ></td>
+                            <td class="align-middle"><img src="../assets/img/utpl_logo1.png" style="width: 90%;" ></td>
                             <td class="align-middle"> <h3 >UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
                               <h5>Informe Consolidado</h5></td>
 
@@ -444,7 +339,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 1</td>
                   <td>12-04-2019</td>
                   <td>Estudio del caso y analisis de la aplicacion en que se va a trabajar</td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="../Assets/img/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-success">Calificado</span></td>
                 </tr>
@@ -453,7 +348,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Desarrollo de aplicacion</td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="../Assets/img/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                 </tr>
@@ -462,7 +357,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Desarrollo de aplicacion</td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="../Assets/img/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>
@@ -471,7 +366,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Apliacacion de las metodologias adecuadas </td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="../Assets/img/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>

@@ -34,7 +34,7 @@ include '../../includes/estructuras/links.html';
                 <ul class="list-unstyled">
                 <li><a href="Postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
                 <li><a href="#"><i class=></i>&nbsp;&nbsp; Estado de Proyectos</a></li>
-                <li><a href="Convenios.php"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
+
             </ul>
             </div>
         </div>

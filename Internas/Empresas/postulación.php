@@ -34,7 +34,7 @@ include '../../includes/estructuras/links.html';
                 <ul class="list-unstyled">
                 <li><a href="#"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
                 <li><a href="estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de Proyectos</a></li>
-                <li><a href="convenios.php"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
+                
             </ul>
             </div>
         </div>
@@ -68,7 +68,7 @@ include '../../includes/estructuras/links.html';
 </body>
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Empresas<small>Convenios</small></h1>
+              <h1 class="all-tittles">Empresas<small>Postulacion</small></h1>
             </div>
         </div>
         <div class="row">
@@ -126,4 +126,9 @@ include '../../includes/estructuras/links.html';
                                         <input type="text" class="form-control" placeholder="Actividades ...">
                                         <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
                                                     <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
+
+                                                    </div>
+          </div>
+          </div>
+        
 
