@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <title>Estudiantes</title>
     <?php 
@@ -10,7 +9,6 @@
     <link rel="Assets/Fecha/css/bootstrap-datetimepicker.min.css">
     <link rel="Assets/Fecha/css/bootstrap-datetimepicker.min.js">
 </head>
-
 <body>
     <!--llamadas a los menu lateral y superior-->
     <div class="navbar-lateral full-reset">
@@ -26,7 +24,6 @@
                include_once 'Includes/Estructuras/Estudiantes/MenuEstudiantes.php';
                ?>
         </nav>
-
         <!--************
             ************
             ************
@@ -35,18 +32,6 @@
             ************
             ************
         -->
-
-
-
-
-
-
-
-
-
-
-
-
         <div id="res">
             <!-- Content Header (Page header) -->
             <section class="content-header">
@@ -59,14 +44,11 @@
                     <li class="active">User profile</li>
                 </ol>
             </section>
-
             <!-- Main content -->
             <section class="content">
-
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-md-12">
-
                         <div class="nav-tabs-custom">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#activity" data-toggle="tab">Estudiante</a></li>
@@ -110,7 +92,6 @@
                                                 <tr class=" bg-primary" style="background:#3c8dbc">
                                                     <th>Nivel del Gestion Productiva/Practicum :</th>
                                                     <td>
-
                                                         <?php $user->SetNivel2($userSession->getCurrentUser()); ?>
                                                         <?php echo $user->getNivel2()?>
                                                     </td>
@@ -155,20 +136,15 @@
                                                 </ul>
                                             </div>
                                         </div>
-
                                         <div class="col-md-12">
                                             <h2 class="all-tittles"><small>Actividades del Proyecto</small></h2>
                                             <?php   $user->SetActividadesEstudiante($userSession->getCurrentUser());?>
-
                                         </div>
                                     </div>
                                 </div>
-
                                 <!-- /.tab-pane -->
-
                                 <div class="tab-pane" id="settings">
                                     <section class="content">
-
                                         <!-- /.col -->
                                         <div class="col-md-12">
                                             <div class="box box-primary">
@@ -186,9 +162,7 @@
                                     </section>
                                     <!-- /.col -->
                                 </div>
-
                                 <!-- /.row -->
-
                             </div>
                             <!-- /.tab-pane -->
                         </div>
@@ -200,9 +174,6 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-
-
-
         <!--************
             ************
             ************
@@ -211,9 +182,7 @@
             ************
             ************
         -->
-
         <div id="asis" style="display: none;">
-
             <div class="container-fluid">
                 <div class="container">
                     <div class="page-header">
@@ -225,7 +194,6 @@
                     <div class="box box-warning">
                         <div class="box-header with-border">
                             <div class="col-md-2">
-
                                 <script>
                                 $(document).ready(function() {
                                     $("#bt").click(function() {
@@ -237,11 +205,8 @@
                                 <button type="button" id="bt" class="btn btn-block btn-default bg-blue">
                                     <i class="fa fa-plus-square"></i>
                                     Crear nuevo reporte</button>
-
                             </div>
                             <div class="col-md-10"></div>
-
-
                             <div id="form" style="display:none;">
                                 <table style="height: 100px;">
                                     <div class="col-md-1"></div>
@@ -253,7 +218,6 @@
                                                 <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
                                                 <h5>Registro de asistencias de practicas pre profesionales</h5>
                                             </td>
-
                                         </tr>
                                     </tbody>
                                 </table> <!-- /.box-header -->
@@ -265,10 +229,8 @@
                                     }
                                     </style>
                                     <div class="container">
-
                                         <form id="register_form" novalidate
                                             action="Includes/Database/db_Estudiantes/insertRegistro.php" method="post">
-
                                             <fieldset>
                                                 <div class="col-sm-6">
                                                     <label>NOMBRE DE LA TITULACIÓN/CARRERA:</label>
@@ -287,7 +249,7 @@
                                                 <div class="col-sm-6">
                                                     <label>Periodo Academico :</label>
                                                     <select class="form-control">
-                                                        <option>Abril 2019 - Agosto 2019</option>
+                                                    <option>Abril 2019 - Agosto 2019</option>
                                                     </select>
                                                     <label>Institucion:</label>
                                                     <input type="text" class="form-control" placeholder="UTPL" readonly>
@@ -301,7 +263,7 @@
                                                 <input type="button"
                                                     class="next-form btn btn-block btn-default  bg-light-blue"
                                                     style="width:20%; " value="Siguiente" />
-                                            </fieldset>
+                                            </fieldset> 
                                             <fieldset>
                                                 <div class="box-header">
                                                     <h3 class="box-title">Titulo del Reporte</h3>
@@ -348,17 +310,14 @@
                                                         </label>
                                                     </div>
                                                     <div class="col-sm-4">
-                                                        <input type="text" class="form-control" placeholder="Enter ..."
+                                                        <input type="text" class="form-control" placeholder="Actividad ..."
                                                             name="Actividad_0">
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        <div class="input-group">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-clock-o"></i>
-                                                            </div>
-                                                            <input type="text" class="form-control pull-right"
-                                                                id="datepicker" name="Fecha_Act_0">
-                                                        </div>
+                                                    <div class="input-group input-append date" id="datePicker0">
+                                                                <input type="text" class="form-control" name="Fecha_Act_0" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>                                                    
                                                     </div>
                                                     <div class="col-sm-2">
 
@@ -395,13 +354,12 @@
                                                                     placeholder="Enter ..." name="Actividad_1">
                                                             </div>
                                                             <div class="col-sm-2">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-addon">
-                                                                        <i class="fa fa-clock-o"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control pull-right"
-                                                                        id="datepicker" name="Fecha_Act_1">
-                                                                </div>
+                                                                 
+                                                    <div class="input-group input-append date" id="datePicker1">
+                                                                <input type="text" class="form-control" name="Fecha_Act_1" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+                                                    
                                                             </div>
                                                             <div class="col-sm-2">
                                                                 <div class="clearfix">
@@ -444,13 +402,12 @@
                                                                     placeholder="Enter ..." name="Actividad_2">
                                                             </div>
                                                             <div class="col-sm-2">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-addon">
-                                                                        <i class="fa fa-clock-o"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control pull-right"
-                                                                        id="datepicker" name="Fecha_Act_2">
-                                                                </div>
+                                                                 
+                                                    <div class="input-group input-append date" id="datePicker2">
+                                                                <input type="text" class="form-control" name="Fecha_Act_2" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+
                                                             </div>
                                                             <div class="col-sm-2">
                                                                 <div class="clearfix">
@@ -493,14 +450,12 @@
                                                                         name="Actividad_3">
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon">
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                        </div>
-                                                                        <input type="text"
-                                                                            class="form-control pull-right"
-                                                                            id="datepicker" name="Fecha_Act_3">
-                                                                    </div>
+                                                                   
+                                                                        <div class="input-group input-append date" id="datePicker3">
+                                                                                    <input type="text" class="form-control" name="Fecha_Act_3" />
+                                                                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                                                </div>
+
                                                                 </div>
                                                                 <div class="col-sm-2">
 
@@ -543,14 +498,12 @@
                                                                             placeholder="Enter ..." name="Actividad_4">
                                                                     </div>
                                                                     <div class="col-sm-2">
-                                                                        <div class="input-group">
-                                                                            <div class="input-group-addon">
-                                                                                <i class="fa fa-clock-o"></i>
-                                                                            </div>
-                                                                            <input type="text"
-                                                                                class="form-control pull-right"
-                                                                                id="datepicker" name="Fecha_Act_4">
-                                                                        </div>
+                                                                         
+                                                    <div class="input-group input-append date" id="datePicker4">
+                                                                <input type="text" class="form-control" name="Fecha_Act_4" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+
                                                                     </div>
                                                                     <div class="col-sm-2">
 
@@ -594,14 +547,12 @@
                                                                                 name="Actividad_5">
                                                                         </div>
                                                                         <div class="col-sm-2">
-                                                                            <div class="input-group">
-                                                                                <div class="input-group-addon">
-                                                                                    <i class="fa fa-clock-o"></i>
-                                                                                </div>
-                                                                                <input type="text"
-                                                                                    class="form-control pull-right"
-                                                                                    id="datepicker" name="Fecha_Act_5">
-                                                                            </div>
+                                                                             
+                                                    <div class="input-group input-append date" id="datePicker5">
+                                                                <input type="text" class="form-control" name="Fecha_Act_5" />
+                                                                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+
                                                                         </div>
                                                                         <div class="col-sm-2">
                                                                             <div class="clearfix">
@@ -961,25 +912,29 @@
                                                     <input type="text" class="form-control"
                                                         placeholder="Loja" readonly>
                                                     <label>Fecha:</label>  
+  
+                                                            <div class="input-group input-append date" id="datePicker6">
+                                                                <input type="text" class="form-control" name="date" placeholder="2019-04-01"  />
+                                                                <span class="input-group-addon add-on" >
+                                                                <span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+                                                        
+                                                    
+                                                    <label>Estudiante:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="" readonly>
-                                                       
-                                                    <label>Ciudad:</label>
+                                                        placeholder=" <?php 
+                                                        echo $user->getPNombre();
+                                                        echo $user->getSNombre();
+                                                        echo $user->getPApellido();
+                                                        echo $user->getMApellido();
+                                                        ?>
+                                                     " readonly >
+                                                    <label>Carrera:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Loja" readonly>
-                                                    <label>Fecha:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
+                                                        placeholder="Sistemas Informáticos y Computación" readonly>
                                                    
                                                 </div>
                                                 <div class="col-sm-4">
-                                                     <label>Estudiante</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
-                                                        
-                                                    <label>Carrera :</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
                                                     <label>Periodo Academico :</label>
                                                     <select class="form-control">
                                                     <option>Abril 2019 - Agosto 2019</option>
@@ -987,28 +942,30 @@
                                                     <label>Institucion:</label>
                                                     <input type="text" class="form-control" placeholder="UTPL" readonly>
                                                     <label>Dependencia</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    
-                                                </div>
-                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y Electrónica,Sección Departamental de Ingeniería de Software" readonly>
                                                 <label>Fecha de Incio de prácticas :</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
+                                                <div class="input-group input-append date" id="datePicker6">
+                                                                <input type="text" class="form-control" name="date" placeholder="2019-04-01"  />
+                                                                <span class="input-group-addon add-on" >
+                                                                <span class="glyphicon glyphicon-calendar"></span></span>
+                                                     
+                                                     h                    fb       </div>
+                                                        
+                                                </dbviv>
+                                                <div class="col-sm-4">
+                                                
                                                     <label>Horas a Cumplir :</label>
-                                                    <select class="form-control">
-                                                    <option>Tutor Externo:</option>
-                                                    </select>
+                                                    <input type="text" class="form-control" placeholder="Horas" readonly>
                                                     <label>Tutor Académico:</label>
-                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
+                                                    <input type="text" class="form-control" placeholder="Tutor" readonly>
                                                     <label>Ciclo</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    <label>Nivel de GP/Prácticum:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
+                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
+                                                        <label>Nivel de GP/Prácticum:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
                                                 </div>
-                                                <input type="button"
+                                                <input type="submit"
                                                     class="next-form btn btn-block btn-default  bg-green"
                                                     style="width:20%; " value="Guardar" />
                                     </form>
@@ -1017,13 +974,11 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-
                                 <div class="box">
                                     <div class="box-header">
                                         <h3 class="box-title">Cartas de Compromiso</h3>
                                         <div class="box-tools">
                                             <div class="input-group input-group-sm" style="width: 150px;">
-                      
                                                 <div class="input-group-btn">
                                                     <button class="btn btn-default"><i
                                                             class="fa fa-search"></i></button>
@@ -1059,12 +1014,10 @@
                         <h1 class="all-tittles">Estudiantes <small>Carta de Asignacion</small></h1>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="box box-warning">
                         <div class="box-header with-border">
                             <div class="col-md-2">
-
                                 <script>
                                 $(document).ready(function() {
                                     $("#bt_comp").click(function() {
@@ -1076,10 +1029,8 @@
                                 <button type="button" id="bt_comp" class="btn btn-block btn-default bg-blue">
                                     <i class="fa fa-plus-square"></i>
                                    Nueva Carta de Asignacion</button>
-
                             </div>
                             <div class="col-md-10">
-                                .
                             </div>
                             <div id="form_comp" style="display:none;">
                                 <table style="height: 100px;">
@@ -1092,7 +1043,6 @@
                                                 <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
                                                 <h5>Formulario de creacion de la carta de compromiso para la Gestion Productiva / Prcticum Agignada </h5>
                                             </td>
-
                                         </tr>
                                     </tbody>
                                 </table> <!-- /.box-header -->
@@ -1104,30 +1054,28 @@
                                     }
                                     </style>
                                     <div class="container">
-
                                         <form action="Includes/Database/db_Estudiantes/insertCartaCompromiso.php" method="post">
                                                 <div class="col-sm-4">
                                                     <label>Ciudad:</label>
-                                                
                                                     <input type="text" class="form-control"
                                                         placeholder="Loja" readonly>
                                                     <label>Fecha:</label>  
                                                     <input type="text" class="form-control"
                                                         placeholder="" readonly>
-                                                       
-                                                    <label>Ciudad:</label>
+                                                    <label>Estudiante:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Loja" readonly>
+                                                        placeholder=" <?php echo $user->getPNombre()?>
+                                                        <?php echo $user->getSNombre()?>
+                                                        <?php echo $user->getPApellido()?>
+                                                        <?php echo $user->getMApellido();?>" readonly>
                                                     <label>Fecha:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                                   
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>                                           
                                                 </div>
                                                 <div class="col-sm-4">
                                                      <label>Estudiante</label>
                                                     <input type="text" class="form-control"
                                                         placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
-                                                        
                                                     <label>Carrera :</label>
                                                     <input type="text" class="form-control"
                                                         placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
@@ -1139,8 +1087,7 @@
                                                     <input type="text" class="form-control" placeholder="UTPL" readonly>
                                                     <label>Dependencia</label>
                                                     <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    
+                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly> 
                                                 </div>
                                                 <div class="col-sm-4">
                                                 <label>Fecha de Incio de prácticas :</label>
@@ -1157,9 +1104,9 @@
                                                 Electrónica,Sección Departamental de Ingeniería de Software" readonly>
                                                     <label>Nivel de GP/Prácticum:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
-                                                </div>
-                                                <input type="button"
+                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
+                                                 </div>
+                                                <input type="submit"
                                                     class="next-form btn btn-block btn-default  bg-green"
                                                     style="width:20%; " value="Guardar" />
                                     </form>
@@ -1168,7 +1115,6 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-
                                 <div class="box">
                                     <div class="box-header">
                                         <h3 class="box-title">Cartas de Compromiso</h3>
@@ -1222,7 +1168,6 @@
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
                                             <h5>Formulario de resgistro de incidencias</h5>
                                         </td>
-
                                     </tr>
                                 </tbody>
                             </table>
@@ -1253,9 +1198,7 @@
                                                 </td>
                                             </tr>
                                         </table>
-
                                     </div>
-
                                 </form>
                             </div>
                             <!-- /.box-body -->
@@ -1328,31 +1271,74 @@
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
                                             <h5>Proyectos Disponibles para la Gestion Productiva 2.2</h5>
                                         </td>
-
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="col-sm-12">
-
                             <div class="box">
                                 <div class="box-header">
                                     <h3 class="box-title">Plazas para la Gestion Productiva 2.2 </h3>
                                 </div>
                                 <!-- /.box-header -->
                                 <div class="box-body">
-
                                     <?php  $user->PostulacionProyecto($userSession->getCurrentUser()); ?>
-
                                 </div>
                                 <!-- /.box-body -->
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+$(document).ready(function() {
+    $('#datePicker0')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+    $('#datePicker1')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker2')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker3')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker4')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker5')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker6')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker7')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker8')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker9')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })
+        $('#datePicker10')
+        .datepicker({
+            format: 'yyyy-mm-dd'
+        })  
+});
+</script>
         <?php
     include 'Includes/Estructuras/Estudiantes/BotonesMenu.php';
     include 'Includes/Estructuras/Footer.php';
@@ -1364,7 +1350,5 @@
     <?php 
     include_once 'Includes/Estructuras/ScriptsFooter.php';
     ?>
-
 </body>
-
 </html>

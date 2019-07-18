@@ -2,10 +2,6 @@
 <?php
 require('../../../assets/FPDF/fpdf.php');
 
-
-
-
-
 $idReg = $_GET['idReg']; 
 
 class PDF extends FPDF
@@ -110,7 +106,9 @@ $userSession = new UserSession();
 $user = new User();
 $user->setUser($userSession->getCurrentUser());
 $us=$userSession->getCurrentUser();
+
 $idReg = $_GET['idReg']; 
+
     $objData = new  Database();
     
     $sth = $objData->prepare("SELECT TipoGP FROM tipo_gp,nivel_gp,tipogp_nivel, estudiantes, usuarios
@@ -172,7 +170,6 @@ $idReg = $_GET['idReg'];
     where fk_idRegistroAistencias=(SELECT MAX(idRegistroAistencias) FROM registro_aistencias, estudiantes, usuarios
     where fk_idEstudiante= idestudiante and fk_idusuario_est=idusuario and usuario = :us)") ;
       
-
    $sth9->execute(['us' => $us]);
   
 
@@ -287,7 +284,6 @@ $idReg = $_GET['idReg'];
         }
         foreach ($sth9 as $currentUserPDF9) {
        
-      
             $this->SetFont('Arial','B',12);
             $this->Cell(175,6,utf8_decode(''),1,0,'c');
             $this->CellFitScale(35,6,utf8_decode('Total'),1,0,'c');
