@@ -257,24 +257,25 @@ include 'Includes/Estructuras/links.html';
                                 <form role="form">
                                     <!-- text input -->
                                     <div class="form-group">
-                                        <label>Nombre de la Empresa / Institución</label>
-                                        <input type="text" class="form-control" placeholder="Empresa ...">
-                                        <label>¿Mantiene su empresa un convenio con la carrera de Sistemas Informáticos y Computación de la UTPL?</label>
+                                        <label>Nivel/Ciclo</label>
+                                        <input type="text" class="form-control">
+                                        <label>Carácter de la Práctica</label>
                                         <select class= "form-control">
-                                        <option>Si</option>
-                                            <option>No</option>
+                                        <option>Investigación Diagnóstica</option>
+                                            <option>Investigación y Desarrollo</option>
+                                            <option>Investigación - Intervención</option>
                                         </select>
-                                        <label>Nombre de la dependencia</label>
-                                        <input type="text" class="form-control" placeholder="Dependencia ...">
-                                        <label>Nombre y Apellido del Encargado</label>
-                                        <input type="text" class="form-control" placeholder="Encargado ...">
+                                        <label>Objetivo</label>
+                                        <input type="text" class="form-control">
+                                        <label>Modalidad</label>
+                                        <input type="text" class="form-control" placeholder="Estancias prácticas en entornos laborales y simulados...">
                                         
-                                        <label>E-mail del encargado del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Email ...">
-                                        <label>Telefono del encargado del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Telefono ...">
-                                        <label>Nombre del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Proyecto ...">
+                                        <label>Perfil a desarrollar</label>
+                                        <input type="text" class="form-control" placeholder="Referido a cada uno de los ejes del perfil de egreso...">
+                                        <label>Perfil del tutor académico</label>
+                                        <input type="text" class="form-control" placeholder=" Perfil Tutor Académico...">
+                                        <label>Metodologías</label>
+                                        <input type="text" class="form-control" placeholder="Protocolos profesionales a aplicarse ...">
                                         <label>Seleccione el número de estudiantes requeridos</label>
                                         <select class= "form-control">
                                         <option>1</option>
