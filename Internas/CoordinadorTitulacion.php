@@ -4,33 +4,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Coordinador de Sistemas Informáticos y Computación</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="Shortcut Icon" type="image/x-icon" href="assets/imagenes/icons/book.ico" />
-<link rel="stylesheet" href="assets/css/sweet-alert.css">
-<link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/componentes/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/componentes/Ionicons/css/ionicons.min.css">
-<link rel="stylesheet" href="assets/css/AdminLTE.min.css">
-<link rel="stylesheet" href="assets/componentes/jvectormap/jquery-jvectormap.css">
-<link rel="stylesheet" href="assets/componentes/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-<link rel="stylesheet" href="assets/componentes/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" href="assets/componentes/bootstrap-daterangepicker/daterangepicker.css">
-<link rel="stylesheet" href="assets/componentes/plugins/timepicker/bootstrap-timepicker.min.css">
-<link rel="stylesheet" href="assets/css/skins/_all-skins.min.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\/script>')
-</script>
-<script src="assets/js/modernizr.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/sweet-alert.min.js"></script>
+    <title>Coordinador de Titulación</title>
+    <?php
+include 'Includes/Estructuras/links.html';
+?>
 <script>
     $(document).ready(function() {
          $("#resumen").click(function() {
@@ -63,6 +40,7 @@ window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\
         });
     });
 </script>
+
 </head>
 <body>
     <!--llamadas a los menu lateral y superior-->
@@ -250,140 +228,71 @@ window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\
             ************
         --> <div id="c1" style="display: none;">
         <div class="container">
+        <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Créditos ECTS-ECTS 1C<small></small></h1>
+              <h1 class="all-tittles">Coordinador de Sistemas Informáticos y Computación</h1>
             </div>
         </div>
         <div class="row">
-        <div class="col-xs-11">
-          <div class="box">
-            <div class="box-header">
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                </div>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-               <tr>  
-                 <th>Nivel (Ciclo)</th>
-                  <th>Carácter de la Práctica</th>
-                  <th>Objetivo</th>
-                  <th>Modalidad</th>
-                  <th>Perfil a desarrollar</th>
-                  <th>Perfil del tutor académico</th>
-                  <th>Metodologías, protocolos profesionales a aplicarse</th>
-                  <th>Escenarios posibles de la Práctica</th>
-                </tr>
-                <tr>
-                  <td>I</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr> 
-                 <tr>
-                  <td>II</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-               <tr>
-                  <td>III</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                 <tr>
-                  <td>IV</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>V</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>VI</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>VII</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>VII</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>IX</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>X</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <table style="height: 100px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle"><img src="./assets/imagenes/utpl_logo1.png"
+                                                style="width: 90%;"></td>
+                                        <td class="align-middle">
+                                            <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                            <h5> Créditos ECTS-ECTS 1C</h5>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <form role="form">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Nivel/Ciclo</label>
+                                        <input type="text" class="form-control">
+                                        <label>Carácter de la Práctica</label>
+                                        <select class= "form-control">
+                                        <option>Investigación Diagnóstica</option>
+                                            <option>Investigación y Desarrollo</option>
+                                            <option>Investigación - Intervención</option>
+                                        </select>
+                                        <label>Objetivo</label>
+                                        <input type="text" class="form-control">
+                                        <label>Modalidad</label>
+                                        <input type="text" class="form-control" placeholder="Estancias prácticas en entornos laborales y simulados...">
+                                        
+                                        <label>Perfil a desarrollar</label>
+                                        <input type="text" class="form-control" placeholder="Referido a cada uno de los ejes del perfil de egreso...">
+                                        <label>Perfil del tutor académico</label>
+                                        <input type="text" class="form-control" placeholder=" Perfil Tutor Académico...">
+                                        <label>Metodologías</label>
+                                        <input type="text" class="form-control" placeholder="Protocolos profesionales a aplicarse ...">
+                                        <label>Seleccione el número de estudiantes requeridos</label>
+                                        <select class= "form-control">
+                                        <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                        <label>Por favor, indique las actividades a desarrollarse o entregables esperados del proyecto con un cronograma tentativo de octubre 2018 a febrero 2019. <br> Por ejemplo:
+<br>  1. Levantamiento de requerimientos - Del 8 al 19 de octubre
+ <br> 2. Diseño de solución arquitectónica - Del 22 al 31 de octubre</label>
+                                        <input type="text" class="form-control" placeholder="Actividades ...">
+                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
+                                                    <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
+
+
         </div>
       </div>
-        </div>
     <!--************
             ************
             ************
