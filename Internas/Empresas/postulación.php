@@ -68,7 +68,7 @@ include '../../includes/estructuras/links.html';
 </body>
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Empresas<small>Convenios</small></h1>
+              <h1 class="all-tittles">Empresas<small>Postulacion</small></h1>
             </div>
         </div>
         <div class="row">
@@ -126,4 +126,9 @@ include '../../includes/estructuras/links.html';
                                         <input type="text" class="form-control" placeholder="Actividades ...">
                                         <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
                                                     <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
+
+                                                    </div>
+          </div>
+          </div>
+        
 
