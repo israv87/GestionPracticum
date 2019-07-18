@@ -1,5 +1,5 @@
 <!-- 
-* Copyright 2016 Carlos Eduardo Alfaro Orellana
+Gestión Productiva
 -->
 <!DOCTYPE html>
 <html lang="es">
