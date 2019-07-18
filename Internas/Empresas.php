@@ -38,7 +38,7 @@ include '../includes/estructuras/links.html';
                 <ul class="list-unstyled">
                 <li><a href="Empresas/postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
                 <li><a href="Empresas/Estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de proyecto</a></li>
-                <li><a href="Empresas/convenios.php"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
+         
                         
                            
                      
@@ -73,6 +73,7 @@ include '../includes/estructuras/links.html';
             </ul>
         </nav>
     </div>  
+
     <div class="modal fade " tabindex="-1" role="dialog" id="ModalHelp">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">

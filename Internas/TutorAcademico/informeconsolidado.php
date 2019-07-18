@@ -97,7 +97,7 @@
                         <tbody>
                           <tr>                             
                             
-                            <td class="align-middle"><img src="../../assets/img/utpl_logo1.png" style="width: 90%;" ></td>
+                            <td class="align-middle"><img src="assets/img/utpl_logo1.png" style="width: 90%;" ></td>
                             <td class="align-middle"> <h3 >UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
                               <h5>Informe Consolidado</h5></td>
 
