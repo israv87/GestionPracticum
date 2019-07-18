@@ -125,3 +125,23 @@ SELECT TipoGP, PrimerNombre from estudiantes, Tipo_Gp, usuarios,TipoGP_Nivel,niv
         INSERT INTO registro_aistencias (CodRegistro, fk_idEstudiante,Fecha) 
 SELECT (select concat("REG00",MAX(idRegistroAistencias)+1 ) from registro_aistencias),
 (select idEstudiante from estudiantes, usuarios where idusuario=fk_idUsuario_Est and usuario= "gsolano"),current_date();
+
+
+select NombreProyecto
+from proyectos;
+
+
+
+Select CodProyecto
+from proyectos;
+
+select codconvenio
+from convenio;
+
+select dependencia from empresas;
+
+SELECT encargado
+from empresas;
+
+
+

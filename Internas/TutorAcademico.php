@@ -56,7 +56,7 @@ include 'includes/estructuras/links.html';
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="assets/imagenes/template/institu.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="./assets/imagenes/template/institution.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
@@ -127,7 +127,7 @@ include 'includes/estructuras/links.html';
                   <td>A</td>
                   <td>12-04-2019</td>
                   <td>Primer Bimestre</td>
-                  <td><img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-success">Calificado</span></td>
                 </tr>
@@ -136,7 +136,7 @@ include 'includes/estructuras/links.html';
                   <td>B</td>
                   <td>22-04-2019</td>
                   <td>Primer Bimestre</td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                 </tr>
@@ -199,7 +199,7 @@ include 'includes/estructuras/links.html';
                         <tbody>
                           <tr>                             
                             
-                            <td class="align-middle"><img src="../assets/img/utpl_logo1.png" style="width: 90%;" ></td>
+                            <td class="align-middle"><img src="./assets/imagenes/utpl_logo1.png" style="width: 90%;" ></td>
                             <td class="align-middle"> <h3 >UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
                               <h5>Informe Consolidado</h5></td>
 
@@ -339,7 +339,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 1</td>
                   <td>12-04-2019</td>
                   <td>Estudio del caso y analisis de la aplicacion en que se va a trabajar</td>
-                  <td><img src="../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-success">Calificado</span></td>
                 </tr>
@@ -348,7 +348,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Desarrollo de aplicacion</td>
-                  <td><img src="../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/img/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                 </tr>
@@ -357,7 +357,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Desarrollo de aplicacion</td>
-                  <td><img src="../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/img/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>
@@ -366,7 +366,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Apliacacion de las metodologias adecuadas </td>
-                  <td><img src="../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/img/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>
