@@ -147,3 +147,4 @@ SELECT PrimerNombre, SegundoNombre, apellido_paterno, apellido_materno, NivelGp 
 
 SELECT PrimerNombre, SegundoNombre, apellido_paterno, apellido_materno, paralelo FROM usuarios, estudiantes, paralelos WHERE fk_idparalelo_est = idparalelo and fk_idusuario_est = idusuario and paralelo = 'A'
 
+SELECT PrimerNombre, SegundoNombre, apellido_paterno, apellido_materno, ciclo FROM usuarios, estudiantes, ciclos WHERE fk_idciclo_est = idciclo and fk_idusuario_est = idusuario and ciclo = '6'
