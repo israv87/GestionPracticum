@@ -9,7 +9,18 @@
     <?php
 include '../includes/estructuras/links.html';
 ?>
-
+<script>
+    $(document).ready(function() {
+        $("#postu").click(function() {
+            $("#postulacion").show();
+            $("#estadodeproyectos").hide();
+        });
+        $("#estado_pro").click(function() {
+            $("#estadodeproyectos").show();
+            $("#postulacion").hide();
+        
+    });
+</script>  
 
 
 
@@ -38,14 +49,16 @@ include '../includes/estructuras/links.html';
                 <ul class="list-unstyled">
                 <li><a href="Empresas/postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
                 <li><a href="Empresas/Estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de proyecto</a></li>
-         
-                        
-                           
-                     
+                </li>
                 </ul>
             </div>
         </div>
     </div>
+         
+                        
+                           
+                     
+  
     <div class="content-page-container full-reset custom-scroll-containers">
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
@@ -73,6 +86,126 @@ include '../includes/estructuras/links.html';
             </ul>
         </nav>
     </div>  
+    <div id= "postulaciones">
+    <div class="container">
+            <div class="page-header">
+              <h1 class="all-tittles">Empresas<small>Postulacion</small></h1>
+            </div>
+        </div>
+        <div class="row">
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <table style="height: 100px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle"><img src="../../assets/imagenes/utpl_logo1.png"
+                                                style="width: 90%;"></td>
+                                        <td class="align-middle">
+                                            <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                            <h5>Postulacion Empresas</h5>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <form role="form">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Nombre de la Empresa / Institución</label>
+                                        <input type="text" class="form-control" placeholder="Empresa ...">
+                                        <label>¿Mantiene su empresa un convenio con la carrera de Sistemas Informáticos y Computación de la UTPL?</label>
+                                        <select class= "form-control">
+                                        <option>Si</option>
+                                            <option>No</option>
+                                        </select>
+                                        <label>Nombre de la dependencia</label>
+                                        <input type="text" class="form-control" placeholder="Dependencia ...">
+                                        <label>Nombre y Apellido del Encargado</label>
+                                        <input type="text" class="form-control" placeholder="Encargado ...">
+                                        
+                                        <label>E-mail del encargado del proyecto</label>
+                                        <input type="text" class="form-control" placeholder="Email ...">
+                                        <label>Telefono del encargado del proyecto</label>
+                                        <input type="text" class="form-control" placeholder="Telefono ...">
+                                        <label>Nombre del proyecto</label>
+                                        <input type="text" class="form-control" placeholder="Proyecto ...">
+                                        <label>Seleccione el número de estudiantes requeridos</label>
+                                        <select class= "form-control">
+                                        <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                        <label>Por favor, indique las actividades a desarrollarse o entregables esperados del proyecto con un cronograma tentativo de octubre 2018 a febrero 2019. <br> Por ejemplo:
+<br>  1. Levantamiento de requerimientos - Del 8 al 19 de octubre
+ <br> 2. Diseño de solución arquitectónica - Del 22 al 31 de octubre</label>
+                                        <input type="text" class="form-control" placeholder="Actividades ...">
+                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
+                                                    <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
+
+                                                    </div>
+          </div>
+          </div>
+<div id= "Estadoproyecto"
+          <div class="container">
+            <div class="page-header">
+              <h1 class="all-tittles">Empresas<small>Estado de proyecto</small></h1>
+            </div>
+        </div>
+        <div class="row">
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <table style="height: 100px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle"><img src="../../assets/imagenes/utpl_logo1.png"
+                                                style="width: 90%;"></td>
+                                        <td class="align-middle">
+                                            <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                            <h5>Estado de proyecto - Empresas</h5>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Codigo Proyecto</th>
+            
+            <th>Proyecto</th>
+            <th>Convenio </th>
+            <th>Codigo de convenio</th>
+            <th>Dependencia</th>
+            <th>Encargado</th>
+            <th>Numero de estudiantes</th>
+            <th>Estado</th>
+        </tr>
+        <tr>
+            <td>PRO001</td>
+            <td>Proyecto ASCENDERE </td>
+            <td>Vigente </td>
+            <td>CNV001</td>
+            <td>Dirección de Innovación, Formación y Evaluación Docente </td>
+            <td> Maria Isabel Loaiza </td>
+            <td> 2 </td>
+          <td>  <span class="label label-success">Validado</span> <td/>
+
+
+</tr>
+    </thead>
+    <tbody>
+
+        </tfoot>
+        </table>';
+    }
 
     <div class="modal fade " tabindex="-1" role="dialog" id="ModalHelp">
           <div class="modal-dialog modal-lg">
@@ -110,5 +243,6 @@ include '../includes/estructuras/links.html';
             <div class="footer-copyright full-reset all-tittles">UTPL</div>
         </footer>   
     </div>
+</div>
 </body>
 </html>
