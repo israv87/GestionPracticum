@@ -14,6 +14,8 @@ class PDF extends FPDF
     private $Consulta8; 
     private $consulta9;
     private $Consulta10;
+    private $Consulta11;
+
 
     private $p_cord;
     private $s_cord;
@@ -136,15 +138,16 @@ $userSession = new UserSession();
 $user = new User();
 $user->setUser($userSession->getCurrentUser());
 $us=$userSession->getCurrentUser();
-$idCom = $_GET['idCom']; 
+$idAsig = $_GET['idAsig']; 
 
     $objData = new  Database();
     
-    $sth = $objData->prepare(" SELECT Fecha from cartacompromiso 
-    where idCartaCom=(select MAX(idCartaCom) from cartacompromiso,estudiantes,usuarios
+    $sth = $objData->prepare(" SELECT Fecha from carta_asig 
+    where idCARTA_ASIG=(select MAX(idCARTA_ASIG) from carta_asig,estudiantes,usuarios
     where idusuario=fk_idUsuario_Est and usuario=:us )") ;
 
     $sth->execute(['us' => $us]);
+
 
     $sth2 = $objData->prepare("SELECT CicloNombre FROM ciclos, estudiantes,usuarios
     where fk_idCiclo_Est=idciclo and fk_idUsuario_Est=idUsuario and usuario= :us");
@@ -315,6 +318,18 @@ $idCom = $_GET['idCom'];
     }
     
 
+    $sth11 = $objData->prepare(" SELECT FechaInicio from carta_asig 
+    where idCARTA_ASIG=(select MAX(idCARTA_ASIG) from carta_asig,estudiantes,usuarios
+    where idusuario=fk_idUsuario_Est and usuario=:us )") ;
+
+    $sth11->execute(['us' => $us]);
+
+
+    foreach ($sth11 as $currentUserPDF11) {
+
+        $consulta11 = $currentUserPDF11['FechaInicio'];
+    }
+
     
 
     // Logo
@@ -399,38 +414,35 @@ $this->CellFitScale(20,6,$monthNameSpanish,0,0,'c');
     
     $this->Cell(10);
 
-    $this->MultiCell(170,6,utf8_decode("Magister / Doctor 
-".$p_cord." ".$s_cord." ".$ap_cord." ".$am_cord."
-COORDINADOR DE LA TITULACIÓN DE SISTEMAS INFORMÁTICOS Y COMPUCAIóN DE LA UTPL
+    $this->MultiCell(170,6,utf8_decode("Señor (a) 
 
-Estimado Magister/Doctor:
 
-Yo, ".$p_est." ".$s_est." ".$ap_est." ".$am_est.", con cédula número ".$consulta8.", estudiante de la titulación de Sistemas Információn, de la Universidad Técnica Particular de Loja, manifiesto mi interés por participar en los procesos de aprendizaje que conlleva la: 
+".$p_est." ".$s_est." ".$ap_est." ".$am_est."
+ESTUDIANTE DE LA TITULACIÓN  DE SISTEMAS INFORMÁTICOS Y COMPUCAIÓN DE LA UTPL
+
+De mi consideración:
+
+Por medio del presente me permito comunicar a usted que para el período académico Abril 2019 - Agosto 2019, ha sido asignada/o a (".$consulta4." / ".utf8_decode($consulta5).")
+para que a partir de ".$consulta11." , realice 96 horas de  práctica pre profesional. 
+
+Estas actividades se realizarán en coordinación con   "	.$p_t_ext." ".$s_t_ext." ".$ap_t_ext." ".$am_t_ext.", tutor externo de la práctica pre profesional y  ".$p_t_ac." ".$s_t_ac." ".$ap_t_ac." ".$am_t_ac.", tutor académico de las mismas.
+
+El número de horas señalado corresponde a: 
 
 -    Práctica pre profesional del ".$consulta2.".
 -    ".$consulta9.": ".$consulta10."
 
-Estas prácticas las desarrollaré en (".$consulta4." / ".$consulta5."), a la vez que me comprometo a:
 
--	Cumplir con las actividades planificadas que se contemplan en el plan docente.
--	Trabajar en un ambiente de respeto y compañerismo con mi tutor y compañeros.
--	Mantener reserva y confidencialidad en la información generada. 
--	Cuidar los equipos e instrumentos que me sean entregados.
-    
+Particular que informo a usted para los fines pertinentes
+
+
 Atentamente,
     
 
     
-         f)________________________		        	        f)_____________________
-    ".$p_est." ".$s_est." ".$ap_est." ".$am_est."                 "	.$p_t_ext." ".$s_t_ext." ".$ap_t_ext." ".$am_t_ext."	
-                              Estudiante                                             Tutor Externo
-                                
-
-
-                                                f)______________________
-                                              ".$p_t_ac." ".$s_t_ac." ".$ap_t_ac." ".$am_t_ac."
-                                    Tutor académico de la práctica pre profesional 
-                                                    ".$consulta9.": ".$consulta10."
+         f)________________________		        	        
+    ".$p_cord." ".$s_cord." ".$ap_cord." ".$am_cord."             	
+COORDINADORA DE LA TIULACIÓN DE SISTEMAS INFORMÁTICOS Y COMPUCAIÓN                                    
     "),0,'J',false);
 
 

@@ -517,6 +517,67 @@ class User extends DB
     }
 
 
+    public function CartasAsignacion($user)
+    {
+        $query12 = $this->connect()->prepare('SELECT idCARTA_ASIG,CodCartaAsig as "Codigo",Fecha FROM carta_asig, estudiantes, usuarios 
+        where  fk_est_asig = idEstudiante and idestudiante = idusuario and usuario = :user');
+        $query12->execute(['user' => $user]);
+
+        echo '<table class="table table-hover">
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Fecha</th>
+                                        <th>Archivo</th>
+                                    </tr>';
+
+
+        foreach ($query12 as $currentUser12) {
+            $idCompromisoPDF = $currentUser12['idCARTA_ASIG'];
+            echo '
+                                    <tr>
+                                        <td>' . $currentUser12['Codigo'] . '</td>
+                                        <td>' . $currentUser12['Fecha'] . '</td>
+                                        <td><a href="includes/Estructuras/Estudiantes/CartaAsignacionPDF.php?idAsig='.$idAsignacionPDF.'" target="_blank">
+                                                 <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
+                                            </a>
+                                        </td>
+                                    </tr> 
+                                    ';
+        }
+        echo '</table>';
+    }
+
+    public function Incidencias($user)
+    {
+        $query12 = $this->connect()->prepare('SELECT * FROM Incidencias ');
+        $query12->execute();
+
+        echo '<table class="table table-hover">
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Titulo</th>
+                                        <th>Archivo</th>
+
+                                    </tr>';
+
+
+        foreach ($query12 as $currentUser12) {
+            $idCompromisoPDF = $currentUser12['idCARTA_ASIG'];
+            echo '
+                                    <tr>
+                                        <td>' . $currentUser12['CodIncidencia'] . '</td>
+                                        <td>' . $currentUser12['Titulo'] . '</td>
+                                        <td><a href="" target="_blank">
+                                                 <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
+                                            </a>
+                                        </td>
+                                    </tr> 
+                                    ';
+        }
+        echo '</table>';
+    }
+
+
 /***************Llamadas a un unico dato*****************/
     public function getPNombre()
     {

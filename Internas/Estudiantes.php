@@ -993,7 +993,7 @@
         <div class="container-fluid">
                 <div class="container">
                     <div class="page-header">
-                        <h1 class="all-tittles">Estudiantes <small>Carta de Compromiso</small></h1>
+                        <h1 class="all-tittles">Estudiantes <small>Carta de Asignación</small></h1>
                     </div>
                 </div>
                 <div class="row">
@@ -1002,19 +1002,19 @@
                             <div class="col-md-3">
                                 <script>
                                 $(document).ready(function() {
-                                    $("#bt_comp").click(function() {
-                                        $("#form_comp").show();
-                                        $("#bt_comp").hide();
+                                    $("#bt_asig").click(function() {
+                                        $("#form_asig").show();
+                                        $("#bt_asig").hide();
                                     });
                                 });
                                 </script>
-                                <button type="button" id="bt_comp" class="btn btn-block btn-default bg-blue">
+                                <button type="button" id="bt_asig" class="btn btn-block btn-default bg-blue">
                                     <i class="fa fa-plus-square"></i>
-                                   Nueva Carta de Compromiso</button>
+                                   Nueva Carta de Asignación</button>
                             </div>
                             <div class="col-md-9">
                             </div>
-                            <div id="form_comp" style="display:none;">
+                            <div id="form_asig" style="display:none;">
                                 <table style="height: 100px;">
                                     <div class="col-md-1"></div>
                                     <tbody>
@@ -1023,7 +1023,7 @@
                                                     style="width: 90%;"></td>
                                             <td class="align-middle">
                                                 <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                                <h5>Formulario de creacion de la carta de comprmiso para la Gestion Productiva / Prcticum Agignada </h5>
+                                                <h5>Formulario de creacion de la carta de asignación para la Gestion Productiva / Prcticum Agignada </h5>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1036,49 +1036,52 @@
                                     }
                                     </style>
                                     <div class="container">
-                                        <form action="Includes/Database/db_Estudiantes/insertCartaCompromiso.php" method="post">
+                                        <form action="Includes/Database/db_Estudiantes/insertCartaAsignacion.php" method="post">
                                                 <div class="col-sm-3">
                                                     <label>Ciudad:</label>
                                                     <input type="text" class="form-control"
                                                         placeholder="Loja" readonly>
                                                     <label>Fecha:</label>  
-                                                    <div class="input-group input-append date" id="datePicker6">
-                                                        <input type="text" class="form-control" value="<?php echo date('Y-m-d'); ?>" name="Fecha6" />
+                                                    <div class="input-group input-append date" id="datePicker7">
+                                                        <input type="text" class="form-control" value="<?php echo date('Y-m-d'); ?>" name="Fecha7" />
                                                         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                                                     </div>
-                                                    <label>Cordinador de Titulación:</label>
+                                                    <label>Estudiante:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Fernanda Maricela Soto Guerrero" readonly>
+                                                        placeholder=" <?php echo $user->getPNombre()?> <?php echo $user->getSNombre()?> <?php echo $user->getPApellido()?> <?php echo $user->getMApellido();?>" readonly>
+                                                    
                                                         <label>Carrera:</label>
                                                     <input type="text" class="form-control"
                                                         placeholder="Ingeniería en Sistemas Informáticos y Computación" readonly>                                           
                                                 </div>
                                                 <div class="col-sm-3">
-                                                <label>Estudiante:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=" <?php echo $user->getPNombre()?> <?php echo $user->getSNombre()?> <?php echo $user->getPApellido()?> <?php echo $user->getMApellido();?>" readonly>
-                                                    <label>Cédula :</label>
-                                                    <?php $user->SetCedula($userSession->getCurrentUser()); ?>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="<?php echo $user->getCedula()?>" readonly>
-                                                    <label>Ciclo:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="<?php echo $user->getCiclo2()?>" readonly>
-                                                    <label>Gestión Productiva - Prácticum</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="<?php echo $user->getTipoGp2()?>" readonly>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                <label>Nivel :</label>
-                                                <input type="text" class="form-control"
-                                                        placeholder="<?php echo $user->getNivel2()?>" readonly>
-                                                    <label>Institucion:</label>
+                                                <label>Periódo Académico :</label>
+                                                <select  class="form-control">
+                                                <option>Abril 2019 - Agosto 2019</option>
+                                                </select>
+                                                <label>Institucion:</label>
                                                     <input type="text" class="form-control"
                                                         placeholder="<?php echo $user->getInstitucion()?>" readonly>
                                                     <label>Dependencia</label>
-                                                    <?php $user->SetDependenciaEstudiante($userSession->getCurrentUser()); ?>
                                                     <input type="text" class="form-control"
                                                         placeholder="<?php echo $user->getDependencia()?>" readonly>
+                                                        <label>Fecha de inicio de practicas:</label>  
+                                                    <div class="input-group input-append date" id="datePicker8">
+                                                        <input type="text" class="form-control" value="2019-04-1" name="Fecha8" />
+                                                        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                <label>Horas :</label>
+                                                <input type="text" class="form-control"
+                                                        placeholder="96 Horas" readonly>
+                                                    <label>Tutor Externo:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="" readonly>
+                                                    <label>Tutor Academico:</label>
+                                                    <?php $user->SetDependenciaEstudiante($userSession->getCurrentUser()); ?>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="" readonly>
                                                         <label></label>
                                                         <input type="submit"
                                                     class="next-form btn btn-block btn-default  bg-green"
@@ -1093,7 +1096,7 @@
                             <div class="col-xs-12">
                                 <div class="box">
                                     <div class="box-header">
-                                        <h3 class="box-title">Cartas de Compromiso</h3>
+                                        <h3 class="box-title">Cartas de Asignacion</h3>
                                         <div class="box-tools">
                                             <div class="input-group input-group-sm" style="width: 150px;">
                       
@@ -1106,7 +1109,7 @@
                                     </div>
                                     <!-- /.box-header -->
                                     <div class="box-body table-responsive no-padding">
-                                        <?php  $user->CartasCompromiso($userSession->getCurrentUser()); ?>
+                                        <?php  $user->CartasAsignacion($userSession->getCurrentUser()); ?>
                                     </div>
                                     <!-- /.box-body -->
                                 </div>
@@ -1126,6 +1129,154 @@
             ************
         -->
         <div id="inc" style="display: none;">
+        <div class="container-fluid">
+                <div class="container">
+                    <div class="page-header">
+                        <h1 class="all-tittles">Estudiantes <small>Reporte de Incidencias</small></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <div class="col-md-3">
+                                <script>
+                                $(document).ready(function() {
+                                    $("#bt_INC").click(function() {
+                                        $("#form_INC").show();
+                                        $("#bt_INC").hide();
+                                    });
+                                });
+                                </script>
+                                <button type="button" id="bt_INC" class="btn btn-block btn-default bg-blue">
+                                    <i class="fa fa-plus-square"></i>
+                                   Nuevo Reporte</button>
+                            </div>
+                            <div class="col-md-9">
+                            </div>
+                            <div id="form_INC" style="display:none;">
+                                <table style="height: 100px;">
+                                    <div class="col-md-1"></div>
+                                    <tbody>
+                                        <tr>
+                                            <td class="align-middle"><img src="assets/imagenes/utpl_logo1.png"
+                                                    style="width: 90%;"></td>
+                                            <td class="align-middle">
+                                                <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                                <h5>Formulario de Reporte de Incidencias </h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table> <!-- /.box-header -->
+                                <div class="box-body">
+                                    <!-- /.box-header < method="post" action="Includes/Database/db_Estudiantes/insert.php">-->
+                                    <style type="text/css">
+                                    #register_form fieldset:not(:first-of-type) {
+                                        display: none;
+                                    }
+                                    </style>
+                                    <div class="container">
+                                        <form action="Includes/Database/db_Estudiantes/insertCartaAsignacion.php" method="post">
+                                        <div class="col-sm-6">
+                            
+                            <div class="box-body">
+                                <form role="form">
+                            
+                                    <div class="form-group">
+                                        <label>Incidencia:</label>
+                                        <input type="text" class="form-control" placeholder="Titulo ...">
+                                        <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
+                                        <?php // $user->SetNivelGP();?>
+                                        <label>Tipo de incidencia:</label>
+                                        <?php  //$user->getIncidencia();?>
+                                        <label for="exampleInputFile">Anexos</label>
+                                        <input type="file" id="exampleInputFile">
+                                        <table style="margin-top: 5%;width: 50%;">
+                                            <tr>
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-block btn-default bg-blue">Enviar</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-block btn-default bg-yellow">Borrar</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </form>
+                            </div>
+                    
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box box-info">
+                                <div class="box-header">
+                                    <h3 class="box-title">Incidencia
+                                        <small>Describa la incidencia ocurrida dentro de las practicas pre
+                                            profesionales.
+                                        </small>
+                                    </h3>
+                        
+                                    <div class="pull-right box-tools">
+                                        <button type="button" class="btn btn-info btn-sm" data-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                            <i class="fa fa-minus"></i></button>
+                                        <button type="button" class="btn btn-info btn-sm" data-widget="remove"
+                                            data-toggle="tooltip" title="Remove">
+                                            <i class="fa fa-times"></i></button>
+                                    </div>
+                    
+                                </div>
+                                
+                                <div class="box-body pad">
+                                    <form>
+                                        <textarea id="editor2" name="editor2" rows="10" cols="80">
+                                           Describa aqui la o las incidencias.
+                                        </textarea>
+                                    </form>
+                                    <script>
+                                    $(function() {
+                                        // Replace the <textarea id="editor1"> with a CKEditor
+                                        // instance, using default configuration.
+                                        CKEDITOR.replace('editor2')
+                                        //bootstrap WYSIHTML5 - text editor
+                                        $('.textarea').wysihtml5()
+                                    })
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="box">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Cartas de Asignacion</h3>
+                                        <div class="box-tools">
+                                            <div class="input-group input-group-sm" style="width: 150px;">
+                      
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-default"><i
+                                                            class="fa fa-search"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body table-responsive no-padding">
+                                        <?php  $user->Incidencias($userSession->getCurrentUser()); ?>
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                                <!-- /.box -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--
             <div class="container-fluid" style="margin: 20px 0;">
                 <div class="container">
@@ -1158,9 +1309,9 @@
                                         <label>Incidencia:</label>
                                         <input type="text" class="form-control" placeholder="Titulo ...">
                                         <label>GESTIÓN PRODUCTIVA/PRACTICUM :</label>
-                                        <?php  $user->SetNivelGP();?>
+                                        <?php // $user->SetNivelGP();?>
                                         <label>Tipo de incidencia:</label>
-                                        <?php  $user->getIncidencia();?>
+                                        <?php  //$user->getIncidencia();?>
                                         <label for="exampleInputFile">Anexos</label>
                                         <input type="file" id="exampleInputFile">
                                         <table style="margin-top: 5%;width: 50%;">

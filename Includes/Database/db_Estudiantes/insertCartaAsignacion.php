@@ -13,14 +13,16 @@ $user->setUser($userSession->getCurrentUser());
 $us=$userSession->getCurrentUser();
 
 
-$sth1 = $objData->prepare('INSERT INTO cartacompromiso (CodCartaCompromiso, fk_idEstudiante_comp,Fecha) 
-SELECT (select concat("CMP00",MAX(idCartaCom)+1 ) from cartacompromiso),
+$sth1 = $objData->prepare('INSERT INTO carta_asig (CodCartaAsig, fk_est_asig,Fecha,FechaInicio) 
+SELECT (select concat("ASG00",MAX(idCARTA_ASIG)+1 ) from carta_asig),
 (select idEstudiante from estudiantes, usuarios where idusuario=fk_idUsuario_Est 
-and usuario= :us),:Fecha6');
+and usuario= :us),:Fecha7,:Fecha8');
 
-$Fecha6 = $_POST['Fecha6'];
+$Fecha7 = $_POST['Fecha7'];
+$Fecha8 = $_POST['Fecha8'];
 
-$sth1->bindParam(':Fecha6', $Fecha6);
+$sth1->bindParam(':Fecha7', $Fecha7);
+$sth1->bindParam(':Fecha8', $Fecha8);
 $sth1->bindParam(':us', $us);
 $sth1->execute();
 
