@@ -43,7 +43,7 @@ include '../../includes/estructuras/links.html';
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="../../assets/imagenes/template/institu.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="../../assets/imagenes/template/institution.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Postulación</span>
