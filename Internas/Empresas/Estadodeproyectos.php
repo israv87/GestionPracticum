@@ -120,3 +120,4 @@ include '../../includes/estructuras/links.html';
         </tfoot>
         </table>';
     }
+    </div>
