@@ -24,7 +24,7 @@
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset" style="padding: 10px 0; color:#fff;">
                 <figure>
-                    <img src="../../assets/imagemes/template/user.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
+                    <img src="../../assets/imagemes/template/user02.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
                 <p class="text-center" style="padding-top: 15px;">Tutor Academico</p>
             </div>
@@ -48,7 +48,7 @@
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="../../assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="../../assets/img/user02.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
@@ -110,7 +110,7 @@
                   <td>Semana 1</td>
                   <td>12-04-2019</td>
                   <td>Estudio del caso y analisis de la aplicacion en que se va a trabajar</td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-success">Calificado</span></td>
                 </tr>
@@ -119,7 +119,7 @@
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Desarrollo de aplicacion</td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                 </tr>
@@ -128,7 +128,7 @@
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Desarrollo de aplicacion</td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>
@@ -137,7 +137,7 @@
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Apliacacion de las metodologias adecuadas </td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>

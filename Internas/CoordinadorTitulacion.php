@@ -14,22 +14,24 @@ include 'Includes/Estructuras/links.html';
             $("#res").show();
             $("#c1,#c2,#res1,#res2,#con,#inf").hide();
         });
+        $("#rediseñocurricular1").click(function() {
+            $("#res1").show();
+            $("#res,#c1,#c2,#res2,#con,#inf").hide();
+        });
         $("#creditosects1").click(function() {
             $("#c1").show();
             $("#res,#c2,#res1,#res2,#con,#inf").hide();
+        });
+        
+        $("#rediseñocurricular2").click(function() {
+            $("#res2").show();
+            $("#res,#c1,#c2,#res1,#con,#inf").hide();
         });
         $("#creditosects2").click(function() {
             $("#c2").show();
             $("#res,#c1,#res1,#res2,#con,#inf").hide();
         });
-        $("#rediseñocurricular1").click(function() {
-            $("#res1").show();
-            $("#res,#c1,#c2,#res2,#con,#inf").hide();
-        });
-        $("#rediseñocurricular2").click(function() {
-            $("#res2").show();
-            $("#res,#c1,#c2,#res1,#con,#inf").hide();
-        });
+        
         $("#convenios").click(function() {
             $("#con").show();
             $("#res,#c1,#c2,#res1,#res2,#inf").hide();
@@ -68,13 +70,15 @@ include 'Includes/Estructuras/links.html';
             <div class="full-reset nav-lateral-list-menu">
             <style type="text/css">a {cursor:pointer;}</style>
                 <ul class="list-unstyled">
-                    <li><a id="resumen"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Resumen</a></li>
-                    <li><a id="creditosects1"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>&nbsp;&nbsp; Créditos ECTS-ECTS 1C</a></li>
-                    <li><a id="creditosects2"><i class="zmdi zmdi-truck zmdi-hc-fw"></i>&nbsp;&nbsp; Créditos UTPL-ECTS 1C</a></li>
-                    <li><a id="rediseñocurricular1"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Rediseño Curricular 1</a></li>
-                    <li><a id="rediseñocurricular2"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i>&nbsp;&nbsp; Rediseño Curricular 2</a></li>
-                    <li><a id="convenios"><i class="zmdi zmdi-trending-up zmdi-hc-fw"></i>&nbsp;&nbsp; Convenios</a></li>
-                    <li><a id="informesestudiantes"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Informes Estudiantes</a></li>
+                    <li><a id="resumen"><i class="zmdi zmdi-collection-item-9-plus"></i>&nbsp;&nbsp; Resumen</a></li>
+                    <li><a id="#"><i class="zmdi zmdi-long-arrow-down"></i>&nbsp;&nbsp; Programación de las prácticas pre profesionales</a></li>
+                    <li><a id="rediseñocurricular1"><i i class="zmdi zmdi-forward"></i>&nbsp;&nbsp; Rediseño Curricular </a></li>
+                    <li><a id="creditosects1"><i class="zmdi zmdi-forward"></i>&nbsp;&nbsp; Créditos ECTS-ECTS 1C</a></li>
+                    <li><a id="#"><i class="zmdi zmdi-long-arrow-down"></i>&nbsp;&nbsp; Planificación de prácticas pre profesionales por <br> ciclos académicos </a></li>
+                    <li><a id="rediseñocurricular2"><i i class="zmdi zmdi-forward"></i>&nbsp;&nbsp; Rediseño Curricular </a></li>
+                    <li><a id="creditosects2"><i class="zmdi zmdi-forward"></i>&nbsp;&nbsp; Créditos UTPL-ECTS 1C</a></li>
+                    <li><a id="convenios"><i class="zmdi zmdi-accounts-alt"></i>&nbsp;&nbsp; Convenios</a></li>
+                    <li><a id="informesestudiantes"><i class="zmdi zmdi-file"></i>&nbsp;&nbsp; Informes Estudiantes</a></li>
                 </ul>
             </div>
         </div>
@@ -219,6 +223,84 @@ include 'Includes/Estructuras/links.html';
                 </div>
             </div>
         </div>
+        
+    <!--************
+            ************
+            ************
+            Inicio de la sección RediseñoCurricular1
+            ************
+            ************
+            ************
+        -->
+
+        <div id="res1" style="display: none;">
+        <div class="container">
+        <div class="container">
+            <div class="page-header">
+              <h1 class="all-tittles">Coordinador de Sistemas Informáticos y Computación</h1>
+            </div>
+        </div>
+        <div class="row">
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <table style="height: 100px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle"><img src="./assets/imagenes/utpl_logo1.png"
+                                                style="width: 90%;"></td>
+                                        <td class="align-middle">
+                                            <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                            <h5> Rediseño Curricular</h5>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <form role="form">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Práctica</label> 
+                                        <input type="text" class="form-control">
+                                        <label>Unidades de organización curricular</label> 
+                                       <select class= "form-control">
+                                        <option>Formación Básica</option>
+                                            <option>Formación Profesional</option>
+                                            <option>Titulación</option>
+                                            <option>Prácticas de servicios comunitarios</option>
+                                        </select>
+                                        <label>Carácter de la Práctica</label>
+                                        <select class= "form-control">
+                                        <option>Investigación Diagnóstica</option>
+                                            <option>Investigación y Desarrollo</option>
+                                            <option>Investigación - Intervención</option>
+                                        </select>
+                                        <label>Objetivo</label>
+                                        <input type="text" class="form-control">
+                                        <label>Modalidad</label>
+                                        <input type="text" class="form-control" placeholder="Estancias prácticas en entornos laborales y simulados...">
+                                        
+                                        <label>Perfil a desarrollar</label>
+                                        <input type="text" class="form-control" placeholder="Referido a cada uno de los ejes del perfil de egreso...">
+                                        <label>Perfil del tutor académico</label>
+                                        <input type="text" class="form-control" placeholder=" Perfil Tutor Académico...">
+                                        <label>Metodologías</label>
+                                        <input type="text" class="form-control" placeholder="Protocolos profesionales a aplicarse ...">
+                                        <label>Escenarios posibles de la práctica</label>
+                                        <input type="text" class="form-control" placeholder="Protocolos profesionales a aplicarse ...">
+                                        <label>Espacios de integración con el área de epistomología y metodología de investigación</label>
+                                        <input type="text" class="form-control"><br>
+                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
+                                        <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
         <!--************
             ************
             ************
@@ -226,7 +308,8 @@ include 'Includes/Estructuras/links.html';
             ************
             ************
             ************
-        --> <div id="c1" style="display: none;">
+        --> 
+        <div id="c1" style="display: none;">
         <div class="container">
         <div class="container">
             <div class="page-header">
@@ -276,23 +359,93 @@ include 'Includes/Estructuras/links.html';
                                         <input type="text" class="form-control" placeholder=" Perfil Tutor Académico...">
                                         <label>Metodologías</label>
                                         <input type="text" class="form-control" placeholder="Protocolos profesionales a aplicarse ...">
-                                        <label>Seleccione el número de estudiantes requeridos</label>
-                                        <select class= "form-control">
-                                        <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                        <label>Por favor, indique las actividades a desarrollarse o entregables esperados del proyecto con un cronograma tentativo de octubre 2018 a febrero 2019. <br> Por ejemplo:
-<br>  1. Levantamiento de requerimientos - Del 8 al 19 de octubre
- <br> 2. Diseño de solución arquitectónica - Del 22 al 31 de octubre</label>
-                                        <input type="text" class="form-control" placeholder="Actividades ...">
+                                        <label>Escenarios posibles de la práctica</label>
+                                        <input type="text" class="form-control" placeholder="Protocolos profesionales a aplicarse ..."><br>
+                                  
                                         <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
                                                     <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
-
-
         </div>
+      </div></div>
       </div>
+      </div></div>
+      </div>
+      
+            <!--************
+            ************
+            ************
+            Inicio de la sección RediseñoCurricular2
+            ************
+            ************
+            ************
+        -->
+        <div id="res2" style="display: none;">
+        <div class="container">
+        <div class="container">
+            <div class="page-header">
+              <h1 class="all-tittles">Coordinador de Sistemas Informáticos y Computación</h1>
+            </div>
+        </div>
+        <div class="row">
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <table style="height: 100px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle"><img src="./assets/imagenes/utpl_logo1.png"
+                                                style="width: 90%;"></td>
+                                        <td class="align-middle">
+                                            <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                            <h5>Rediseño Curricular</h5>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <form role="form">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Unidades de organización curricular</label>
+                                        <select class= "form-control">
+                                        <option>Básica</option>
+                                            <option>Profesional</option>
+                                            <option>Titulación</option>
+                                        </select>
+                                        <label>Núcleo Problemático</label>
+                                        <input type="text" class="form-control">
+                                        <label>Ciclo</label>
+                                        <input type="text" class="form-control"> 
+                                        <hr style="border: 1px solid #081268;">
+                                        <label><h3>Praxis Profesional</h3></label><br>
+                                        <label>Cátedra Integradora</label>
+                                        <input type="text" class="form-control"><br>
+                                        <label>Fases del proceso práctico de aprendizaje</label>
+                                        <input type="text" class="form-control"><br>
+                                        <hr style="border: 1px solid #081268;">
+                                        <label><h3>Epistemología y Metodología de la Investigación</h3></label> <br>
+                                        <label>Fases</label>
+                                        <input type="text" class="form-control" >
+                                        <label>Métodos</label>
+                                        <input type="text" class="form-control" >
+                                        <label>Acciones</label>
+                                        <input type="text" class="form-control" > <br>
+                                        <hr style="border: 1px solid #081268;">
+                                        <label>Proyecto de Integración de Saberes</label>
+                                        <input type="text" class="form-control" > <br>
+                                        <label>Horas</label>
+                                        <input type="text" class="form-control" > <br>
+
+                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
+                                                    <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
+        </div>
+      </div></div>
+      </div>
+      </div></div>
+      </div>
+
+
     <!--************
             ************
             ************
@@ -300,404 +453,70 @@ include 'Includes/Estructuras/links.html';
             ************
             ************
             ************
-        --><div id="c2" style="display: none;">
+        -->
+        
+        <div id="c2" style="display: none;">
+        <div class="container">
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Créditos UTPL-ECTS 1C<small></small></h1>
+              <h1 class="all-tittles">Coordinador de Sistemas Informáticos y Computación</h1>
             </div>
         </div>
         <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                </div>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-               <tr>  
-                 <th>Nivel (Ciclo)</th>
-                  <th>Carácter de la Práctica</th>
-                  <th>Objetivo</th>
-                  <th>Modalidad</th>
-                  <th>Perfil a desarrollar</th>
-                  <th>Perfil del tutor académico</th>
-                  <th>Metodologías, protocolos profesionales a aplicarse</th>
-                  <th>Escenarios posibles de la Práctica</th>
-                </tr>
-                <tr>
-                  <td>I</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr> 
-                 <tr>
-                  <td>II</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-               <tr>
-                  <td>III</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                 <tr>
-                  <td>IV</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>V</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>VI</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>VII</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>VII</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>IX</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>X</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <table style="height: 100px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle"><img src="./assets/imagenes/utpl_logo1.png"
+                                                style="width: 90%;"></td>
+                                        <td class="align-middle">
+                                            <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
+                                            <h5> Créditos UTPL-ECTS 1C</h5>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <form role="form">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Gestión Productiva/Prácticum</label>
+                                        <select class= "form-control">
+                                        <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                        <label>Competencias</label>
+                                        <input type="text" class="form-control">
+                                        <label>Nivel/Ciclo</label>
+                                        <input type="text" class="form-control"> 
+                                        <hr style="border: 1px solid #081268;">
+                                        <label><h3>Praxis Profesional</h3></label><br>
+                                        <label>Fases del proceso práctico de aprendizaje</label>
+                                        <input type="text" class="form-control"><br>
+                                        <hr style="border: 1px solid #081268;">
+                                        <label><h3>Metodología de la Investigación</h3></label> <br>
+                                        <label>Fases</label>
+                                        <input type="text" class="form-control" >
+                                        <label>Métodos</label>
+                                        <input type="text" class="form-control" >
+                                        <label>Acciones</label>
+                                        <input type="text" class="form-control" > <br>
+                                        <hr style="border: 1px solid #081268;">
+                                        <label>Número de créditos</label>
+                                        <input type="text" class="form-control" > <br>
+                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
+                                                    <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
         </div>
+      </div></div>
       </div>
-        </div>
-
-    <!--************
-            ************
-            ************
-            Inicio de la sección RediseñoCurricular1
-            ************
-            ************
-            ************
-
-        --><div id="res1" style="display: none;">
-        <div class="container">
-            <div class="page-header">
-              <h1 class="all-tittles">Rediseño Curricular 1<small></small></h1>
-            </div>
-        </div>
-
-        <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                </div>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <th> <label>Práctica:</label><input type="text" class="form-control">  </th>
-                <tr>  
-                <th>Unidades de Organización Curricular</th>
-                  <th>Carácter de la Práctica</th>
-                  <th>Objetivo</th>
-                  <th>Perfil a desarrollar</th>
-                  <th>Perfil del tutor académico</th>
-                  <th>Metodologías profesionales a desarrollarse</th>
-                  <th>Escenarios posible de prácticas</th>
-                  <th>Espacios de integración con el área de epistemología y metodología de la investigación</th>
-                </tr>
-
-                <tr>
-                  <td>Formación Básica</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr> 
-                 <tr>
-                  <td>Formación Profesional</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-               <tr>
-                  <td>Titulación</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                 <tr>
-                  <td>Prácticas de servicio comunitario</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-      </div>
-        </div>
-        <div class="modal fade " tabindex="-1" role="dialog" id="ModalHelp">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title text-center all-tittles">ayuda del sistema</h4>
-                </div>
-                <div class="modal-body ">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore dignissimos qui molestias ipsum officiis unde aliquid consequatur, accusamus delectus asperiores sunt. Quibusdam veniam ipsa accusamus error. Animi mollitia corporis iusto.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> &nbsp; De acuerdo</button>
-                </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <!--************
-            ************
-            ************
-            Inicio de la sección RediseñoCurricular2
-            ************
-            ************
-            ************
-
-        --><div id="res2" style="display: none;">
-
-        <div class="container">
-            <div class="page-header">
-              <h1 class="all-tittles">Rediseño Curricular 2<small></small></h1>
-            </div>
-        </div>
-
-
-        <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                </div>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <th>Unidades de Organización Curricular</th>
-                  <th>Carácter de la Práctica</th>
-                  <th>Núcleo problemático</th>
-                  <th>Ciclo</th>
-                  <th>Cátedra Integradora</th>
-                  <th>Fases del proceso práctico de aprendizaje</th>
-                  <th>Fases</th>
-                  <th>Métodos </th>
-                  <th>Acciones</th>
-                  <th>Horas</th>
-                </tr>
-               <tr>
-                  <td>Básico</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td>I</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr> 
-                 <tr>
-                  <td>Básico</td>
-                  <td><input type="text" class="form-control"> </td>
-                  <td>II</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-               <tr>
-                  <td>Básico</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td>III</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                 <tr>
-                  <td>Profesional</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td>IV</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>Profesional</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td>V</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>Profesional</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td>VI</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>Profesional</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td>VII</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>Titulación</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td>VIII</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td>Titulación</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td>IX</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                </tr>
-               
-               
-              </table>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
+      </div></div>
       </div>
 </body>
+
 </html>
