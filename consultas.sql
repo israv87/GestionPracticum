@@ -143,5 +143,7 @@ select dependencia from empresas;
 SELECT encargado
 from empresas;
 
+SELECT PrimerNombre, SegundoNombre, apellido_paterno, apellido_materno, NivelGp FROM usuarios, estudiantes, nivel_gp WHERE fk_idnivelgp_est = idnivelgp and fk_idusuario_est = idusuario and NivelGp = '2.2'
 
+SELECT PrimerNombre, SegundoNombre, apellido_paterno, apellido_materno, paralelo FROM usuarios, estudiantes, paralelos WHERE fk_idparalelo_est = idparalelo and fk_idusuario_est = idusuario and paralelo = 'A'
 
