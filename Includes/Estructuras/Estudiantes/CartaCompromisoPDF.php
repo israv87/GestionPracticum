@@ -130,7 +130,29 @@ $idCom = $_GET['idCom'];
 
     $sth3->execute(['us' => $us]);
 
-  
+    $sth4 = $objData->prepare(" SELECT Institucion FROM instituciones, estudiantes, proyectos, usuarios, proyecto_estudiante
+    where idInstitucion = fk_idInstitucion 
+    and fk_idproyectos_pe=idproyectos and fk_idestudiante_pe =idestudiante 
+    and  idestudiante=idusuario and usuario =:us");
+
+    $sth4->execute(['us' => $us]);
+
+
+    $sth5 = $objData->prepare(" SELECT Dependencia
+    FROM dep_proyecto, proyectos, dependencias, estudiantes, usuarios, proyecto_estudiante
+    where fk_dep_dp = idDependencia and fk_pry_dp= idProyectos and fk_idProyectos_pe = idProyectos 
+    and fk_idEstudiante_pe = idEstudiante and fk_idUsuario_est = idusuario and usuario = :us");
+
+    $sth5->execute(['us' => $us]);
+
+    
+    $sth6 = $objData->prepare("SELECT concat(PrimerNombre,' ', SegundoNombre,' ', apellido_paterno,' ',apellido_materno,' ') As 'te' FROM text_estudiante,tutor_externo,estudiantes,usuarios
+    Where fk_idUsuario_tex=idUsuario and fk_idTutorExterno=idTutorExterno and fk_idEstudiante = idEstudiante
+    and idEstudiante = (select idEstudiante from estudiantes, usuarios where fk_idUsuario_Est = idusuario and usuario=:us)") ;
+       
+
+    $sth6->execute(['us' => $us]);
+
 
     
     // Logo
@@ -214,19 +236,50 @@ $this->CellFitScale(20,6,$monthNameSpanish,0,0,'c');
     
     $this->Cell(10);
 
-    $this->CellFitScale(25,6,utf8_decode('Señor (a)'),0,1,'c');
+    $this->CellFitScale(45,10,utf8_decode('Señor (a)'),0,1,'c');
+
+    foreach ($sth3 as $currentUserPDF1) {
+        
+        $this->Cell(10);
+
+    $this->Cell(15,6,utf8_decode(''),0,1,'c');
     $this->Cell(10);
     
-    foreach ($sth3 as $currentUserPDF1) {
         $this->CellFitScale(200,6,utf8_decode($currentUserPDF1['estudiante']),0,1,'c');      
     }
-    $this->Cell(15,6,utf8_decode(''),0,1,'c');
     $this->SetFont('Arial','B',12);
     $this->Cell(10);
     $this->CellFitScale(200,6,utf8_decode('ESTUDIANTE DE LA TITULACION DE SISTEMAS INFORMÁTICOS Y COMPUTACIÓN'),0,1,'c');      
-    $this->Cell(15,20,utf8_decode(''),1,1,'c');
+    $this->Cell(15,10,utf8_decode(''),0,1,'c');
+    $this->Cell(10);
+    $this->SetFont('Arial','',12);
+    $this->Cell(15,6,utf8_decode('De mi consideración:'),0,1,'c');
+    $this->Cell(15,6,utf8_decode(''),0,1,'c');
+    $this->Cell(10);
+    $this->Cell(15,6,utf8_decode('Por medio del presente me permito comunicar a usted que para el período académico'),0,1,'c');
+    $this->Cell(10);
+    
+    $this->Cell(15,6,utf8_decode('Abril 2019 - Agosto 2019,  ha sido asignada/o a :('),0,0,'c');
+    foreach ($sth4 as $currentUserPDF4) {
+        $this->Cell(80);
+
+        $this->CellFitScale(200,6,utf8_decode($currentUserPDF4['Institucion']),0,1,'c');     
+
+          $this->CellFitScale(15,6,utf8_decode('/'),0,0,'c');
+
+    }
+    foreach ($sth5 as $currentUserPDF5) {
+        
+
+        $this->CellFitScale(200,6,$currentUserPDF5['Dependencia'],0,0,'c');  
+        $this->CellFitScale(15,6,utf8_decode(')'),0,0,'c');
+
+    }
 
 
+
+
+    
        
 }
 
