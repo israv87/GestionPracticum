@@ -36,7 +36,7 @@ include 'includes/estructuras/links.html';
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset" style="padding: 10px 0; color:#fff;">
                 <figure>
-                    <img src="assets/imagenes/template/institution.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
+                    <img src="assets/imagenes/template/user02.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
                 <p class="text-center" style="padding-top: 15px;">TutorAcademico</p>
             </div>
@@ -56,7 +56,7 @@ include 'includes/estructuras/links.html';
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="./assets/imagenes/template/institution.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="./assets/imagenes/template/user02.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
@@ -145,7 +145,7 @@ include 'includes/estructuras/links.html';
                   <td>A</td>
                   <td>22-04-2019</td>
                   <td>Primer Bimestre</td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>
@@ -154,7 +154,7 @@ include 'includes/estructuras/links.html';
                   <td>A</td>
                   <td>22-04-2019</td>
                   <td>Primer Bimestre </td>
-                  <td><img src="../../Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>

@@ -25,7 +25,7 @@ include '../../includes/estructuras/links.html';
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset" style="padding: 10px 0; color:#fff;">
                 <figure>
-                    <img src="../../assets/imagenes/template/user06.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
+                    <img src="../../assets/imagenes/template/institution.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
                 <p class="text-center" style="padding-top: 15px;">Empresas</p>
             </div>
@@ -43,7 +43,7 @@ include '../../includes/estructuras/links.html';
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="../../assets/imagenes/template/user06.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="../../assets/imagenes/template/institution.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Estado de proyecto</span>
