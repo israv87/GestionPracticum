@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-07-2019 a las 20:46:27
+-- Tiempo de generación: 19-07-2019 a las 22:57:37
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -93,13 +93,12 @@ INSERT INTO `actividades_registro` (`idActividades_Registro`, `Actividad`, `fk_i
 (20, 'Creacionde base de datos', 2, '2019-04-04', '20:00:00', '21:00:00', 1),
 (21, 'Analisis de la Solucion', 2, '2019-04-01', '10:00:00', '11:00:00', 1),
 (22, 'levantamiento de datros', 16, '2019-04-06', '10:00:00', '12:00:00', 2),
-(23, 'levantamiento de datros', 23, '2019-04-06', '10:00:00', '12:00:00', 2),
 (24, 'AnÃ¡lisis de bases de datos', 24, '2019-06-12', '15:00:00', '17:00:00', 2),
 (25, 'Planteamiento de la solucion', 24, '2019-07-12', '17:00:00', '18:00:00', 1),
 (26, 'Analisis de requeriemientos', 24, '2019-08-12', '16:00:00', '18:00:00', 2),
-(27, 'DiseÃ±o de base de datos', 24, '2019-09-12', '17:00:00', '19:00:00', 2),
-(28, 'Codificacion', 24, '2019-10-12', '15:00:00', '18:00:00', 3),
-(29, 'levantamiento de datros', 24, '2019-04-06', '10:00:00', '12:00:00', 2);
+(31, 'Levantamiento de Informacion', 26, '2019-06-12', '15:00:00', '18:00:00', 3),
+(32, 'Modelado de datos', 26, '2019-06-13', '16:00:00', '17:00:00', 1),
+(33, 'Crear Base de datos', 26, '2019-06-14', '18:00:00', '12:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -111,8 +110,6 @@ CREATE TABLE `cartacompromiso` (
   `idCartaCom` int(11) NOT NULL,
   `CodCartaCompromiso` varchar(7) DEFAULT NULL,
   `Fecha` date DEFAULT NULL,
-  `Año` year(4) DEFAULT NULL,
-  `fk_idCordinador_comp` int(11) DEFAULT NULL,
   `fk_idEstudiante_comp` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -120,9 +117,12 @@ CREATE TABLE `cartacompromiso` (
 -- Volcado de datos para la tabla `cartacompromiso`
 --
 
-INSERT INTO `cartacompromiso` (`idCartaCom`, `CodCartaCompromiso`, `Fecha`, `Año`, `fk_idCordinador_comp`, `fk_idEstudiante_comp`) VALUES
-(1, 'CMP0001', '2019-04-01', 2019, 1, 1),
-(2, 'CMP0002', '2019-05-06', 2019, 1, 2);
+INSERT INTO `cartacompromiso` (`idCartaCom`, `CodCartaCompromiso`, `Fecha`, `fk_idEstudiante_comp`) VALUES
+(1, 'CMP0001', '2019-04-01', 1),
+(2, 'CMP0002', '2019-05-06', 2),
+(3, 'CMP003', NULL, 2),
+(4, 'CMP004', NULL, 2),
+(5, 'CMP005', NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -134,9 +134,17 @@ CREATE TABLE `carta_asig` (
   `idCARTA_ASIG` int(11) NOT NULL,
   `CodCartaAsig` varchar(7) DEFAULT NULL,
   `Fecha` date DEFAULT NULL,
-  `Año` year(4) DEFAULT NULL,
-  `fk_est_asig` int(11) NOT NULL
+  `fk_est_asig` int(11) NOT NULL,
+  `FechaInicio` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `carta_asig`
+--
+
+INSERT INTO `carta_asig` (`idCARTA_ASIG`, `CodCartaAsig`, `Fecha`, `fk_est_asig`, `FechaInicio`) VALUES
+(1, 'ASG0001', '2019-05-15', 3, '0000-00-00'),
+(2, 'ASG002', '2019-07-19', 2, '2019-04-01');
 
 -- --------------------------------------------------------
 
@@ -291,14 +299,14 @@ CREATE TABLE `coordinador_titulacion` (
   `CodCordinador` varchar(45) DEFAULT NULL,
   `fk_idDepartamento` int(11) NOT NULL,
   `fk_idExtension` int(11) NOT NULL,
-  `fk_idUsuario` int(11) NOT NULL
+  `fk_idUsuario_cord` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `coordinador_titulacion`
 --
 
-INSERT INTO `coordinador_titulacion` (`idCoordinadorTitulacion`, `CodCordinador`, `fk_idDepartamento`, `fk_idExtension`, `fk_idUsuario`) VALUES
+INSERT INTO `coordinador_titulacion` (`idCoordinadorTitulacion`, `CodCordinador`, `fk_idDepartamento`, `fk_idExtension`, `fk_idUsuario_cord`) VALUES
 (1, 'CRT0001', 4, 9, 45);
 
 -- --------------------------------------------------------
@@ -1004,8 +1012,10 @@ INSERT INTO `registro_aistencias` (`idRegistroAistencias`, `CodRegistro`, `fk_id
 (14, 'REG0014', 4, 'Semana 2', '2019-04-06', 'Entregado a Tiempo', 1, 1, 5),
 (15, 'REG0015', 4, 'Semana 3', '2019-04-15', 'Entregado a Tiempo', 1, 1, 4),
 (16, 'REG0016', 2, 'Semana 4', '2019-07-08', 'Entregado a Tiempo', 0, 0, 4),
-(23, 'REG0017', 1, 'semana 5', '2019-07-15', NULL, 0, 0, NULL),
-(24, 'REG0024', 1, 'Informe de la semana 5', '2019-07-15', 'Entregado a tiempo', 0, 0, NULL);
+(24, 'REG0024', 1, 'Informe de la semana 5', '2019-07-15', 'Entregado a tiempo', 0, 0, NULL),
+(26, 'REG0025', 1, 'Semana 6', '2019-07-15', 'Entregado a tiempo', 0, 0, NULL),
+(27, 'REG0027', 1, '', '2019-07-19', 'Entregado a tiempo', 0, 0, NULL),
+(28, 'REG0028', 2, NULL, '2019-07-19', 'Entregado a tiempo', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1190,8 +1200,8 @@ INSERT INTO `tipo_incidencias` (`idTipoIncidencia`, `TipoIncidencia`) VALUES
 
 CREATE TABLE `tutoracademico_estudiante` (
   `idTAcEst` int(11) NOT NULL,
-  `fk_idTutorAcademico` int(11) NOT NULL,
-  `fk_idEstudiante` int(11) NOT NULL,
+  `fk_idTutorAcademico_te` int(11) NOT NULL,
+  `fk_idEstudiante_te` int(11) NOT NULL,
   `Calificacion` varchar(45) DEFAULT NULL,
   `Estado` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1200,7 +1210,7 @@ CREATE TABLE `tutoracademico_estudiante` (
 -- Volcado de datos para la tabla `tutoracademico_estudiante`
 --
 
-INSERT INTO `tutoracademico_estudiante` (`idTAcEst`, `fk_idTutorAcademico`, `fk_idEstudiante`, `Calificacion`, `Estado`) VALUES
+INSERT INTO `tutoracademico_estudiante` (`idTAcEst`, `fk_idTutorAcademico_te`, `fk_idEstudiante_te`, `Calificacion`, `Estado`) VALUES
 (1, 1, 1, NULL, '1'),
 (2, 1, 2, NULL, '1'),
 (3, 1, 3, NULL, '1'),
@@ -1218,14 +1228,14 @@ CREATE TABLE `tutor_academico` (
   `CodTAaca` varchar(45) DEFAULT NULL,
   `fk_idDepartamento` int(11) NOT NULL,
   `fk_idExtension` int(11) NOT NULL,
-  `fk_idUsuario` int(11) NOT NULL
+  `fk_idUsuario_tac` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tutor_academico`
 --
 
-INSERT INTO `tutor_academico` (`idTutorAcademico`, `CodTAaca`, `fk_idDepartamento`, `fk_idExtension`, `fk_idUsuario`) VALUES
+INSERT INTO `tutor_academico` (`idTutorAcademico`, `CodTAaca`, `fk_idDepartamento`, `fk_idExtension`, `fk_idUsuario_tac`) VALUES
 (1, 'CAC0001', 1, 23, 44);
 
 -- --------------------------------------------------------
@@ -1371,8 +1381,7 @@ ALTER TABLE `actividades_registro`
 --
 ALTER TABLE `cartacompromiso`
   ADD PRIMARY KEY (`idCartaCom`),
-  ADD KEY `fk_est` (`fk_idEstudiante_comp`),
-  ADD KEY `fk_cord` (`fk_idCordinador_comp`);
+  ADD KEY `fk_est` (`fk_idEstudiante_comp`);
 
 --
 -- Indices de la tabla `carta_asig`
@@ -1442,7 +1451,7 @@ ALTER TABLE `coordinador_titulacion`
   ADD PRIMARY KEY (`idCoordinadorTitulacion`),
   ADD KEY `fk_Coordinador_Titulacion_Departamentos1` (`fk_idDepartamento`),
   ADD KEY `fk_Coordinador_Titulacion_Extensiones1` (`fk_idExtension`),
-  ADD KEY `fk_Coordinador_Titulacion_Usuarios1` (`fk_idUsuario`);
+  ADD KEY `fk_Coordinador_Titulacion_Usuarios1` (`fk_idUsuario_cord`);
 
 --
 -- Indices de la tabla `creditos`
@@ -1726,8 +1735,8 @@ ALTER TABLE `tipo_incidencias`
 --
 ALTER TABLE `tutoracademico_estudiante`
   ADD PRIMARY KEY (`idTAcEst`),
-  ADD KEY `fk_TutorAcademico_Estudiante_Tutor_Academico1` (`fk_idTutorAcademico`),
-  ADD KEY `fk_TutorAcademico_Estudiante_Estudiantes1` (`fk_idEstudiante`);
+  ADD KEY `fk_TutorAcademico_Estudiante_Tutor_Academico1` (`fk_idTutorAcademico_te`),
+  ADD KEY `fk_TutorAcademico_Estudiante_Estudiantes1` (`fk_idEstudiante_te`);
 
 --
 -- Indices de la tabla `tutor_academico`
@@ -1736,7 +1745,7 @@ ALTER TABLE `tutor_academico`
   ADD PRIMARY KEY (`idTutorAcademico`),
   ADD KEY `fk_Tutor_Academico_Departamentos1` (`fk_idDepartamento`),
   ADD KEY `fk_Tutor_Academico_Extensiones1` (`fk_idExtension`),
-  ADD KEY `fk_Tutor_Academico_Usuarios1` (`fk_idUsuario`);
+  ADD KEY `fk_Tutor_Academico_Usuarios1` (`fk_idUsuario_tac`);
 
 --
 -- Indices de la tabla `tutor_externo`
@@ -1761,19 +1770,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `actividades_registro`
 --
 ALTER TABLE `actividades_registro`
-  MODIFY `idActividades_Registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `idActividades_Registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `cartacompromiso`
 --
 ALTER TABLE `cartacompromiso`
-  MODIFY `idCartaCom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCartaCom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `carta_asig`
 --
 ALTER TABLE `carta_asig`
-  MODIFY `idCARTA_ASIG` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCARTA_ASIG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `ciclos`
@@ -1983,7 +1992,7 @@ ALTER TABLE `rediseño_curricular_2`
 -- AUTO_INCREMENT de la tabla `registro_aistencias`
 --
 ALTER TABLE `registro_aistencias`
-  MODIFY `idRegistroAistencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idRegistroAistencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `rgeneral`
@@ -2077,7 +2086,6 @@ ALTER TABLE `actividades_registro`
 -- Filtros para la tabla `cartacompromiso`
 --
 ALTER TABLE `cartacompromiso`
-  ADD CONSTRAINT `fk_cord` FOREIGN KEY (`fk_idCordinador_comp`) REFERENCES `coordinador_titulacion` (`idCoordinadorTitulacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_est` FOREIGN KEY (`fk_idEstudiante_comp`) REFERENCES `estudiantes` (`idEstudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -2107,7 +2115,7 @@ ALTER TABLE `convenio`
 ALTER TABLE `coordinador_titulacion`
   ADD CONSTRAINT `fk_Coordinador_Titulacion_Departamentos1` FOREIGN KEY (`fk_idDepartamento`) REFERENCES `departamentos` (`idDepartamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Coordinador_Titulacion_Extensiones1` FOREIGN KEY (`fk_idExtension`) REFERENCES `extensiones` (`idExtension`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Coordinador_Titulacion_Usuarios1` FOREIGN KEY (`fk_idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Coordinador_Titulacion_Usuarios1` FOREIGN KEY (`fk_idUsuario_cord`) REFERENCES `usuarios` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `creditos`
@@ -2272,8 +2280,8 @@ ALTER TABLE `tipogp_nivel`
 -- Filtros para la tabla `tutoracademico_estudiante`
 --
 ALTER TABLE `tutoracademico_estudiante`
-  ADD CONSTRAINT `fk_TutorAcademico_Estudiante_Estudiantes1` FOREIGN KEY (`fk_idEstudiante`) REFERENCES `estudiantes` (`idEstudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_TutorAcademico_Estudiante_Tutor_Academico1` FOREIGN KEY (`fk_idTutorAcademico`) REFERENCES `tutor_academico` (`idTutorAcademico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_TutorAcademico_Estudiante_Estudiantes1` FOREIGN KEY (`fk_idEstudiante_te`) REFERENCES `estudiantes` (`idEstudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_TutorAcademico_Estudiante_Tutor_Academico1` FOREIGN KEY (`fk_idTutorAcademico_te`) REFERENCES `tutor_academico` (`idTutorAcademico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tutor_academico`
@@ -2281,7 +2289,7 @@ ALTER TABLE `tutoracademico_estudiante`
 ALTER TABLE `tutor_academico`
   ADD CONSTRAINT `fk_Tutor_Academico_Departamentos1` FOREIGN KEY (`fk_idDepartamento`) REFERENCES `departamentos` (`idDepartamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Tutor_Academico_Extensiones1` FOREIGN KEY (`fk_idExtension`) REFERENCES `extensiones` (`idExtension`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Tutor_Academico_Usuarios1` FOREIGN KEY (`fk_idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Tutor_Academico_Usuarios1` FOREIGN KEY (`fk_idUsuario_tac`) REFERENCES `usuarios` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tutor_externo`
