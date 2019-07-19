@@ -348,7 +348,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Desarrollo de aplicacion</td>
-                  <td><img src="./Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                   <td><span class="label label-danger">Cancelado</span></td>
                 </tr>
@@ -357,7 +357,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Desarrollo de aplicacion</td>
-                  <td><img src="./Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-success">Verificado</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>
@@ -366,7 +366,7 @@ include 'includes/estructuras/links.html';
                   <td>Semana 2</td>
                   <td>22-04-2019</td>
                   <td>Apliacacion de las metodologias adecuadas </td>
-                  <td><img src="./Assets/img/pdf.jpg" style="width: 5%;"></td>
+                  <td><img src="./Assets/imagenes/template/pdf.jpg" style="width: 5%;"></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                   <td><span class="label label-warning">Pendiente</span></td>
                 </tr>
