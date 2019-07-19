@@ -28,6 +28,9 @@ class User extends DB
     private $paralelo2;
     private $nivel2;
     private $idRegistroPDF;
+    private $cedula;
+    private $dependencia;
+
 
     
 
@@ -489,7 +492,29 @@ class User extends DB
         }
         echo '</table>';
     }
+    public function SetCedula($user)
+    {
+        $query14 = $this->connect()->prepare(' SELECT cedula FROM usuarios where usuario= :user ');
+        $query14->execute(['user' => $user]);
 
+        foreach ($query14 as $currentUser14) {
+            $this->cedula = $currentUser14['cedula'];
+        }
+    }
+ 
+
+    public function setDependenciaEstudiante($user)
+    {
+        $query15 = $this->connect()->prepare('SELECT Dependencia
+        FROM dep_proyecto, proyectos, dependencias, estudiantes, usuarios, proyecto_estudiante
+        where fk_dep_dp = idDependencia and fk_pry_dp= idProyectos and fk_idProyectos_pe = idProyectos 
+        and fk_idEstudiante_pe = idEstudiante and fk_idUsuario_est = idusuario and usuario = :user');
+        $query15->execute(['user' => $user]);
+
+        foreach ($query15 as $currentUser15) {
+            $this->dependencia = $currentUser15['Dependencia'];
+        }
+    }
 
 
 /***************Llamadas a un unico dato*****************/
@@ -540,6 +565,14 @@ class User extends DB
     public function getNivel2()
     {
         return $this->nivel2;
+    }
+    public function getCedula()
+    {
+        return $this->cedula;
+    }
+    public function getDependencia()
+    {
+        return $this->dependencia;
     }
 }
 

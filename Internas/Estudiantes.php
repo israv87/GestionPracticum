@@ -856,13 +856,13 @@
         <div class="container-fluid">
                 <div class="container">
                     <div class="page-header">
-                        <h1 class="all-tittles">Estudiantes <small>Carta de Asignacion</small></h1>
+                        <h1 class="all-tittles">Estudiantes <small>Carta de Compromiso</small></h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="box box-warning">
                         <div class="box-header with-border">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <script>
                                 $(document).ready(function() {
                                     $("#bt_comp").click(function() {
@@ -873,9 +873,9 @@
                                 </script>
                                 <button type="button" id="bt_comp" class="btn btn-block btn-default bg-blue">
                                     <i class="fa fa-plus-square"></i>
-                                   Nueva Carta de Asignacion</button>
+                                   Nueva Carta de Compromiso</button>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-9">
                             </div>
                             <div id="form_comp" style="display:none;">
                                 <table style="height: 100px;">
@@ -886,7 +886,7 @@
                                                     style="width: 90%;"></td>
                                             <td class="align-middle">
                                                 <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                                <h5>Formulario de creacion de la carta de compromiso para la Gestion Productiva / Prcticum Agignada </h5>
+                                                <h5>Formulario de creacion de la carta de comprmiso para la Gestion Productiva / Prcticum Agignada </h5>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -900,60 +900,54 @@
                                     </style>
                                     <div class="container">
                                         <form action="Includes/Database/db_Estudiantes/insertCartaCompromiso.php" method="post">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-3">
                                                     <label>Ciudad:</label>
                                                     <input type="text" class="form-control"
                                                         placeholder="Loja" readonly>
                                                     <label>Fecha:</label>  
-                                                    <input type="text" class="form-control"
-                                                        placeholder="" readonly>
-                                                    <label>Estudiante:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=" <?php echo $user->getPNombre()?>
-                                                        <?php echo $user->getSNombre()?>
-                                                        <?php echo $user->getPApellido()?>
-                                                        <?php echo $user->getMApellido();?>" readonly>
-                                                    <label>Fecha:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>                                           
-                                                </div>
-                                                <div class="col-sm-4">
-                                                     <label>Estudiante</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
-                                                    <label>Carrera :</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                                    <label>Periodo Academico :</label>
-                                                    <select class="form-control">
-                                                    <option>Abril 2019 - Agosto 2019</option>
-                                                    </select>
-                                                    <label>Institucion:</label>
-                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
-                                                    <label>Dependencia</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly> 
-                                                </div>
-                                                <div class="col-sm-4">
-                                                <label>Fecha de Incio de prácticas :</label>
+                                                    <div class="input-group input-append date" id="datePicker6">
+                                                        <input type="text" class="form-control" value="<?php echo date('Y-m-d'); ?>" name="Fecha6" />
+                                                        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                    </div>
+                                                    <label>Cordinador de Titulación:</label>
                                                     <input type="text" class="form-control"
                                                         placeholder="Fernanda Maricela Soto Guerrero" readonly>
-                                                    <label>Horas a Cumplir :</label>
-                                                    <select class="form-control">
-                                                    <option>Tutor Externo:</option>
-                                                    </select>
-                                                    <label>Tutor Académico:</label>
-                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
-                                                    <label>Ciclo</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    <label>Nivel de GP/Prácticum:</label>
+                                                        <label>Carrera:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                                 </div>
-                                                <input type="submit"
+                                                        placeholder="Ingeniería en Sistemas Informáticos y Computación" readonly>                                           
+                                                </div>
+                                                <div class="col-sm-3">
+                                                <label>Estudiante:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=" <?php echo $user->getPNombre()?> <?php echo $user->getSNombre()?> <?php echo $user->getPApellido()?> <?php echo $user->getMApellido();?>" readonly>
+                                                    <label>Cédula :</label>
+                                                    <?php $user->SetCedula($userSession->getCurrentUser()); ?>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getCedula()?>" readonly>
+                                                    <label>Ciclo:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getCiclo2()?>" readonly>
+                                                    <label>Gestión Productiva - Prácticum</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getTipoGp2()?>" readonly>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                <label>Nivel :</label>
+                                                <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getNivel2()?>" readonly>
+                                                    <label>Institucion:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getInstitucion()?>" readonly>
+                                                    <label>Dependencia</label>
+                                                    <?php $user->SetDependenciaEstudiante($userSession->getCurrentUser()); ?>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getDependencia()?>" readonly>
+                                                        <label></label>
+                                                        <input type="submit"
                                                     class="next-form btn btn-block btn-default  bg-green"
-                                                    style="width:20%; " value="Guardar" />
+                                                    style="width:100%; " value="Guardar" />
+                                                 </div>
+                                                
                                     </form>
                                 </div>
                             </div>
@@ -999,13 +993,13 @@
         <div class="container-fluid">
                 <div class="container">
                     <div class="page-header">
-                        <h1 class="all-tittles">Estudiantes <small>Carta de Asignacion</small></h1>
+                        <h1 class="all-tittles">Estudiantes <small>Carta de Compromiso</small></h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="box box-warning">
                         <div class="box-header with-border">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <script>
                                 $(document).ready(function() {
                                     $("#bt_comp").click(function() {
@@ -1016,9 +1010,9 @@
                                 </script>
                                 <button type="button" id="bt_comp" class="btn btn-block btn-default bg-blue">
                                     <i class="fa fa-plus-square"></i>
-                                   Nueva Carta de Asignacion</button>
+                                   Nueva Carta de Compromiso</button>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-9">
                             </div>
                             <div id="form_comp" style="display:none;">
                                 <table style="height: 100px;">
@@ -1029,7 +1023,7 @@
                                                     style="width: 90%;"></td>
                                             <td class="align-middle">
                                                 <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                                <h5>Formulario de creacion de la carta de compromiso para la Gestion Productiva / Prcticum Agignada </h5>
+                                                <h5>Formulario de creacion de la carta de comprmiso para la Gestion Productiva / Prcticum Agignada </h5>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1043,60 +1037,54 @@
                                     </style>
                                     <div class="container">
                                         <form action="Includes/Database/db_Estudiantes/insertCartaCompromiso.php" method="post">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-3">
                                                     <label>Ciudad:</label>
                                                     <input type="text" class="form-control"
                                                         placeholder="Loja" readonly>
                                                     <label>Fecha:</label>  
-                                                    <input type="text" class="form-control"
-                                                        placeholder="" readonly>
-                                                    <label>Estudiante:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=" <?php echo $user->getPNombre()?>
-                                                        <?php echo $user->getSNombre()?>
-                                                        <?php echo $user->getPApellido()?>
-                                                        <?php echo $user->getMApellido();?>" readonly>
-                                                    <label>Fecha:</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>                                           
-                                                </div>
-                                                <div class="col-sm-4">
-                                                     <label>Estudiante</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getCiclo2()?>.Ciclo" readonly>
-                                                    <label>Carrera :</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                                    <label>Periodo Academico :</label>
-                                                    <select class="form-control">
-                                                    <option>Abril 2019 - Agosto 2019</option>
-                                                    </select>
-                                                    <label>Institucion:</label>
-                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
-                                                    <label>Dependencia</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly> 
-                                                </div>
-                                                <div class="col-sm-4">
-                                                <label>Fecha de Incio de prácticas :</label>
+                                                    <div class="input-group input-append date" id="datePicker6">
+                                                        <input type="text" class="form-control" value="<?php echo date('Y-m-d'); ?>" name="Fecha6" />
+                                                        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                    </div>
+                                                    <label>Cordinador de Titulación:</label>
                                                     <input type="text" class="form-control"
                                                         placeholder="Fernanda Maricela Soto Guerrero" readonly>
-                                                    <label>Horas a Cumplir :</label>
-                                                    <select class="form-control">
-                                                    <option>Tutor Externo:</option>
-                                                    </select>
-                                                    <label>Tutor Académico:</label>
-                                                    <input type="text" class="form-control" placeholder="UTPL" readonly>
-                                                    <label>Ciclo</label>
-                                                    <input type="text" class="form-control" placeholder="Departamento de Ciencias de la Computación y 
-                                                Electrónica,Sección Departamental de Ingeniería de Software" readonly>
-                                                    <label>Nivel de GP/Prácticum:</label>
+                                                        <label>Carrera:</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getTipoGp2()?>." readonly>
-                                                 </div>
-                                                <input type="submit"
+                                                        placeholder="Ingeniería en Sistemas Informáticos y Computación" readonly>                                           
+                                                </div>
+                                                <div class="col-sm-3">
+                                                <label>Estudiante:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder=" <?php echo $user->getPNombre()?> <?php echo $user->getSNombre()?> <?php echo $user->getPApellido()?> <?php echo $user->getMApellido();?>" readonly>
+                                                    <label>Cédula :</label>
+                                                    <?php $user->SetCedula($userSession->getCurrentUser()); ?>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getCedula()?>" readonly>
+                                                    <label>Ciclo:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getCiclo2()?>" readonly>
+                                                    <label>Gestión Productiva - Prácticum</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getTipoGp2()?>" readonly>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                <label>Nivel :</label>
+                                                <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getNivel2()?>" readonly>
+                                                    <label>Institucion:</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getInstitucion()?>" readonly>
+                                                    <label>Dependencia</label>
+                                                    <?php $user->SetDependenciaEstudiante($userSession->getCurrentUser()); ?>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="<?php echo $user->getDependencia()?>" readonly>
+                                                        <label></label>
+                                                        <input type="submit"
                                                     class="next-form btn btn-block btn-default  bg-green"
-                                                    style="width:20%; " value="Guardar" />
+                                                    style="width:100%; " value="Guardar" />
+                                                 </div>
+                                                
                                     </form>
                                 </div>
                             </div>
@@ -1138,6 +1126,7 @@
             ************
         -->
         <div id="inc" style="display: none;">
+        <!--
             <div class="container-fluid" style="margin: 20px 0;">
                 <div class="container">
                     <div class="page-header">
@@ -1161,10 +1150,10 @@
                             </table>
                         </div>
                         <div class="col-sm-6">
-                            <!-- /.box-header -->
+                            
                             <div class="box-body">
                                 <form role="form">
-                                    <!-- text input -->
+                            
                                     <div class="form-group">
                                         <label>Incidencia:</label>
                                         <input type="text" class="form-control" placeholder="Titulo ...">
@@ -1189,7 +1178,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <!-- /.box-body -->
+                    
                         </div>
                         <div class="col-sm-6">
                             <div class="box box-info">
@@ -1199,7 +1188,7 @@
                                             profesionales.
                                         </small>
                                     </h3>
-                                    <!-- tools box -->
+                        
                                     <div class="pull-right box-tools">
                                         <button type="button" class="btn btn-info btn-sm" data-widget="collapse"
                                             data-toggle="tooltip" title="Collapse">
@@ -1208,9 +1197,9 @@
                                             data-toggle="tooltip" title="Remove">
                                             <i class="fa fa-times"></i></button>
                                     </div>
-                                    <!-- /. tools -->
+                    
                                 </div>
-                                <!-- /.box-header -->
+                                
                                 <div class="box-body pad">
                                     <form>
                                         <textarea id="editor2" name="editor2" rows="10" cols="80">
@@ -1232,7 +1221,9 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
+
         <!--************
             ************
             Inicio de la seccion Postulacion de Proyectos

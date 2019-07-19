@@ -6,7 +6,37 @@ require('../../../assets/FPDF/fpdf.php');
 
 class PDF extends FPDF
 {
-    private $resultado1;
+    private $Consulta2;
+    private $Consulta3;
+    private $Consulta4;
+    private $Consulta5;
+    private $Consulta6;
+    private $Consulta8; 
+    private $consulta9;
+    private $Consulta10;
+
+    private $p_cord;
+    private $s_cord;
+    private $ap_cord;
+    private $am_cord;
+    private $p_est;
+    private $s_est;
+    private $ap_est;
+    private $am_est;
+    private $p_t_ext;
+    private $s_t_ext;
+    private $ap_t_ext;
+    private $am_t_ext;
+    private $p_t_ac;
+    private $s_t_ac;
+    private $ap_t_ac;
+    private $am_t_ac;
+    
+    
+
+
+
+
     
     function CellFit($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='', $scale=false, $force=true)
     {
@@ -121,14 +151,27 @@ $idCom = $_GET['idCom'];
 
     $sth2->execute(['us' => $us]);
 
+    foreach ($sth2 as $currentUserPDF2) {
+
+        $consulta2 = $currentUserPDF2['CicloNombre'];
+    }
      
    
-    $sth3 = $objData->prepare("SELECT concat(PrimerNombre,' ', SegundoNombre,' ', apellido_paterno,' 
-    ',apellido_materno,' ') As 'estudiante' 
+    $sth3 = $objData->prepare("SELECT PrimerNombre,SegundoNombre,apellido_paterno,apellido_materno 
     FROM estudiantes,usuarios where fk_idUsuario_Est = idusuario and usuario=:us") ;
        
 
     $sth3->execute(['us' => $us]);
+
+
+    foreach ($sth3 as $currentUserPDF3) {
+
+        
+    $p_est    = $currentUserPDF3['PrimerNombre'];
+    $s_est    = $currentUserPDF3['SegundoNombre'];
+    $ap_est    = $currentUserPDF3['apellido_paterno'];
+    $am_est    = $currentUserPDF3['apellido_materno'];
+    }
 
     $sth4 = $objData->prepare(" SELECT Institucion FROM instituciones, estudiantes, proyectos, usuarios, proyecto_estudiante
     where idInstitucion = fk_idInstitucion 
@@ -137,6 +180,10 @@ $idCom = $_GET['idCom'];
 
     $sth4->execute(['us' => $us]);
 
+    foreach ($sth4 as $currentUserPDF4) {
+
+        $consulta4 = $currentUserPDF4['Institucion'];
+    }
 
     $sth5 = $objData->prepare(" SELECT Dependencia
     FROM dep_proyecto, proyectos, dependencias, estudiantes, usuarios, proyecto_estudiante
@@ -145,20 +192,135 @@ $idCom = $_GET['idCom'];
 
     $sth5->execute(['us' => $us]);
 
-    
-    $sth6 = $objData->prepare("SELECT concat(PrimerNombre,' ', SegundoNombre,' ', apellido_paterno,' ',apellido_materno,' ') As 'te' FROM text_estudiante,tutor_externo,estudiantes,usuarios
+    foreach ($sth5 as $currentUserPDF5) {
+
+        $consulta5 = utf8_decode($currentUserPDF5['Dependencia']);
+    }
+
+    $sth6 = $objData->prepare("SELECT PrimerNombre,SegundoNombre,apellido_paterno,apellido_materno
+    FROM text_estudiante,tutor_externo,estudiantes,usuarios
     Where fk_idUsuario_tex=idUsuario and fk_idTutorExterno=idTutorExterno and fk_idEstudiante = idEstudiante
     and idEstudiante = (select idEstudiante from estudiantes, usuarios where fk_idUsuario_Est = idusuario and usuario=:us)") ;
        
 
     $sth6->execute(['us' => $us]);
 
+    
+    foreach ($sth6 as $currentUserPDF6) {
 
     
+        
+    $p_t_ext = $currentUserPDF6['PrimerNombre'];
+    $s_t_ext = $currentUserPDF6['SegundoNombre'];
+    $ap_t_ext = $currentUserPDF6['apellido_paterno'];
+    $am_t_ext = $currentUserPDF6['apellido_materno'];
+    
+
+    }
+
+    $sth7 = $objData->prepare(" SELECT PrimerNombre,SegundoNombre,apellido_paterno,apellido_materno 
+    FROM usuarios, coordinador_titulacion where fk_idusuario_cord=idUsuario") ;
+       
+
+    $sth7->execute();
+
+    
+    foreach ($sth7 as $currentUserPDF7) {
+
+    $p_cord    = $currentUserPDF7['PrimerNombre'];
+    $s_cord    = $currentUserPDF7['SegundoNombre'];
+    $ap_cord    = $currentUserPDF7['apellido_paterno'];
+    $am_cord    = $currentUserPDF7['apellido_materno'];
+
+    }
+
+    $sth8 = $objData->prepare("  SELECT cedula FROM usuarios where usuario= :us") ;
+       
+
+    $sth8->execute(['us' => $us]);
+
+    
+    foreach ($sth8 as $currentUserPDF8) {
+
+        $consulta8 = $currentUserPDF8['cedula'];
+    
+    }
+
+
+
+    $sth9 = $objData->prepare("SELECT TipoGP FROM tipo_gp,nivel_gp,tipogp_nivel, estudiantes, usuarios
+    where fk_TipoGpNV=idTipogp and fkNivelGPNV =idNivelGP and fk_idNivelGP_Est = idNivelGP
+    and fk_idUsuario_Est = idUsuario and usuario = :us") ;
+
+    $sth9->execute(['us' => $us]);
+
+    foreach ($sth9 as $currentUserPDF9) {
+        $consulta9 = $currentUserPDF9['TipoGP'];
+    }
+
+    $sth10 = $objData->prepare("    SELECT NivelGP FROM nivel_gp,estudiantes, usuarios
+    where fk_idNivelGP_Est=idNivelGp and fk_idNivelGP_Est = idNivelGP
+    and fk_idUsuario_Est = idUsuario and usuario = :us");
+
+    $sth10->execute(['us' => $us]);
+
+   
+    foreach ($sth10 as $currentUserPDF10) {
+
+        $consulta10 = $currentUserPDF10['NivelGP'];
+    
+    }
+   
+
+    $sth6 = $objData->prepare("SELECT PrimerNombre,SegundoNombre,apellido_paterno,apellido_materno
+    FROM text_estudiante,tutor_externo,estudiantes,usuarios
+    Where fk_idUsuario_tex=idUsuario and fk_idTutorExterno=idTutorExterno and fk_idEstudiante = idEstudiante
+    and idEstudiante = (select idEstudiante from estudiantes, usuarios where fk_idUsuario_Est = idusuario and usuario=:us)") ;
+       
+
+    $sth6->execute(['us' => $us]);
+
+    
+    foreach ($sth6 as $currentUserPDF6) {
+
+    
+        
+    $p_t_ext = $currentUserPDF6['PrimerNombre'];
+    $s_t_ext = $currentUserPDF6['SegundoNombre'];
+    $ap_t_ext = $currentUserPDF6['apellido_paterno'];
+    $am_t_ext = $currentUserPDF6['apellido_materno'];
+    
+
+    }
+    
+    $sth6 = $objData->prepare("SELECT PrimerNombre,SegundoNombre,apellido_paterno,apellido_materno FROM tutoracademico_estudiante,
+    tutor_academico,estudiantes,usuarios
+    where fk_idUsuario_tac = idUsuario and fk_idTutorAcademico_te =idTutorAcademico and fk_idEstudiante_te = idEstudiante
+    and fk_idUsuario_Est=(select idusuario from usuarios where usuario=:us)") ;
+       
+
+    $sth6->execute(['us' => $us]);
+
+    
+    foreach ($sth6 as $currentUserPDF6) {
+
+    
+        
+    $p_t_ac = $currentUserPDF6['PrimerNombre'];
+    $s_t_ac = $currentUserPDF6['SegundoNombre'];
+    $ap_t_ac = $currentUserPDF6['apellido_paterno'];
+    $am_t_ac = $currentUserPDF6['apellido_materno'];
+    
+
+    }
+    
+
+    
+
     // Logo
     $this->Image('../../../Assets/imagenes/utpl_logo.png',10,8,70);
     // Arial bold 15
-    $this->SetFont('Arial','',14);
+    $this->SetFont('Arial','',12);
     // Movernos a la derecha
     $this->Cell(10);
     // Título
@@ -224,7 +386,7 @@ $this->CellFitScale(20,6,$monthNameSpanish,0,0,'c');
     $monthNameSpanish = "Noviembre";
     $this->CellFitScale(26,6,$monthNameSpanish,0,0,'c'); 
     break;
-    case 12:
+    case 12:$
     $monthNameSpanish = "Diciembre";
     $this->CellFitScale(25,6,$monthNameSpanish,0,0,'c');
     break;
@@ -232,10 +394,47 @@ $this->CellFitScale(20,6,$monthNameSpanish,0,0,'c');
 }
     $this->CellFitScale(9,6,utf8_decode('del'),0,0,'c');
     $this->CellFitScale(25,6,$anio,0,1,'c'); 
+    $this->Cell(9,6,utf8_decode(''),0,1,'c');
     
     
     $this->Cell(10);
 
+    $this->MultiCell(170,6,utf8_decode("Magister / Doctor 
+".$p_cord." ".$s_cord." ".$ap_cord." ".$am_cord."
+COORDINADOR DE LA TITULACIÓN DE SISTEMAS INFORMÁTICOS Y COMPUCAIóN DE LA UTPL
+
+Estimado Magister/Doctor:
+
+Yo, ".$p_est." ".$s_est." ".$ap_est." ".$am_est.", con cédula número ".$consulta8.", estudiante de la titulación de Sistemas Információn, de la Universidad Técnica Particular de Loja, manifiesto mi interés por participar en los procesos de aprendizaje que conlleva la: 
+
+-    Práctica pre profesional del ".$consulta2.".
+-    ".$consulta9.": ".$consulta10."
+
+Estas prácticas las desarrollaré en (".$consulta4." / ".$consulta5."), a la vez que me comprometo a:
+
+-	Cumplir con las actividades planificadas que se contemplan en el plan docente.
+-	Trabajar en un ambiente de respeto y compañerismo con mi tutor y compañeros.
+-	Mantener reserva y confidencialidad en la información generada. 
+-	Cuidar los equipos e instrumentos que me sean entregados.
+    
+Atentamente,
+    
+
+    
+         f)________________________		        	        f)_____________________
+    ".$p_est." ".$s_est." ".$ap_est." ".$am_est."                 "	.$p_t_ext." ".$s_t_ext." ".$ap_t_ext." ".$am_t_ext."	
+                              Estudiante                                             Tutor Externo
+                                
+
+
+                                                f)______________________
+                                              ".$p_t_ac." ".$s_t_ac." ".$ap_t_ac." ".$am_t_ac."
+                                    Tutor académico de la práctica pre profesional 
+                                                    ".$consulta9.": ".$consulta10."
+    "),0,'J',false);
+
+
+/*
     $this->CellFitScale(45,10,utf8_decode('Señor (a)'),0,1,'c');
 
     foreach ($sth3 as $currentUserPDF1) {
@@ -276,7 +475,7 @@ $this->CellFitScale(20,6,$monthNameSpanish,0,0,'c');
 
     }
 
-
+*/
 
 
     
