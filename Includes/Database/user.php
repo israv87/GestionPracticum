@@ -28,6 +28,7 @@ class User extends DB
     private $paralelo2;
     private $nivel2;
     private $idRegistroPDF;
+    private $idIncidenciaPDF;
     private $cedula;
     private $dependencia;
 
@@ -532,7 +533,7 @@ class User extends DB
 
 
         foreach ($query12 as $currentUser12) {
-            $idCompromisoPDF = $currentUser12['idCARTA_ASIG'];
+            $idAsignacionPDF = $currentUser12['idCARTA_ASIG'];
             echo '
                                     <tr>
                                         <td>' . $currentUser12['Codigo'] . '</td>
@@ -549,27 +550,33 @@ class User extends DB
 
     public function Incidencias($user)
     {
-        $query12 = $this->connect()->prepare('SELECT * FROM Incidencias ');
-        $query12->execute();
+        $query16 = $this->connect()->prepare('SELECT * FROM Incidencias ');
+        $query16->execute();
 
         echo '<table class="table table-hover">
                                     <tr>
                                         <th>Codigo</th>
                                         <th>Titulo</th>
+                                        <th>Lugar</th>
+                                        <th>Fecha</th>
+                                        <th>Hora</th>
                                         <th>Archivo</th>
-
                                     </tr>';
 
 
-        foreach ($query12 as $currentUser12) {
-            $idCompromisoPDF = $currentUser12['idCARTA_ASIG'];
+        foreach ($query16 as $currentUser16) {
+            $idIncidenciaPDF = $currentUser16['idIncidencia'];
             echo '
                                     <tr>
-                                        <td>' . $currentUser12['CodIncidencia'] . '</td>
-                                        <td>' . $currentUser12['Titulo'] . '</td>
-                                        <td><a href="" target="_blank">
-                                                 <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
-                                            </a>
+                                        <td>' . $currentUser16['CodIncidencia'] . '</td>
+                                        <td>' . $currentUser16['Titulo'] . '</td>
+                                        <td>' . $currentUser16['Lugar'] . '</td>
+                                        <td>' . $currentUser16['Fecha'] . '</td>
+                                        <td>' . $currentUser16['Hora'] . '</td>                                        
+                                        <td><a href="includes/Estructuras/Estudiantes/CartaAsignacionPDF.php?idInc='.$idIncidenciaPDF.'" target="_blank">
+                                        <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
+                                   </a>
+                               </td>
                                         </td>
                                     </tr> 
                                     ';

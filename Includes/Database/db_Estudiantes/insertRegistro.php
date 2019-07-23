@@ -3,33 +3,21 @@
 //nos conectamos a la BD`
 
 include'Conexion_Estudiante.php';
-include'../user_session.php';
-include'../user.php';
+
 $objData = new  Database();
-$userSession = new UserSession();
-$user = new User();
     
-$user->setUser($userSession->getCurrentUser());
-$us=$userSession->getCurrentUser();
-
-
-$sth1 = $objData->prepare('INSERT INTO registro_aistencias (CodRegistro, fk_idEstudiante,Fecha,Observacion) 
-SELECT (select concat("REG00",MAX(idRegistroAistencias)+1 ) from registro_aistencias),
-(select idEstudiante from estudiantes, usuarios where idusuario=fk_idUsuario_Est and usuario= :us),current_date(),"Entregado a tiempo"');
-$sth1->bindParam(':us', $us);
-$sth1->execute();
-
 $sth2 = $objData->prepare('UPDATE registro_aistencias SET Titulo = :titulo
 where idRegistroAistencias=(select MAX(idRegistroAistencias) from registro_aistencias, estudiantes, usuarios 
 where fk_idEstudiante = idestudiante and fk_idUsuario_Est = idusuario and usuario = :us)');
 
-$titulo = $_POST['titulo'];
+$practica = $_POST['practica']
+$practica = $_POST['practica'];;
 
 $sth2->bindParam(':titulo', $titulo);
+$sth2->bindParam(':titulo', $titulo);
+
 $sth2->bindParam(':us', $us);
 $sth2->execute();
-
-
 
 if (empty($_POST['Actividad_0'])) {  
 } else {

@@ -263,7 +263,7 @@ include 'Includes/Estructuras/links.html';
                                     <!-- text input -->
                                     <div class="form-group">
                                         <label>Práctica</label> 
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="practica">
                                         <label>Unidades de organización curricular</label> 
                                        <select class= "form-control">
                                         <option>Formación Básica</option>
