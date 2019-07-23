@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-07-2019 a las 22:57:37
+-- Tiempo de generación: 23-07-2019 a las 03:45:00
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -636,12 +636,23 @@ INSERT INTO `extensiones` (`idExtension`, `Telefono`, `Extension`) VALUES
 CREATE TABLE `incidencias` (
   `idIncidencia` int(11) NOT NULL,
   `CodIncidencia` varchar(7) DEFAULT NULL,
-  `fk_idEstudiante` int(11) NOT NULL,
+  `fk_idEstudiante_inc` int(11) NOT NULL,
   `Titulo` varchar(45) DEFAULT NULL,
-  `fk_idTipoIncidencia` int(11) NOT NULL,
-  `Observacion` varchar(100) DEFAULT NULL,
-  `AnexosPDF` longblob DEFAULT NULL
+  `Lugar` varchar(100) DEFAULT NULL,
+  `Fecha` date DEFAULT NULL,
+  `Hora` time DEFAULT NULL,
+  `Detalle` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `incidencias`
+--
+
+INSERT INTO `incidencias` (`idIncidencia`, `CodIncidencia`, `fk_idEstudiante_inc`, `Titulo`, `Lugar`, `Fecha`, `Hora`, `Detalle`) VALUES
+(1, 'INC001', 1, 'Fallo del sistema', 'UTPL', '2019-03-22', '10:00:00', 'Fallo en los sistemas de bases de datos'),
+(2, 'INC002', 1, 'Fallo del sistema', 'UTPL', '2019-03-22', '10:00:00', 'Fallo en los sistemas de bases de datos'),
+(3, 'INC003', 1, 'Fallo del sistema', 'UTPL', '2019-03-22', '10:00:00', 'Fallo en los sistemas de bases de datos'),
+(4, 'INC004', 1, 'Fallo del sistema', 'UTPL', '2019-03-22', '10:00:00', 'Fallo en los sistemas de bases de datos');
 
 -- --------------------------------------------------------
 
@@ -1175,26 +1186,6 @@ INSERT INTO `tipo_gp` (`idTipoGP`, `TipoGP`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo_incidencias`
---
-
-CREATE TABLE `tipo_incidencias` (
-  `idTipoIncidencia` int(11) NOT NULL,
-  `TipoIncidencia` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `tipo_incidencias`
---
-
-INSERT INTO `tipo_incidencias` (`idTipoIncidencia`, `TipoIncidencia`) VALUES
-(1, 'Personal'),
-(2, 'Academica'),
-(3, 'Tecnica');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tutoracademico_estudiante`
 --
 
@@ -1544,9 +1535,8 @@ ALTER TABLE `extensiones`
 -- Indices de la tabla `incidencias`
 --
 ALTER TABLE `incidencias`
-  ADD PRIMARY KEY (`idIncidencia`),
-  ADD KEY `fk_Incidencias_TipoIncidencias1` (`fk_idTipoIncidencia`),
-  ADD KEY `fk_Incidencias_Estudiantes1` (`fk_idEstudiante`);
+  ADD PRIMARY KEY (`idIncidencia`,`fk_idEstudiante_inc`),
+  ADD KEY `fk_Incidencias_Estudiantes1` (`fk_idEstudiante_inc`);
 
 --
 -- Indices de la tabla `informeconsolidado`
@@ -1725,12 +1715,6 @@ ALTER TABLE `tipo_gp`
   ADD PRIMARY KEY (`idTipoGP`);
 
 --
--- Indices de la tabla `tipo_incidencias`
---
-ALTER TABLE `tipo_incidencias`
-  ADD PRIMARY KEY (`idTipoIncidencia`);
-
---
 -- Indices de la tabla `tutoracademico_estudiante`
 --
 ALTER TABLE `tutoracademico_estudiante`
@@ -1902,7 +1886,7 @@ ALTER TABLE `extensiones`
 -- AUTO_INCREMENT de la tabla `incidencias`
 --
 ALTER TABLE `incidencias`
-  MODIFY `idIncidencia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idIncidencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `informeconsolidado`
@@ -2037,12 +2021,6 @@ ALTER TABLE `tipo_gp`
   MODIFY `idTipoGP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `tipo_incidencias`
---
-ALTER TABLE `tipo_incidencias`
-  MODIFY `idTipoIncidencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT de la tabla `tutoracademico_estudiante`
 --
 ALTER TABLE `tutoracademico_estudiante`
@@ -2171,8 +2149,7 @@ ALTER TABLE `eventualidad`
 -- Filtros para la tabla `incidencias`
 --
 ALTER TABLE `incidencias`
-  ADD CONSTRAINT `fk_Incidencias_Estudiantes1` FOREIGN KEY (`fk_idEstudiante`) REFERENCES `estudiantes` (`idEstudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Incidencias_TipoIncidencias1` FOREIGN KEY (`fk_idTipoIncidencia`) REFERENCES `tipo_incidencias` (`idTipoIncidencia`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Incidencias_Estudiantes1` FOREIGN KEY (`fk_idEstudiante_inc`) REFERENCES `estudiantes` (`idEstudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `informeconsolidado`
