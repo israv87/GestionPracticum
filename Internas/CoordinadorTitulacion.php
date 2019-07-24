@@ -138,7 +138,7 @@ include 'Includes/Estructuras/links.html';
                             <!-- Add the bg color to the header using any of the bg-* classes -->
                             <div class="widget-user-header bg-yellow">
                                 <div class="widget-user-image">
-                                    <h3 class="widget-user-username">Proyecto Asignado:</h3>
+                                    <h3 class="widget-user-username">Coordinador de Sistemas Informáticos:</h3>
                                     <h3>
                                         <?php echo $user->getPE_Proyecto2()?>
                                     </h3>
@@ -512,11 +512,12 @@ include 'Includes/Estructuras/links.html';
                                         <input type="text" class="form-control" > <br>
                                         <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
                                                     <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
-        </div>
-      </div></div>
-      </div>
-      </div></div>
-      </div>
-</body>
-
-</html>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                    </body>
+                                                    </html>
