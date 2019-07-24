@@ -86,6 +86,9 @@ include '../includes/estructuras/links.html';
             </ul>
         </nav>
     </div>  
+    <div id="resumenempresa">
+     
+
     <div id= "postulaciones">
     <div class="container">
             <div class="page-header">
