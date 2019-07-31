@@ -47,8 +47,8 @@ include '../includes/estructuras/links.html';
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset nav-lateral-list-menu">
                 <ul class="list-unstyled">
-                <li><a href="Empresas/postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
-                <li><a href="Empresas/Estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de proyecto</a></li>
+                <li><a href="Empresas/postulación.php"><i ></i>&nbsp;&nbsp; Postulación</a></li>
+                <li><a href="Empresas/Estadodeproyectos.php"><i></i>&nbsp;&nbsp; Estado de proyecto</a></li>
                 </li>
                 </ul>
             </div>
@@ -87,7 +87,6 @@ include '../includes/estructuras/links.html';
         </nav>
     </div>  
     <div id="resumenempresa">
-     
 
     <div id= "postulaciones">
     <div class="container">
