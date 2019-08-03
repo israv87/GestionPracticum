@@ -8,93 +8,7 @@ class PDF extends FPDF
 {
     private $resultado1;
     
-    function CellFit($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='', $scale=false, $force=true)
-    {
-        //Get string width
-        $str_width=$this->GetStringWidth($txt);
-
-        //Calculate ratio to fit cell
-        if($w==0)
-            $w = $this->w-$this->rMargin-$this->x;
-        $ratio = ($w-$this->cMargin*2)/$str_width;
-
-        $fit = ($ratio < 1 || ($ratio > 1 && $force));
-        if ($fit)
-        {
-            if ($scale)
-            {
-                //Calculate horizontal scaling
-                $horiz_scale=$ratio*100.0;
-                //Set horizontal scaling
-                $this->_out(sprintf('BT %.2F Tz ET',$horiz_scale));
-            }
-            else
-            {
-                //Calculate character spacing in points
-                $char_space=($w-$this->cMargin*2-$str_width)/max($this->MBGetStringLength($txt)-1,1)*$this->k;
-                //Set character spacing
-                $this->_out(sprintf('BT %.2F Tc ET',$char_space));
-            }
-            //Override user alignment (since text will fill up cell)
-            $align='';
-        }
-
-        //Pass on to Cell method
-        $this->Cell($w,$h,$txt,$border,$ln,$align,$fill,$link);
-
-        //Reset character spacing/horizontal scaling
-        if ($fit)
-            $this->_out('BT '.($scale ? '100 Tz' : '0 Tc').' ET');
-    }
-
-    //Cell with horizontal scaling only if necessary
-    function CellFitScale($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='')
-    {
-        $this->CellFit($w,$h,$txt,$border,$ln,$align,$fill,$link,true,false);
-    }
-
-    //Cell with horizontal scaling always
-    function CellFitScaleForce($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='')
-    {
-        $this->CellFit($w,$h,$txt,$border,$ln,$align,$fill,$link,true,true);
-    }
-
-    //Cell with character spacing only if necessary
-    function CellFitSpace($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='')
-    {
-        $this->CellFit($w,$h,$txt,$border,$ln,$align,$fill,$link,false,false);
-    }
-
-    //Cell with character spacing always
-    function CellFitSpaceForce($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='')
-    {
-        //Same as calling CellFit directly
-        $this->CellFit($w,$h,$txt,$border,$ln,$align,$fill,$link,false,true);
-    }
-
-    //Patch to also work with CJK double-byte text
-    function MBGetStringLength($s)
-    {
-        if($this->CurrentFont['type']=='Type0')
-        {
-            $len = 0;
-            $nbbytes = strlen($s);
-            for ($i = 0; $i < $nbbytes; $i++)
-            {
-                if (ord($s[$i])<128)
-                    $len++;
-                else
-                {
-                    $len++;
-                    $i++;
-                }
-            }
-            return $len;
-        }
-        else
-            return strlen($s);
-    }
-
+  
     function Header()
 {  include('../../Database/db_Estudiantes/Conexion_Estudiante.php');
     include('../../Database/db_PDF/conexion_db_pdf.php');
@@ -183,12 +97,12 @@ $idReg = $_GET['idReg'];
     // Movernos a la derecha
     $this->Cell(45);
     // Título
-    $this->CellFitScale(100,6,utf8_decode('NOMBRE DE LA TITULACIÓN:'),1,0,'c');
+    $this->Cell(100,6,utf8_decode('NOMBRE DE LA TITULACIÓN:'),1,0,'c');
     $this->SetFont('Arial','',12);
-    $this->CellFitScale(100,6,utf8_decode('Sistemas Informáticos y Computación'),1,1,'c');
+    $this->Cell(100,6,utf8_decode('Sistemas Informáticos y Computación'),1,1,'c');
     $this->Cell(45);
     $this->SetFont('Arial','B',12);
-    $this->CellFitScale(100,6,utf8_decode('REGISTRO Y CONTROL DE ASISTENCIA DE:'),1,0,'c');
+    $this->Cell(100,6,utf8_decode('REGISTRO Y CONTROL DE ASISTENCIA DE:'),1,0,'c');
     $this->SetFont('Arial','',12);
 
     foreach ($sth as $currentUserPDF1) {
@@ -198,7 +112,7 @@ $idReg = $_GET['idReg'];
   
     $this->Cell(45);
     $this->SetFont('Arial','B',12);
-    $this->CellFitScale(100,6,utf8_decode('PRÁCTICAS PRE PROFESIONALES:'),1,0,'c');
+    $this->Cell(100,6,utf8_decode('PRÁCTICAS PRE PROFESIONALES:'),1,0,'c');
     $this->SetFont('Arial','',12);
     
     foreach ($sth2 as $currentUserPDF2) {
@@ -206,51 +120,51 @@ $idReg = $_GET['idReg'];
     }
     $this->Cell(45);
     $this->SetFont('Arial','B',12);
-    $this->CellFitScale(100,6,utf8_decode('GESTIÓN PRODUCTIVA/PRÁCTICUM:'),1,0,'c');
+    $this->Cell(100,6,utf8_decode('GESTIÓN PRODUCTIVA/PRÁCTICUM:'),1,0,'c');
     $this->SetFont('Arial','',12);
     foreach ($sth3 as $currentUserPDF3) {
-        $this->CellFitScale(100,6,utf8_decode($currentUserPDF3['NivelGP']),1,1,'c');
+        $this->Cell(100,6,utf8_decode($currentUserPDF3['NivelGP']),1,1,'c');
     }
     
     $this->Cell(45);
     $this->SetFont('Arial','B',12);
-    $this->CellFitScale(100,6,utf8_decode('Periodo Academico:'),1,0);
+    $this->Cell(100,6,utf8_decode('Periodo Academico:'),1,0);
     $this->SetFont('Arial','',12);
 
-    $this->CellFitScale(100,6,utf8_decode('Abril - Agosto 2019'),1,1,'c');
+    $this->Cell(100,6,utf8_decode('Abril - Agosto 2019'),1,1,'c');
     $this->Cell(45);
     $this->Ln(10);
     
     $this->SetFont('Arial','B',12);
     $this->Cell(1);
-    $this->CellFitScale(45,6,utf8_decode('Institución:'),1,0,'c');
+    $this->Cell(45,6,utf8_decode('Institución:'),1,0,'c');
     $this->SetFont('Arial','',12);
     foreach ($sth4 as $currentUserPDF4) {
-        $this->CellFitScale(200,6,utf8_decode($currentUserPDF4['Institucion']),1,1,'c');
+        $this->Cell(200,6,utf8_decode($currentUserPDF4['Institucion']),1,1,'c');
     }
     $this->Cell(1);
     $this->SetFont('Arial','B',12);
    
-    $this->CellFitScale(45,6,utf8_decode('Dependencia:'),1,0,'c');
+    $this->Cell(45,6,utf8_decode('Dependencia:'),1,0,'c');
     $this->SetFont('Arial','',12);
     foreach ($sth5 as $currentUserPDF5) {
-        $this->CellFitScale(200,6, $currentUserPDF5['Dependencia'],1,1,'c');
+        $this->Cell(200,6, $currentUserPDF5['Dependencia'],1,1,'c');
     }
     $this->Cell(1);
     $this->SetFont('Arial','B',12);
-    $this->CellFitScale(45,6,utf8_decode('Tutor Externo:'),1,0,'c');
+    $this->Cell(45,6,utf8_decode('Tutor Externo:'),1,0,'c');
     $this->SetFont('Arial','',12);
     foreach ($sth6 as $currentUserPDF6) {
-        $this->CellFitScale(200,6, $currentUserPDF6['te'],1,1,'c');
+        $this->Cell(200,6, $currentUserPDF6['te'],1,1,'c');
     }
     $this->Cell(1);
     $this->SetFont('Arial','B',12);
-    $this->CellFitScale(45,6,utf8_decode('Estudiante:'),1,0,'c');
+    $this->Cell(45,6,utf8_decode('Estudiante:'),1,0,'c');
 
    
     $this->SetFont('Arial','',12);
     foreach ($sth7 as $currentUserPDF7) {
-        $this->CellFitScale(200,6, $currentUserPDF7['estudiante'],1,1,'c');
+        $this->Cell(200,6, $currentUserPDF7['estudiante'],1,1,'c');
     }
     // Salto de línea
     $this->Ln(10);
@@ -259,12 +173,12 @@ $idReg = $_GET['idReg'];
    
     $this->SetFont('Arial','B',12);
     
-    $this->CellFitScale(75,6,utf8_decode('Actividad'),1,0,'c');
-    $this->CellFitScale(30,6,utf8_decode('Fecha'),1,0,'c');
-    $this->CellFitScale(35,6,utf8_decode('Día'),1,0,'c');
-    $this->CellFitScale(35,6,utf8_decode('Hora de Entrada'),1,0,'c'); 
-    $this->CellFitScale(35,6,utf8_decode('Hora de salida'),1,0,'c');
-    $this->CellFitScale(35,6,utf8_decode('Horas Trabajadas'),1,1,'c');
+    $this->Cell(75,6,utf8_decode('Actividad'),1,0,'c');
+    $this->Cell(30,6,utf8_decode('Fecha'),1,0,'c');
+    $this->Cell(35,6,utf8_decode('Día'),1,0,'c');
+    $this->Cell(35,6,utf8_decode('Hora de Entrada'),1,0,'c'); 
+    $this->Cell(35,6,utf8_decode('Hora de salida'),1,0,'c');
+    $this->Cell(35,6,utf8_decode('Horas Trabajadas'),1,1,'c');
   
     foreach ($sth8 as $currentUserPDF8) {
        
@@ -275,27 +189,27 @@ $idReg = $_GET['idReg'];
         $day = date('w',strtotime($scheduled_day));
         $scheduled_day = date(strtotime(($days[$day])))." $days[$day]";  
 
-        $this->CellFitScale(75,6, utf8_decode($currentUserPDF8['Actividad']),1,0,'c');
-        $this->CellFitScale(30,6, utf8_decode($currentUserPDF8['Fecha']),1,0,'c');
-        $this->CellFitScale(35,6,utf8_decode($scheduled_day) ,1,0,'c');
-        $this->CellFitScale(35,6, utf8_decode($currentUserPDF8['HEntrada']),1,0,'c');
-        $this->CellFitScale(35,6, utf8_decode($currentUserPDF8['HSalida']),1,0,'c');
-        $this->CellFitScale(35,6, utf8_decode($currentUserPDF8['HorasTrabajadas']),1,1,'c');
+        $this->Cell(75,6, utf8_decode($currentUserPDF8['Actividad']),1,0,'c');
+        $this->Cell(30,6, utf8_decode($currentUserPDF8['Fecha']),1,0,'c');
+        $this->Cell(35,6,utf8_decode($scheduled_day) ,1,0,'c');
+        $this->Cell(35,6, utf8_decode($currentUserPDF8['HEntrada']),1,0,'c');
+        $this->Cell(35,6, utf8_decode($currentUserPDF8['HSalida']),1,0,'c');
+        $this->Cell(35,6, utf8_decode($currentUserPDF8['HorasTrabajadas']),1,1,'c');
         }
         foreach ($sth9 as $currentUserPDF9) {
        
             $this->SetFont('Arial','B',12);
             $this->Cell(175,6,utf8_decode(''),1,0,'c');
-            $this->CellFitScale(35,6,utf8_decode('Total'),1,0,'c');
-            $this->CellFitScale(35,6, utf8_decode($currentUserPDF9['total_horas_trabajadas']),1,1,'c');
+            $this->Cell(35,6,utf8_decode('Total'),1,0,'c');
+            $this->Cell(35,6, utf8_decode($currentUserPDF9['total_horas_trabajadas']),1,1,'c');
             }
       
         
         $this->Ln(5);
         $this->SetFont('Arial','B',12);
-        $this->CellFitScale(45,6,utf8_decode('Observaciones'),1,0,'c');
+        $this->Cell(45,6,utf8_decode('Observaciones'),1,0,'c');
         $this->SetFont('Arial','',12);
-        $this->CellFitScale(200,6,'Ninguna',1,1,'c');
+        $this->Cell(200,6,'Ninguna',1,1,'c');
        
 }
 

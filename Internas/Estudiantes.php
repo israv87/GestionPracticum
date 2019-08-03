@@ -38,11 +38,7 @@
                 <div class="page-header">
                     <h2 class="all-tittles">Estudiantes <small>Resumen</small></h2>
                 </div>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="#">Examples</a></li>
-                    <li class="active">User profile</li>
-                </ol>
+                
             </section>
             <!-- Main content -->
             <section class="content">

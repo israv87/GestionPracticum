@@ -10,10 +10,9 @@ $sth2 = $objData->prepare('UPDATE registro_aistencias SET Titulo = :titulo
 where idRegistroAistencias=(select MAX(idRegistroAistencias) from registro_aistencias, estudiantes, usuarios 
 where fk_idEstudiante = idestudiante and fk_idUsuario_Est = idusuario and usuario = :us)');
 
-$practica = $_POST['practica']
-$practica = $_POST['practica'];;
+$practica = $_POST['titulo'];
 
-$sth2->bindParam(':titulo', $titulo);
+
 $sth2->bindParam(':titulo', $titulo);
 
 $sth2->bindParam(':us', $us);
