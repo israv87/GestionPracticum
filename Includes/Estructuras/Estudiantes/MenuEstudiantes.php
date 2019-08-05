@@ -15,7 +15,7 @@
         <i class="zmdi zmdi-power"></i>
     </li>
     <li class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom"
-        title="Buscar libro">
+        title="Buscar">
         <i class="zmdi zmdi-search"></i>
     </li>
     <li class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">

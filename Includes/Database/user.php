@@ -404,7 +404,6 @@ class User extends DB
         <tr>
             <th>Codigo</th>
             <th>Empresa</th>
-            <th>Convenio</th>
             <th>Codigo de Convenio</th>
             <th>Dependencia</th>
             <th>Encargado del estudinte</th>
@@ -440,7 +439,6 @@ class User extends DB
                         <tr>
                         <td>'.$currentUser11['CodProyecto'].'</td>
                         <td>'.$currentUser11['NombreEmpresa'].'</td>
-                        <td>'.$currentUser11['convenio'].'</td>
                         <td>'.$currentUser11['CodConvenio'].'</td>
                         <td>'.$currentUser11['Institucion'].'</td>
                         <td>'.$currentUser11['PrimerNombre'].' '.$currentUser11['SegundoNombre'].' '
@@ -571,14 +569,14 @@ class User extends DB
                                         <td>' . $currentUser16['CodIncidencia'] . '</td>
                                         <td>' . $currentUser16['Titulo'] . '</td>
                                         <td>' . $currentUser16['Lugar'] . '</td>
-                                        <td>' . $currentUser16['Fecha'] . '</td>
-                                        <td>' . $currentUser16['Hora'] . '</td>                                        
-                                        <td><a href="includes/Estructuras/Estudiantes/CartaAsignacionPDF.php?idInc='.$idIncidenciaPDF.'" target="_blank">
-                                        <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
-                                   </a>
+
                                </td>
                                         </td>
-                                    </tr> 
+                                                                          <td>' . $currentUser16['Fecha'] . '</td>
+                                        <td>' . $currentUser16['Hora'] . '</td>                                        
+                                        <td><a href="includes/Estructuras/Estudiantes/IncidenciaPDF.php?idInc='.$idIncidenciaPDF.'" target="_blank">
+                                        <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
+                                   </a>  </tr> 
                                     ';
         }
         echo '</table>';

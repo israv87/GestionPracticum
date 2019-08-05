@@ -3,8 +3,16 @@
 //nos conectamos a la BD`
 
 include'Conexion_Estudiante.php';
-
+include'../user_session.php';
+include'../user.php';
 $objData = new  Database();
+$userSession = new UserSession();
+$user = new User();
+    
+$user->setUser($userSession->getCurrentUser());
+$us=$userSession->getCurrentUser();
+
+
     
 $sth2 = $objData->prepare('UPDATE registro_aistencias SET Titulo = :titulo
 where idRegistroAistencias=(select MAX(idRegistroAistencias) from registro_aistencias, estudiantes, usuarios 
