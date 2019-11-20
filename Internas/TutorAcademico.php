@@ -1,6 +1,3 @@
-<!-- 
-* Copyright 2016 Carlos Eduardo Alfaro Orellana
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -58,9 +55,6 @@ include 'includes/estructuras/links.html';
                include_once 'Includes/Estructuras/Estudiantes/MenuEstudiantes.php';
                ?>
         </nav>
-
-
-
 
 
 <div id="portafolio">
@@ -312,7 +306,6 @@ include 'includes/estructuras/links.html';
                   <th>Detalle</th>
                   <th>Archivo</th>
                   <th>Validado</th>
-                  <th>Calificado</th>
                 </tr>
                 <tr>
                   <td>REG0154</td>
