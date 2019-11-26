@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Estudiantes</title>
+    <title>Tutor Externo</title>
     <?php 
         include_once 'Includes/Estructuras/links.html';
         include_once 'Includes/Estructuras/Estudiantes/Navegacion.html';

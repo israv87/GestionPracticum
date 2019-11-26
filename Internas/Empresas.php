@@ -153,10 +153,11 @@ include '../includes/estructuras/links.html';
                                                     </div>
           </div>
           </div>
-<div id= "Estadoproyecto"
+<div id= "Estadoproyecto">
           <div class="container">
             <div class="page-header">
               <h1 class="all-tittles">Empresas<small>Estado de proyecto</small></h1>
+            </div>
             </div>
         </div>
         <div class="row">

@@ -68,7 +68,7 @@ include '../../includes/estructuras/links.html';
 </body>
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Empresas<small>Postulacion</small></h1>
+              <h1 class="all-tittles">Empresas<small>Postulación</small></h1>
             </div>
         </div>
         <div class="row">
@@ -81,7 +81,7 @@ include '../../includes/estructuras/links.html';
                                                 style="width: 90%;"></td>
                                         <td class="align-middle">
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                            <h5>Postulacion Empresas</h5>
+                                            <h5>Postulación Empresas</h5>
                                         </td>
 
                                     </tr>
@@ -106,13 +106,26 @@ include '../../includes/estructuras/links.html';
                                         <input type="text" class="form-control" placeholder="Dependencia ...">
                                         <label>Nombre y Apellido del Encargado</label>
                                         <input type="text" class="form-control" placeholder="Encargado ...">
-                                        
+                                         <label>Nombre del proyecto</label>
+                                         <input type="text" class="form-control" placeholder="Proyecto ...">
+                                        <label>Perfil del Estdudiente (Subir Perfil Estudiante)</label>
+                                        <form enctype="multipart/form-data" action="uploader.php" method="POST">
+<input name="uploadedfile" type="file" />
+<input type="submit" value="Subir archivo" />
+</form>
+<br>
+<label>Cronograma</label>
+                                        <form enctype="multipart/form-data" action="uploader.php" method="POST">
+<input name="uploadedfile" type="file" />
+<input type="submit" value="Subir archivo" />
+<br>
+<label>Periodo Académico</label>
+                                        <input type="text" class="form-control" placeholder="Especificar periodo académico ...">
                                         <label>E-mail del encargado del proyecto</label>
                                         <input type="text" class="form-control" placeholder="Email ...">
                                         <label>Telefono del encargado del proyecto</label>
                                         <input type="text" class="form-control" placeholder="Telefono ...">
-                                        <label>Nombre del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Proyecto ...">
+                                       
                                         <label>Seleccione el número de estudiantes requeridos</label>
                                         <select class= "form-control">
                                         <option>1</option>
