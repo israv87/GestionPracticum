@@ -34,6 +34,7 @@ include '../../includes/estructuras/links.html';
                 <ul class="list-unstyled">
                 <li><a href="#"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
                 <li><a href="estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de Proyectos</a></li>
+                <li><a href="convenios.php"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
                 
             </ul>
             </div>
@@ -66,9 +67,9 @@ include '../../includes/estructuras/links.html';
             </ul>
         </nav>
 </body>
-        <div class="container">
+<div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Empresas<small>Postulación</small></h1>
+              <h1 class="all-tittles">Empresas<small>Postulacion</small></h1>
             </div>
         </div>
         <div class="row">
@@ -81,7 +82,7 @@ include '../../includes/estructuras/links.html';
                                                 style="width: 90%;"></td>
                                         <td class="align-middle">
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                            <h5>Postulación Empresas</h5>
+                                            <h5>Postulación - Empresas</h5>
                                         </td>
 
                                     </tr>
@@ -89,6 +90,8 @@ include '../../includes/estructuras/links.html';
                             </table>
 
                         </div>
+                        </div>
+</div>
                         <div class="col-sm-6">
                             <!-- /.box-header -->
                             <div class="box-body">

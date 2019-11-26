@@ -32,10 +32,10 @@ include '../../includes/estructuras/links.html';
             <div class="nav-lateral-divider full-reset"></div>
             <div class="full-reset nav-lateral-list-menu">
                 <ul class="list-unstyled">
-                <li><a href="Postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
-                <li><a href="#"><i class=></i>&nbsp;&nbsp; Estado de Proyectos</a></li>
-                <li><a href="convenios.php"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
-
+                <li><a href="postulación.php"><i class=></i>&nbsp;&nbsp; Postulación</a></li>
+                <li><a href="estadodeproyectos.php"><i class=></i>&nbsp;&nbsp; Estado de Proyectos</a></li>
+                <li><a href="#"><i class=></i>&nbsp;&nbsp; Convenios</a></li>
+                
             </ul>
             </div>
         </div>
@@ -47,7 +47,7 @@ include '../../includes/estructuras/links.html';
                    <img src="../../assets/imagenes/template/institution.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
-                    <span class="all-tittles">Estado de proyecto</span>
+                    <span class="all-tittles">Convenios</span>
                 </li>
                 <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                     <i class="zmdi zmdi-power"></i>
@@ -67,9 +67,9 @@ include '../../includes/estructuras/links.html';
             </ul>
         </nav>
 </body>
-        <div class="container">
+<div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Empresas<small>Estado de proyecto</small></h1>
+              <h1 class="all-tittles">Empresas<small>Convenios</small></h1>
             </div>
         </div>
         <div class="row">
@@ -82,7 +82,7 @@ include '../../includes/estructuras/links.html';
                                                 style="width: 90%;"></td>
                                         <td class="align-middle">
                                             <h3>UNIVERSIDAD TECNICA PARTICULAR DE LOJA</h3>
-                                            <h5>Estado de proyecto - Empresas</h5>
+                                            <h5>Convenios - Empresas</h5>
                                         </td>
 
                                     </tr>
@@ -92,33 +92,10 @@ include '../../includes/estructuras/links.html';
                         </div>
                         </div>
 </div>
-                    <table id="example1" class="table table-bordered table-striped">
-        <thead>
-        <tr>
 
+aqui
+                                                    </div>
+          </div>
+          </div>
+        
 
-            <th>Proyecto</th>
-            <th>Convenio </th>
-
-            <th>Dependencia</th>
-            <th>Encargado</th>
-            <th>Número de estudiantes</th>
-            <th>Estado</th>
-        </tr>
-        <tr>
-            <td>Proyecto ASCENDERE </td>
-            <td>Vigente </td>
-            <td>Dirección de Innovación, Formación y Evaluación Docente </td>
-            <td> Maria Isabel Loaiza </td>
-            <td> 2 </td>
-          <td>  <span class="label label-success">Validado</span> <td/>
-
-
-</tr>
-    </thead>
-    <tbody>
-
-        </tfoot>
-        </table>
-    </div>
-</div>
