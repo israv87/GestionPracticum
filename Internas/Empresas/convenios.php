@@ -92,8 +92,18 @@ include '../../includes/estructuras/links.html';
                         </div>
                         </div>
 </div>
-
-aqui
+<div class="col-sm-6">
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <form role="form">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Nombre de la Empresa</label>
+                                        <input type="text" class="form-control" placeholder="Empresa ...">
+                                        <label>Nombre de la Institución</label>
+                                        <input type="text" class="form-control" placeholder="Institución ...">
+                                        <label>Dirección</label>
+                                        <input type="text" class="form-control" placeholder="Dirección ...">
                                                     </div>
           </div>
           </div>
