@@ -8,13 +8,15 @@
     <?php
 include '../../includes/estructuras/links.html';
 ?>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
 
     
 </head>
 <body>
+
+
     <div class="navbar-lateral full-reset">
         <div class="visible-xs font-movile-menu mobile-menu-button"></div>
         <div class="full-reset container-menu-movile nav-lateral-scroll">
@@ -98,53 +100,11 @@ include '../../includes/estructuras/links.html';
                                 <form role="form">
                                     <!-- text input -->
                                     <div class="form-group">
-                                        <label>Nombre de la Empresa / Institución</label>
-                                        <input type="text" class="form-control" placeholder="Empresa ...">
-                                        <label>¿Mantiene su empresa un convenio con la carrera de Sistemas Informáticos y Computación de la UTPL?</label>
-                                        <select class= "form-control">
-                                        <option>Si</option>
-                                            <option>No</option>
-                                        </select>
-                                        <label>Nombre de la dependencia</label>
-                                        <input type="text" class="form-control" placeholder="Dependencia ...">
-                                        <label>Nombre y Apellido del Encargado</label>
-                                        <input type="text" class="form-control" placeholder="Encargado ...">
-                                         <label>Nombre del proyecto</label>
-                                         <input type="text" class="form-control" placeholder="Proyecto ...">
-                                        <label>Perfil del Estdudiente (Subir Perfil Estudiante)</label>
-                                        <form enctype="multipart/form-data" action="uploader.php" method="POST">
-<input name="uploadedfile" type="file" />
-<input type="submit" value="Subir archivo" />
-</form>
-<br>
-<label>Cronograma</label>
-                                        <form enctype="multipart/form-data" action="uploader.php" method="POST">
-<input name="uploadedfile" type="file" />
-<input type="submit" value="Subir archivo" />
-<br>
-<label>Periodo Académico</label>
-                                        <input type="text" class="form-control" placeholder="Especificar periodo académico ...">
-                                        <label>E-mail del encargado del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Email ...">
-                                        <label>Telefono del encargado del proyecto</label>
-                                        <input type="text" class="form-control" placeholder="Telefono ...">
-                                       
-                                        <label>Seleccione el número de estudiantes requeridos</label>
-                                        <select class= "form-control">
-                                        <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                        <label>Por favor, indique las actividades a desarrollarse o entregables esperados del proyecto con un cronograma tentativo de octubre 2018 a febrero 2019. <br> Por ejemplo:
-<br>  1. Levantamiento de requerimientos - Del 8 al 19 de octubre
- <br> 2. Diseño de solución arquitectónica - Del 22 al 31 de octubre</label>
-                                        <input type="text" class="form-control" placeholder="Actividades ...">
-                                        <button type="Submit" class="btn btn-block btn-default bg-blue" >Enviar</button>
-                                                    <button type="button" class="btn btn-block btn-default bg-yellow" >Borrar</button>
-
-                                                    </div>
-          </div>
+                                    <div class="row">
+<div class="col-xs-12 col-sm-6">Contenido de la primera columna</div>
+<div class="col-xs-12 col-sm-6">Contenido de la segunda columna</div>
+</div>
+	</div>
           </div>
         
 

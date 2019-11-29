@@ -104,7 +104,39 @@ include '../../includes/estructuras/links.html';
                                         <input type="text" class="form-control" placeholder="Institución ...">
                                         <label>Dirección</label>
                                         <input type="text" class="form-control" placeholder="Dirección ...">
-                                                    </div>
+                                        <label>Tipo</label>
+                                        <select class= "form-control">
+                                        <option>PYME</option>
+                                            <option>Grnd</option>
+                                        </select>
+                                        <label>Área especialización</label>
+                                        <input type="text" class="form-control" placeholder="Áreas ...">
+                                        <label>Ha tenido convenios</label>
+                                        <select class= "form-control">
+                                        <option>Si</option>
+                                            <option>No</option>
+                                        </select>
+                                        <label>Correo</label>
+                                        <input type="text" class="form-control" placeholder="Correo ...">
+                                        <label>Página Web</label>
+                                        <input type="text" class="form-control" placeholder="Página web ...">
+                                        <label>Télefono</label>
+                                        <input type="text" class="form-control" placeholder="Télefono ...">
+                                        <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="Gerente">
+  <label class="form-check-label" for="Gerente">
+    Gerente
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="Encargado">
+  <label class="form-check-label" for="Encargado">
+    Encargado 
+  </label>
+  <button type="Submit" class="btn btn-block btn-default bg-blue" >Solicitar</button>
+</div>
+
+                                        </div>
           </div>
           </div>
         
