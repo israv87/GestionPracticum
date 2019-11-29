@@ -401,6 +401,7 @@ $this->CellFitScale(20,6,$monthNameSpanish,0,0,'c');
 
     $this->MultiCell(170,6,utf8_decode("Magister / Doctor 
 ".$p_cord." ".$s_cord." ".$ap_cord." ".$am_cord."
+
 COORDINADOR DE LA TITULACIÓN DE SISTEMAS INFORMÁTICOS Y COMPUCAIóN DE LA UTPL
 
 Estimado Magister/Doctor:
@@ -423,13 +424,13 @@ Atentamente,
     
          f)________________________		        	        f)_____________________
     ".$p_est." ".$s_est." ".$ap_est." ".$am_est."                 "	.$p_t_ext." ".$s_t_ext." ".$ap_t_ext." ".$am_t_ext."	
-                              Estudiante                                             Tutor Externo
+                         Estudiante                                             Tutor Externo
                                 
 
 
                                                 f)______________________
                                               ".$p_t_ac." ".$s_t_ac." ".$ap_t_ac." ".$am_t_ac."
-                                    Tutor académico de la práctica pre profesional 
+                                    Tutor Académico de la Práctica Pre Profesional 
                                                     ".$consulta9.": ".$consulta10."
     "),0,'J',false);
 
