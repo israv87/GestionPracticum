@@ -101,9 +101,47 @@ include '../../includes/estructuras/links.html';
                                     <!-- text input -->
                                     <div class="form-group">
                                     <div class="row">
-<div class="col-xs-12 col-sm-6">Contenido de la primera columna</div>
-<div class="col-xs-12 col-sm-6">Contenido de la segunda columna</div>
+<div class="col-xs-12 col-sm-6">
+<label>Nombre Proyecto</label>
+ <input type="text" class="form-control" placeholder="">
+                                        <label>Descripción</label>
+                                        <input type="text" class="form-control" placeholder="">
+                                        <label>Periodo</label>
+                                        <select class= "form-control">
+                                        <option>Oct2019/Feb2020</option>
+                                            <option>Abril2020/Agosto2020</option>
+                                        </select>
+                                        <div><label>Encargado</label>
+ <input type="text" class="form-control" placeholder=""><input type="reset" value="Editar">
 </div>
+<div><label>Email</label>
+ <input type="text" class="form-control" placeholder=""><input type="reset" value="Editar">
+ 
+
+
+</div>
+</div>
+<div class="col-xs-12 col-sm-6">
+<div><label>Télefono</label>
+ <input type="text" class="form-control" placeholder=""><input type="reset" value="Editar"></div>
+<label>Estudiantes Requeridos</label>
+                                        <select class= "form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+</select>
+<label>Ubicación</label>
+ <input type="text" class="form-control" placeholder="">
+ <label>Cronográma</label>
+ <input type="file" name="archivo" title="Cronograma" id="importData" accept=".xls,.xlsx" />
+ <label>Información</label>
+ <input type="file" name="archivo" title="Cronograma" id="importData" accept=".docx" />
+ <label>Lineamientos</label>
+ <input type="file" name="archivo" title="Cronograma" id="importData" accept=".pdf" />
+</div>
+<div class="col-xs-12 col-sm-6">
 	</div>
           </div>
         

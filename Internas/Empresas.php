@@ -51,7 +51,7 @@ include '../includes/estructuras/links.html';
                 <ul class="list-unstyled">
                 <li><a href="Empresas/postulación.php"><i ></i>&nbsp;&nbsp; Postulación</a></li>
                 <li><a href="Empresas/Estadodeproyectos.php"><i></i>&nbsp;&nbsp; Estado de proyecto</a></li>
-                <li><a href="Empresas/convenios.php"><i></i>&nbsp;&nbsp; convenios</a></li>
+                <li><a href="Empresas/convenios.php"><i></i>&nbsp;&nbsp; Convenios</a></li>
                 </li>
                 </ul>
             </div>
