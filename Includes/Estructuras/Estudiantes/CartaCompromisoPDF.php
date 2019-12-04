@@ -402,7 +402,7 @@ $this->CellFitScale(20,6,$monthNameSpanish,0,0,'c');
     $this->MultiCell(170,6,utf8_decode("Magister / Doctor 
 ".$p_cord." ".$s_cord." ".$ap_cord." ".$am_cord."
 
-COORDINADOR DE LA TITULACIÓN DE SISTEMAS INFORMÁTICOS Y COMPUCAIóN DE LA UTPL
+COORDINADOR DE LA TITULACIÓN DE SISTEMAS INFORMÁTICOS Y COMPUTACIÓN 
 
 Estimado Magister/Doctor:
 
@@ -411,7 +411,7 @@ Yo, ".$p_est." ".$s_est." ".$ap_est." ".$am_est.", con cédula número ".$consul
 -    Práctica pre profesional del ".$consulta2.".
 -    ".$consulta9.": ".$consulta10."
 
-Estas prácticas las desarrollaré en (".$consulta4." / ".$consulta5."), a la vez que me comprometo a:
+Estas prácticas las desarrollaré en (".utf8_decode($consulta4)." / ".utf8_decode($consulta5)."), a la vez que me comprometo a:
 
 -	Cumplir con las actividades planificadas que se contemplan en el plan docente.
 -	Trabajar en un ambiente de respeto y compañerismo con mi tutor y compañeros.
@@ -424,13 +424,13 @@ Atentamente,
     
          f)________________________		        	        f)_____________________
     ".$p_est." ".$s_est." ".$ap_est." ".$am_est."                 "	.$p_t_ext." ".$s_t_ext." ".$ap_t_ext." ".$am_t_ext."	
-                         Estudiante                                             Tutor Externo
+                              Estudiante                                             Tutor Externo
                                 
 
 
                                                 f)______________________
                                               ".$p_t_ac." ".$s_t_ac." ".$ap_t_ac." ".$am_t_ac."
-                                    Tutor Académico de la Práctica Pre Profesional 
+                                    Tutor académico de la práctica pre profesional 
                                                     ".$consulta9.": ".$consulta10."
     "),0,'J',false);
 

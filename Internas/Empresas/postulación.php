@@ -51,7 +51,7 @@ include '../../includes/estructuras/links.html';
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Postulación</span>
                 </li>
-                <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
+                <li  class="tooltips-general exit-system-button" data-href="index.php" data-placement="bottom" title="Salir del sistema">
                     <i class="zmdi zmdi-power"></i>
                 </li>
                 <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
@@ -142,7 +142,21 @@ include '../../includes/estructuras/links.html';
  <input type="file" name="archivo" title="Cronograma" id="importData" accept=".pdf" />
 </div>
 <div class="col-xs-12 col-sm-6">
+<label>Área</label>
+                                        <select class= "form-control">
+                                        <option>Técnica</option>
+                                        
+</select>
+<label>Departamento</label>
+                                        <select class= "form-control">
+                                        <option>Computación</option>
+                                        
+</select>
+
+<button type="button" class="btn btn-success">Guardar</button>
 	</div>
           </div>
+</div>
+
         
 
