@@ -51,63 +51,14 @@
                     <div class="col-md-12">
                         <div class="nav-tabs-custom">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#activity" data-toggle="tab">Estudiante</a></li>
+                                <li class="active"><a href="#activity" data-toggle="tab">Resumen</a></li>
                                 <li><a href="#settings" data-toggle="tab">Calendario</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div class="active tab-pane" id="activity">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <h2 class="all-tittles"><small>Información del Estudiante</small></h2>
-                                            <table class="table table-striped">
-                                                <tr class=" bg-primary" style="background:#3c8dbc">
-                                                    <th>Tutor Externo:</th>
-                                                    <td>
-                                                        <?php echo $user->getPNombre()?>
-                                                        <?php echo $user->getSNombre()?>
-                                                        <?php echo $user->getPApellido()?>
-                                                        <?php echo $user->getMApellido();?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Departamento:</th>
-                                                    <td>
-                                                       Gestión de Tecnologías de la Información
-                                                    </td>
-                                                </tr>
-                                                <tr class=" bg-primary" style="background:#3c8dbc">
-                                                    <th>Institución:</th>
-                                                    <td>
-                                                        UTPL
-                                                    </td>
-                                                </tr>
-                                                
-                                               
-                                            </table>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h2 class="all-tittles"><small>Información</small></h2>
-                                            <div class="col-md-12">
-                                                <ul class="nav nav-stacked">
-                                                    <li>
-                                                        <a href="#">Actividades Completadas
-                                                            <span class="pull-right badge bg-blue">
-                                                             12/25   
-                                                          </span>
-                                                        </a>
-                                                    </li>
-                                                    <li><a href="#">Proyectos a cargo <span
-                                                                class="pull-right badge bg-aqua">3</span></a>
-                                                    </li>
-                                                    <li><a href="#">Estudaintes Asiggnados <span
-                                                                class="pull-right badge bg-green">8</span></a>
-                                                    </li>
-                                                    <li><a href="#">Reportes de Asistencia Validados <span
-                                                                class="pull-right badge bg-green">15</span></a></li>
-                                                    <li><a href="#">Evaluaciones <span
-                                                                class="pull-right badge bg-red">0</span></a></li>
-                                                </ul>
-                                            </div>
+                                            
                                         </div>
                                        
                                     </div>
