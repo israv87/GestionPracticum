@@ -8,7 +8,7 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
 
     <link rel="stylesheet" href="assets/landpage/css_landpage/bootstrap.min.css">
     <link rel="stylesheet" href="assets/landpage/css_landpage/jquery-ui.css">
@@ -121,78 +121,46 @@
             <div class="container">
                 <div class="row mb-5 justify-content-center">
                     <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-                        <h2 class="section-title">Gestión del Prácticum</h2>
-                        <p>La Universidad Técnica Particular de Loja pone a disposicion de la comunidad universitária la plataforma para la Gestión del Practicum la cual mejora los procesos que componen las gestiones productivas de las diferentes carrera
-                            que oferece.
+                        <h1 style="color:#ea8a00">Gestión del Prácticum</h1>
+                        <p>La Universidad Técnica Particular de Loja pone a disposicion de la comunidad universitária la plataforma para la Gestión del Practicum la cual mejora los procesos que componen las gestiones productivas de las diferentes carreras.
                         </p>
                     </div>
                 </div>
+
                 <div class="row mb-5 align-items-center">
-                    <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/landpage/images_landpage/student.jpg" alt="Image" class="img-fluid">
+                    <div class="col-lg-6 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/landpage/images_landpage/company.png"style="width:130%;" alt="Image" >
                     </div>
-                    <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="200">
-                        <h2 class="text-black mb-4">Estudiantes</h2>
-                        <p class="mb-4 " style="text-align: justify">Los estudiantes matriculados en los diferentes niveles de Gestión Productiva podra hacer uso de la plataforma para cumplir con los siguientes requerimientos:
-                        </p>
+                    <div class="col-lg-6 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                        <h2 style="color:#ea8a00" >Empresas</h2>
+                        <p class="mb-4"style="text-align: justify">La UTPL ofrece a las empresas externas la posibilidad de trabajar en proyectos de vinculación donde los  estudiantes
+                        puedan poner en practica los conocimientos aprendidos.<br>
+                      Las empresas interesadas podrán: </p>
 
                         <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                            
+                           
                             <div>
-                           <h3 class="m-0">  <i class="far fa-check-square"></i> Postular a un proyecto por ciclo</h3>
+                                <h3 class="m-0"> <i class="fas fa-file-contract" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Solicitar convenios con la UTPL</h3>
                             </div>
                         </div>
 
                         <div class="d-flex align-items-center custom-icon-wrap mb-3">
                            
                             <div>
-                                <h3 class="m-0"> <i class="far fa-list-alt"></i> Registrar asistencias</h3>
+                                <h3 class="m-0"> <i class="fas fa-project-diagram" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Proponer proyectos de vinculación</h3>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                           
+                            <div>
+                                <h3 class="m-0"> <i class="far fa-id-badge" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Establecer un perfil deconocimientos que estudiante debe tener.</h3>
                             </div>
                         </div>
                         <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+                           
                             <div>
-                                <h3 class="m-0">Realizar Informes</h3>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
-                            <div>
-                                <h3 class="m-0">Generar documentación</h3>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-center custom-icon-wrap">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
-                            <div>
-                                <h3 class="m-0">Reportar eventualidades</h3>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                </div>
-
-                <div class="row mb-5 align-items-center">
-                    <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/landpage/images_landpage/undraw_teaching.svg" alt="Image" class="img-fluid">
-                    </div>
-                    <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-                        <h2 class="text-black mb-4">Strive for Excellent</h2>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem maxime nam porro possimus fugiat quo molestiae illo.</p>
-
-                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
-                            <div>
-                                <h3 class="m-0">22,931 Yearly Graduates</h3>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-center custom-icon-wrap">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
-                            <div>
-                                <h3 class="m-0">150 Universities Worldwide</h3>
+                                <h3 class="m-0"> <i class="far fa-list-alt" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Subir cronogramas, lineamientos y evidencias.</h3>
                             </div>
                         </div>
 
@@ -201,28 +169,102 @@
 
                 <div class="row mb-5 align-items-center">
                     <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/landpage/images_landpage/images/undraw_teacher.svg" alt="Image" class="img-fluid">
+                        <img src="assets/landpage/images_landpage/student.jpg" alt="Image" class="img-fluid">
                     </div>
-                    <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
-                        <h2 class="text-black mb-4">Education is life</h2>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem maxime nam porro possimus fugiat quo molestiae illo.</p>
+                    <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="200">
+                        <h2 style="color:#ea8a00">Estudiantes</h2>
+                        <p class="mb-4 " style="text-align: justify">Los estudiantes matriculados en los diferentes niveles de Gestión Productiva podra hacer uso de la plataforma para cumplir con los siguientes requerimientos:
+                        </p>
 
                         <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+                            
                             <div>
-                                <h3 class="m-0">22,931 Yearly Graduates</h3>
+                           <h3 class="m-0">  
+                             <i class="far fa-check-square" style="font-size:1.5em; color:#ea7f00"></i>
+                             &emsp;Postular a un proyecto por ciclo</h3>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                           
+                            <div>
+                                <h3 class="m-0"> <i class="far fa-list-alt" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Registrar asistencias</h3>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                            
+                            <div>
+                                <h3 class="m-0"><i class="far fa-file-alt" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Realizar Informes</h3>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                            
+                            <div>
+                                <h3 class="m-0"> <i class="far fa-folder-open" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Generar documentación</h3>
                             </div>
                         </div>
 
                         <div class="d-flex align-items-center custom-icon-wrap">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
+                          
                             <div>
-                                <h3 class="m-0">150 Universities Worldwide</h3>
+                                <h3 class="m-0"><i class="fas fa-exclamation" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Reportar eventualidades</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5 align-items-center">
+                    <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/landpage/images_landpage/student.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="200">
+                        <h2 style="color:#ea8a00">Tutores Externos</h2>
+                        <p class="mb-4 " style="text-align: justify">Los estudiantes matriculados en los diferentes niveles de Gestión Productiva podra hacer uso de la plataforma para cumplir con los siguientes requerimientos:
+                        </p>
+
+                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                            
+                            <div>
+                           <h3 class="m-0">  
+                             <i class="far fa-check-square" style="font-size:1.5em; color:#ea7f00"></i>
+                             &emsp;Postular a un proyecto por ciclo</h3>
                             </div>
                         </div>
 
+                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                           
+                            <div>
+                                <h3 class="m-0"> <i class="far fa-list-alt" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Registrar asistencias</h3>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                            
+                            <div>
+                                <h3 class="m-0"><i class="far fa-file-alt" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Realizar Informes</h3>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                            
+                            <div>
+                                <h3 class="m-0"> <i class="far fa-folder-open" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Generar documentación</h3>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center custom-icon-wrap">
+                          
+                            <div>
+                                <h3 class="m-0"><i class="fas fa-exclamation" style="font-size:1.5em; color:#ea7f00"></i>&emsp;Reportar eventualidades</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+
+                
+
+
+
+                
 
             </div>
         </div>
