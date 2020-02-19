@@ -39,9 +39,7 @@
                     <h2 class="all-tittles">Tutor EXterno <small>Resumen</small></h2>
                 </div>
                 <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="#">Examples</a></li>
-                    <li class="active">User profile</li>
+                  
                 </ol>
             </section>
             <!-- Main content -->
@@ -93,41 +91,90 @@
                                         <th>Codigo</th>
                                         <th>Proyecto</th>
                                         <th>Estudiante</th>
-                                        <th>Cuplimiento de Actividades</th>
-                                        <th>Horas de Trabajo</th>
-                                        <th>Reportes Validados</th>
+                                        <th>Actividad</th>
+                                     <th>Estado</th>
+                                    </tr>
+                                    <tr>
+                                        <td>'PRY001'</td>
+                                        <td>'Proyecto Ascendere'</td>
+                                        <td>'Tania Granda'</td>
+                                        <td>'Reporte asistencia'</td>
+                                        <td>'No revisado'</td>
+                                                  
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td>'PRY001'</td>
+                                        <td>'Proyecto Ascendere'</td>
+                                        <td>'Jose Abad'</td>
+                                        <td>'Incidencias'</td>
+                                        <td>'Revisado'</td>
+                                    </tr> 
+                                    
+                                    </table>
+        </div> 
+        </div>
+        </div> 
+   
+        
+        <div class="box box-warning">
+                        <div class="box-header with-border">
+                        
+
+                        <table class="table table-hover">
+                                    <tr>
+                                        <th>Proyecto</th>
+                                        <th>Carrera</th>
+                                        <th>Estudiante</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>'Proyecto Ascendere'</td>
+                                        <td>'Ingenieria en Sistemas Informaticos y Computación'</td>
+                                        <td>'Jose Abad'</td>
+                                    
+                                                  
+                                        
+                                    </tr> 
+                               
+                                    
+                                    </table>
+        </div> 
+        </div>
+        </div> 
+        <div class="box box-warning">
+                        <div class="box-header with-border">
+                        
+
+                        <table class="table table-hover">
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Proyecto</th>
+                                        <th>Estudiante</th>
+                                        <th>Actividad</th>
+                                        <th>Estado</th>
                                     </tr>
                                     <tr>
                                         <td>'PRY001'</td>
                                         <td>'Proyecto Ascendere'</td>
                                         <td>'Jose Abad'</td>
-                                        <td>'50%'</td>
-                                        <td>'10'</td>                                        
-                                        <td>6</td>
+                                        <td>'Reporte de Asistencia'</td>
+                                        <td>'Revisado'</td>
+                                        
+                                    
+                                                  
+                                        
                                     </tr> 
                                     <tr>
-                                        <td>'PRY001'</td>
-                                        <td>'Proyecto Ascendere'</td>
-                                        <td>'Tania Granda'</td>
-                                        <td>'70%'</td>
-                                        <td>'18'</td>                                        
-                                        <td>7</td>
-                                    </tr> 
-                                    <tr>
-                                        <td>'PRY002'</td>
-                                        <td>'Aplicacion Interactiva de Uso de diapositivas moviles en el Aula'</td>
-                                        <td>'Cristian Jose Macas Pineda'</td>
-                                        <td>'65%'</td>
-                                        <td>'13'</td>                                        
-                                        <td>6</td>
-                                    </tr> 
-                                    <tr>
-                                        <td>'PRY002'</td>
-                                        <td>'Aplicacion Interactiva de Uso de diapositivas moviles en el Aula'</td>
-                                        <td>'Nelson Ricardo Parin Cabrera'</td>
-                                        <td>'70%'</td>
-                                        <td>'14'</td>                                        
-                                        <td>7</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>'Jose Abad'</td>
+                                        <td>'Incidencias'</td>
+                                        <td>'No revisado'</td>
+                                        
+                                    
+                                                  
+                                        
                                     </tr> 
                                     
                                     </table>
@@ -145,6 +192,8 @@
             </section>
             <!-- /.col -->
         </div>
+
+        
         <!-- /.row -->
         <!--************
             ************
