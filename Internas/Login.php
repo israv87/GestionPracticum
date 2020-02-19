@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/landpage/css_landpage/aos.css">
     <link rel="stylesheet" href="assets/landpage/css_landpage/estilos.css">
     <link rel="stylesheet" href="assets/landpage/css_landpage/style.css">
-
+    <script src="https://kit.fontawesome.com/d1d2c7ccb4.js" crossorigin="anonymous"></script>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -131,22 +131,22 @@
                     <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
                         <img src="assets/landpage/images_landpage/student.jpg" alt="Image" class="img-fluid">
                     </div>
-                    <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="200">
                         <h2 class="text-black mb-4">Estudiantes</h2>
-                        <p class="mb-4">Los estudiantes matriculados en los diferentes niveles de Gestión Productiva podra hacer uso de la plataforma para cumplir con los siguientes requerimientos:
+                        <p class="mb-4 " style="text-align: justify">Los estudiantes matriculados en los diferentes niveles de Gestión Productiva podra hacer uso de la plataforma para cumplir con los siguientes requerimientos:
                         </p>
 
                         <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+                            
                             <div>
-                                <h3 class="m-0">Postular a un proyecto por ciclo</h3>
+                           <h3 class="m-0">  <i class="far fa-check-square"></i> Postular a un proyecto por ciclo</h3>
                             </div>
                         </div>
 
                         <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                            <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+                           
                             <div>
-                                <h3 class="m-0">Registrar asistencias</h3>
+                                <h3 class="m-0"> <i class="far fa-list-alt"></i> Registrar asistencias</h3>
                             </div>
                         </div>
                         <div class="d-flex align-items-center custom-icon-wrap mb-3">
