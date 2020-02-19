@@ -107,15 +107,7 @@ class User extends DB
                   </div>
               </td>
               <td><span class="badge bg-red">'. $Porcentaje .'%</span></td>
-          </tr>
-              
-              
-
-
-                                            
-                                            
-                                            
-                                        ';
+          </tr>';
             
             $c++;
         }
@@ -313,9 +305,6 @@ class User extends DB
         echo '</table>';
     }
 
-
-
-
     public function setInstitucionEstudainte($user)
     {
         $query9 = $this->connect()->prepare('SELECT Institucion FROM instituciones, estudiantes, proyectos, usuarios, proyecto_estudiante
@@ -363,233 +352,7 @@ class User extends DB
         and fk_idEstudiante_pe=idestudiante and fk_idUsuario_Est = idusuario 
         and fk_idNivelGP_Est = idNivelGp and usuario = :user');
       
-        $query14->execute(['user' => $user]);
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+        $query14->execute(['user' => $user]);        
 
         foreach ($query12 as $currentUser12){
             $NopPlaza=$currentUser12['sum(NopPlaza)'];}
@@ -618,12 +381,12 @@ class User extends DB
         echo '<table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>Codigo</th>
+           
             <th>Empresa</th>
-            <th>Codigo de Convenio</th>
+            
             <th>Dependencia</th>
-            <th>Encargado del estudinte</th>
-            <th>Email del Encargado</th>
+            <th>Encargado </th>
+            <th>Email </th>
             <th>Telefono</th>
             <th>Nombre del Proyecto</th>
             <th>Plazas para la GP'.$NGp.'</th>
@@ -653,9 +416,7 @@ class User extends DB
             echo '
             
                         <tr>
-                        <td>'.$currentUser11['CodProyecto'].'</td>
                         <td>'.$currentUser11['NombreEmpresa'].'</td>
-                        <td>'.$currentUser11['CodConvenio'].'</td>
                         <td>'.$currentUser11['Institucion'].'</td>
                         <td>'.$currentUser11['PrimerNombre'].' '.$currentUser11['SegundoNombre'].' '
                         .$currentUser11['apellido_paterno'].' '.$currentUser11['apellido_materno'].'</td>
@@ -664,8 +425,8 @@ class User extends DB
                         <td>'.$currentUser11['NombreProyecto'].'</td>
                         <td>'.$NGppz.'</td>
                         <td>'.$NopPlaza.'</td>
-                        <td>'.$ocupado.'</td>
                         <td>'.$disponible.'</td>
+                        <td>'.$ocupado.'</td>
                         <th>'.$Estado_pry .'</th>
                         <td>'.$botonOD.'</td>
                             </tr>   
