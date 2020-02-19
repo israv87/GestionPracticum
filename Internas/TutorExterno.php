@@ -108,6 +108,8 @@
                                         <td>'Proyecto Ascendere'</td>
                                         <td>'Jose Abad'</td>
                                         <td>'Incidencias'</td>
+                                        
+                                        
                                         <td><span class="label label-success">Revisado</span></td>
                                     </tr> 
                                     
@@ -159,8 +161,7 @@
                                         <td>'Proyecto Ascendere'</td>
                                         <td>'Jose Abad'</td>
                                         <td>'Reporte de Asistencia'</td>
-                                        <td>'Revisado'</td>
-                                        
+                                        <td><span class="label label-success">Revisado</span></td>
                                     
                                                   
                                         
@@ -170,7 +171,7 @@
                                         <td></td>
                                         <td>'Jose Abad'</td>
                                         <td>'Incidencias'</td>
-                                        <td>'No revisado'</td>
+                                        <td><span class="label label-danger">No revisado</span></td>
                                         
                                     
                                                   
