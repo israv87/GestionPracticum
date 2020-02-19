@@ -111,7 +111,7 @@ include '../../includes/estructuras/links.html';
             <td>Dirección de Innovación, Formación y Evaluación Docente </td>
             <td> Maria Isabel Loaiza </td>
             <td> 2 </td>
-          <td>  <span class="label label-success">Validado</span> <td/>
+          <td><span class="label label-">Validado</span> <td/>
 
 
 </tr>
