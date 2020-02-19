@@ -99,7 +99,7 @@
                                         <td>'Proyecto Ascendere'</td>
                                         <td>'Tania Granda'</td>
                                         <td>'Reporte asistencia'</td>
-                                        <td>'No revisado'</td>
+                                        <td><span class="label label-danger">No revisado</span></td>
                                                   
                                         
                                     </tr> 
@@ -108,7 +108,7 @@
                                         <td>'Proyecto Ascendere'</td>
                                         <td>'Jose Abad'</td>
                                         <td>'Incidencias'</td>
-                                        <td>'Revisado'</td>
+                                        <td><span class="label label-success">Revisado</span></td>
                                     </tr> 
                                     
                                     </table>

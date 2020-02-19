@@ -607,8 +607,7 @@ class User extends DB
                 } else {
                     $ocupado = '<span class="label label-success">'.$currentUser14['ocupado'].'</span>';
                 } 
-                if ($
-                ble <= 1) {
+                if ($disponible <= 1) {
                      $disponible = '<span class="label label-danger">'.$currentUser14['disponible'].'</span>';
                 } else {
                      $disponible = '<span class="label label-success">'.$currentUser14['disponible'].'</span>';
