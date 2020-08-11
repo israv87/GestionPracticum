@@ -3,12 +3,31 @@ include 'db.php';
 
 class User extends DB
 {
+    private $id_est;
+    private $cedula;
     private $p_nombre;
     private $s_nombre;
     private $p_apellido;
     private $m_apellido;
+    private $email;
+    private $email2;
+    private $Nivel_GP;
+    private $paralelo_GP;
+    private $ciclo_act;
     private $username;
     private $u_rol;
+    private $proyecto;
+    private $departamento;
+    private $area;
+    
+    
+    private $p_nombre_tutor;
+    private $s_nombre_tutor;
+    private $p_apellido_tutor;
+    private $m_apellido_tutor;
+    
+    private $codReg;
+
     private $pe_proyecto2;
     private $Actividad;
     private $Validacion;
@@ -29,7 +48,6 @@ class User extends DB
     private $nivel2;
     private $idRegistroPDF;
     private $idIncidenciaPDF;
-    private $cedula;
     private $dependencia;
 
 
@@ -50,34 +68,36 @@ class User extends DB
 
     public function setUser($user)
     {
-        $query = $this->connect()->prepare('SELECT * FROM usuarios WHERE usuario = :user');
+        $query = $this->connect()->prepare("SELECT * from proyectos p, dependencias d,asignacion_proyecto a, estudiantes e, usuarios u
+        where p.idDependencia = d.idDependencia and p.idProyectos = a.idProyectos and e.idEstudiante = a.idEstudiante 
+        and e.idUsuario = u.idUsuario and u.usuario =:user");
         $query->execute(['user' => $user]);
 
         foreach ($query as $currentUser) {
-            $this->p_nombre = $currentUser['PrimerNombre'];
-            $this->s_nombre = $currentUser['SegundoNombre'];
-            $this->p_apellido = $currentUser['apellido_paterno'];
-            $this->m_apellido = $currentUser['apellido_materno'];
+            $this->cedula = $currentUser['cedula'];
+            $this->p_nombre = $currentUser['primerNombre'];
+            $this->s_nombre = $currentUser['segundoNombre'];
+            $this->p_apellido = $currentUser['apellidoPaterno'];
+            $this->m_apellido = $currentUser['apellidoMaterno'];
+            $this->email = $currentUser['email'];
+            $this->email2 = $currentUser['email2'];
+            $this->Nivel_GP = $currentUser['nivelGp'];
+            $this->paralelo_GP = $currentUser['paralelo'];
+            $this->ciclo_act = $currentUser['ciclo'];
             $this->username = $currentUser['usuario'];
-            $this->u_rol = $currentUser['idRol'];
+            $this->proyecto = $currentUser['nombreProyecto'];
+            $this->area = $currentUser['Area_utpl'];
+            $this->departamento = $currentUser['departamento'];
+            $this->id_est = $currentUser['idEstudiante'];
+            $this->u_rol = $currentUser['Rol'];
         }
     }
-    public function SetProyectoEstudiante($user)
-    {
-        $query1 = $this->connect()->prepare('SELECT  NombreProyecto from estudiantes, proyectos, proyecto_estudiante, usuarios 
-        where  idproyectos = fk_idProyectos_pe and fk_idEstudiante_pe = idestudiante and idEstudiante = idUsuario and usuario = :user ');
-        $query1->execute(['user' => $user]);
-
-        foreach ($query1 as $currentUser1) {
-            $this->pe_proyecto2 = $currentUser1['NombreProyecto'];
-        }
-    }
+    
     function SetActividadesEstudiante($user, $c = 0, $i = 0)
     {
-        $query2 = $this->connect()->prepare('SELECT idActPry,Actividad, FechaInicio,FechaFin,Porcentaje
-            from estudiantes, proyectos, proyecto_estudiante, usuarios,actividadesproyecto
-            where fk_idEstudiante_pe=idestudiante and idproyectos = fk_idProyectos_pe 
-            and idEstudiante = idusuario and usuario = :user');
+        $query2 = $this->connect()->prepare('SELECT * from actividadesproyecto a, proyectos p, asignacion_proyecto g, estudiantes e, usuarios u
+        where a.idProyectos = p.idProyectos and g.idProyectos = p.idProyectos and g.idEstudiante = e.idEstudiante 
+        and e.idUsuario = u.idUsuario and usuario =:user');
         $query2->execute(['user' => $user]);
 
         echo '    <div class="box">
@@ -121,11 +141,11 @@ class User extends DB
 
     public function ContActividadesFaltantes($user, $c = 0)
     {
-        $query3 = $this->connect()->prepare('SELECT Porcentaje  from estudiantes, proyectos, proyecto_estudiante, usuarios,actividadesproyecto
-                where Porcentaje=100 and fk_idEstudiante_pe=idestudiante and idproyectos = fk_idProyectos_pe 
-                and idEstudiante = idusuario and usuario = :user');
+        $query3 = $this->connect()->prepare('SELECT Porcentaje from actividadesproyecto a, proyectos p, asignacion_proyecto g, estudiantes e, usuarios u
+        where Porcentaje != 100 and  a.idProyectos = p.idProyectos and g.idProyectos = p.idProyectos and g.idEstudiante = e.idEstudiante 
+        and e.idUsuario = u.idUsuario and usuario  = :user');
         $query3->execute(['user' => $user]);
-
+        
         foreach ($query3 as $currentUser3) {
             $c++;
         }
@@ -134,9 +154,9 @@ class User extends DB
 
     public function ContActividadesCompletadas($user, $c = 0)
     {
-        $query4 = $this->connect()->prepare('SELECT Porcentaje from estudiantes, proyectos, proyecto_estudiante, usuarios,actividadesproyecto
-                    where fk_idEstudiante_pe=idestudiante and idproyectos = fk_idProyectos_pe 
-                    and idEstudiante = idusuario and usuario = :user');
+        $query4 = $this->connect()->prepare('SELECT Porcentaje from actividadesproyecto a, proyectos p, asignacion_proyecto g, estudiantes e, usuarios u
+        where Porcentaje = 100 and  a.idProyectos = p.idProyectos and g.idProyectos = p.idProyectos and g.idEstudiante = e.idEstudiante 
+        and e.idUsuario = u.idUsuario and usuario  = :user');
         $query4->execute(['user' => $user]);
 
         foreach ($query4 as $currentUser4) {
@@ -145,117 +165,11 @@ class User extends DB
         echo $c;
     }
 
-    public function SetTipoGP()
-    {
-        $query5 = $this->connect()->prepare('SELECT TipoGP from tipo_gp');
-        $query5->execute();
-        echo '
-                        <select class="form-control">';
-
-        foreach ($query5 as $currentUser5) {
-            echo '
-                        <option>' . $currentUser5['TipoGP'] . '</option>
-                                        ';
-        }
-
-        echo '</select>';
-    }
-    public function SetTipoGP2($user)
-    {
-        $query5 = $this->connect()->prepare('SELECT TipoGP from estudiantes, Tipo_Gp, usuarios,TipoGP_Nivel,nivel_gp
-        where fk_TipoGpNV = idTipoGp and fkNivelGPNV = idNivelGP
-        and fk_idNivelGP_Est=idNivelGP and  idNivelGP = fk_idNivelGP_Est and fk_idUsuario_Est = idUsuario and usuario =:user');
-        $query5->execute(['user' => $user]);
-  
-                      
-
-        foreach ($query5 as $currentUser5) {
-            $this->stgp2 = $currentUser5['TipoGP'] ;
-        }
-
-     
-    }
-    public function SetNivel2($user)
-    {
-        $query5 = $this->connect()->prepare('SELECT NivelGP from estudiantes, usuarios, nivel_gp
-        where  idNivelGP= fk_idNivelGP_Est  and fk_idUsuario_Est = idUsuario and usuario =:user');
-        $query5->execute(['user' => $user]);
-  
-                      
-
-        foreach ($query5 as $currentUser5) {
-            $this->nivel2 = $currentUser5['NivelGP'] ;
-        }
-
-     
-    }
-    public function SetCiclo2($user)
-    {
-        $query5 = $this->connect()->prepare('SELECT CicloNombre from estudiantes, ciclos, usuarios
-        where fk_idCiclo_Est = idCiclo  and fk_idUsuario_Est = idUsuario and usuario =:user');
-        $query5->execute(['user' => $user]);
-  
-                      
-
-        foreach ($query5 as $currentUser5) {
-            $this->ciclo2 = $currentUser5['CicloNombre'] ;
-        }
-
-     
-    }
-
-
-   
-    public function SetCiclo()
-    {
-        $query6 = $this->connect()->prepare('SELECT ciclo from ciclos');
-        $query6->execute();
-
-        echo '<select class="form-control">';
-
-        foreach ($query6 as $currentUser6) {
-            $Ciclo = $currentUser6['ciclo'];
-            echo '
-                            <option>' . $Ciclo . ' Ciclo </option>';
-        }
-
-        echo '</select>';
-    }
-
-
-
-    public function SetParalelo2($user)
-    {
-        $query5 = $this->connect()->prepare(' SELECT Paralelo from estudiantes, paralelos, usuarios
-        where fk_idParalelo_Est = idParalelo  and fk_idUsuario_Est = idUsuario and usuario =:user');
-        $query5->execute(['user' => $user]);
-  
-                      
-
-        foreach ($query5 as $currentUser5) {
-            $this->paralelo2 = $currentUser5['Paralelo'] ;
-        }
-
-     
-    }
-    public  function SetNivelGP()
-    {
-        $query7 = $this->connect()->prepare('SELECT NivelGP from nivel_gp');
-        $query7->execute();
-
-        echo '<select class="form-control">';
-
-        foreach ($query7 as $currentUser7) {
-            $NivelGP = $currentUser7['NivelGP'];
-            echo '
-                                <option> GESTION PRODUCTIVA / PRÁCTICUM ' . $NivelGP . ' </option>';
-        }
-        echo '</select>';
-    }
+    
     public function RegistrosEntregados($user)
     {
-        $query8 = $this->connect()->prepare('SELECT idRegistroAistencias,CodRegistro as "Codigo",Titulo,Fecha,Observacion, HorasTrabajadas,Validacion, Calificacion FROM registro_aistencias, estudiantes, usuarios 
-                                    where  fk_idEstudiante = idEstudiante and idestudiante = idusuario and usuario = :user');
+        $query8 = $this->connect()->prepare('SELECT * from registro_asistencias r, estudiantes e, usuarios u where
+        r.idEstudiante = e.idEstudiante and e.idUsuario = u.idUsuario and u.usuario  = :user');
         $query8->execute(['user' => $user]);
 
         echo '<table class="table table-hover">
@@ -269,8 +183,6 @@ class User extends DB
                                         <th>Validacion</th>
                                         <th>Calificion</th>
                                     </tr>';
-
-
         foreach ($query8 as $currentUser8) {
             $idRegistroPDF = $currentUser8['idRegistroAistencias'];
             $Validadcion = $currentUser8['Validacion'];
@@ -288,7 +200,7 @@ class User extends DB
 
             echo '
                                     <tr>
-                                        <td>' . $currentUser8['Codigo'] . '</td>
+                                        <td>' . $currentUser8['CodRegistro'] . '</td>
                                         <td>' . $currentUser8['Titulo'] . '</td>
                                         <td>' . $currentUser8['Fecha'] . '</td>
                                         <td>' . $currentUser8['Observacion'] . '</td>
@@ -305,16 +217,7 @@ class User extends DB
         echo '</table>';
     }
 
-    public function setInstitucionEstudainte($user)
-    {
-        $query9 = $this->connect()->prepare('SELECT Institucion FROM instituciones, estudiantes, proyectos, usuarios, proyecto_estudiante
-        where idInstitucion = fk_idInstitucion and fk_idproyectos_pe=idproyectos and fk_idestudiante_pe =idestudiante and  idestudiante=idusuario and usuario = :user');
-        $query9->execute(['user' => $user]);
-
-        foreach ($query9 as $currentUser9) {
-            $this->Institucion = $currentUser9['Institucion'];
-        }
-    }
+   
 
     public function getIncidencia()
     {
@@ -439,26 +342,30 @@ class User extends DB
 
 
 
-    public function CartasCompromiso($user)
+    public function Entregables($user)
     {
-        $query12 = $this->connect()->prepare('SELECT idCartaCom,CodCartaCompromiso as "Codigo",Fecha FROM cartacompromiso, estudiantes, usuarios 
-        where  fk_idEstudiante_comp = idEstudiante and idestudiante = idusuario and usuario = :user');
+        $query12 = $this->connect()->prepare('SELECT * from entregables e, estudiantes a,usuarios u
+        where  e.idEstudiante = a.idEstudiante and a.idUsuario = u.idUsuario and usuario  = :user');
         $query12->execute(['user' => $user]);
 
         echo '<table class="table table-hover">
                                     <tr>
-                                        <th>Codigo</th>
+                                        <th>Nombre</th>
                                         <th>Fecha</th>
+                                        <th>Tipo</th>
+                                        <th>Descripcion</th>
                                         <th>Archivo</th>
                                     </tr>';
 
 
         foreach ($query12 as $currentUser12) {
-            $idCompromisoPDF = $currentUser12['idCartaCom'];
+            $idCompromisoPDF = $currentUser12['idEntregable'];
             echo '
                                     <tr>
-                                        <td>' . $currentUser12['Codigo'] . '</td>
-                                        <td>' . $currentUser12['Fecha'] . '</td>
+                                        <td>' . $currentUser12['nombre'] . '</td>
+                                        <td>' . $currentUser12['fecha'] . '</td>
+                                        <td>' . $currentUser12['tipo'] . '</td>
+                                        <td>' . $currentUser12['descripcion'] . '</td>
                                         <td><a href="includes/Estructuras/Estudiantes/CartaCompromisoPDF.php?idCom='.$idCompromisoPDF.'" target="_blank">
                                                  <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
                                             </a>
@@ -468,52 +375,57 @@ class User extends DB
         }
         echo '</table>';
     }
-    public function SetCedula($user)
-    {
-        $query14 = $this->connect()->prepare(' SELECT cedula FROM usuarios where usuario= :user ');
-        $query14->execute(['user' => $user]);
 
-        foreach ($query14 as $currentUser14) {
-            $this->cedula = $currentUser14['cedula'];
-        }
-    }
- 
 
-    public function setDependenciaEstudiante($user)
+    public function SetTutorExternoEstudiante($user)
     {
-        $query15 = $this->connect()->prepare('SELECT Dependencia
-        FROM dep_proyecto, proyectos, dependencias, estudiantes, usuarios, proyecto_estudiante
-        where fk_dep_dp = idDependencia and fk_pry_dp= idProyectos and fk_idProyectos_pe = idProyectos 
-        and fk_idEstudiante_pe = idEstudiante and fk_idUsuario_est = idusuario and usuario = :user');
+        $query15 = $this->connect()->prepare('SELECT t.primerNombre,t.segundoNombre, t.apellidoPaterno,t.apellidoMaterno
+        from tutor_externo t, proyectos p, asignacion_proyecto a, estudiantes e, usuarios u
+        where  t.idTutorExterno = p.idTutorExterno and a.idProyectos = p.idProyectos and a.idEstudiante = e.idEstudiante
+        and e.idUsuario = u.idUsuario and u.usuario = :user');
         $query15->execute(['user' => $user]);
 
         foreach ($query15 as $currentUser15) {
-            $this->dependencia = $currentUser15['Dependencia'];
+            $this->p_nombre_tutor = $currentUser15['primerNombre'];
+            $this->s_nombre_tutor = $currentUser15['segundoNombre'];
+            $this->p_apellido_tutor = $currentUser15['apellidoPaterno'];
+            $this->m_apellido_tutor = $currentUser15['apellidoMaterno'];
         }
     }
+    public function SetCodRegistro()
+    {
+        $query16 = $this->connect()->prepare('Select max(CodRegistro) as"cod" from registro_asistencias');
+        $query16->execute();
 
+        foreach ($query16 as $currentUser16) {
+            $this->codReg = $currentUser16['cod'];
+        }
+    }
+    
 
     public function CartasAsignacion($user)
     {
-        $query12 = $this->connect()->prepare('SELECT idCARTA_ASIG,CodCartaAsig as "Codigo",Fecha FROM carta_asig, estudiantes, usuarios 
-        where  fk_est_asig = idEstudiante and idestudiante = idusuario and usuario = :user');
+        $query12 = $this->connect()->prepare('SELECT * from entregables e, estudiantes a,usuarios u
+        where e.tipo="Carta Asignación" and e.idEstudiante = a.idEstudiante and a.idUsuario = u.idUsuario and usuario  = :user');
         $query12->execute(['user' => $user]);
 
         echo '<table class="table table-hover">
                                     <tr>
-                                        <th>Codigo</th>
+                                        <th>Nombre</th>
                                         <th>Fecha</th>
+                                        <th>Descripcion</th>
                                         <th>Archivo</th>
                                     </tr>';
 
 
         foreach ($query12 as $currentUser12) {
-            $idAsignacionPDF = $currentUser12['idCARTA_ASIG'];
+            $idCompromisoPDF = $currentUser12['idEntregable'];
             echo '
                                     <tr>
-                                        <td>' . $currentUser12['Codigo'] . '</td>
-                                        <td>' . $currentUser12['Fecha'] . '</td>
-                                        <td><a href="includes/Estructuras/Estudiantes/CartaAsignacionPDF.php?idAsig='.$idAsignacionPDF.'" target="_blank">
+                                        <td>' . $currentUser12['nombre'] . '</td>
+                                        <td>' . $currentUser12['fecha'] . '</td>
+                                        <td>' . $currentUser12['descripcion'] . '</td>
+                                        <td><a href="includes/Estructuras/Estudiantes/CartaCompromisoPDF.php?idCom='.$idCompromisoPDF.'" target="_blank">
                                                  <img src="Assets/imagenes/template/pdf.jpg" style="width: 5%;">
                                             </a>
                                         </td>
@@ -561,6 +473,14 @@ class User extends DB
 
 
 /***************Llamadas a un unico dato*****************/
+    public function getidEstudiante()
+    {
+        return $this->id_est;
+    }   
+    public function getCedula()
+    {
+        return $this->cedula;
+    }   
     public function getPNombre()
     {
         return $this->p_nombre;
@@ -581,10 +501,73 @@ class User extends DB
     {
         return $this->u_rol;
     }
-    public function getPE_Proyecto2()
+    public function getEmail()
     {
-        return $this->pe_proyecto2;
+        return $this->email;
     }
+    public function getEmail2()
+    {
+        return $this->email2;
+    }
+    public function getNivelGP()
+    {
+        return $this->Nivel_GP;
+    }
+    public function getParaleloGP()
+    {
+        return $this->paralelo_GP;
+    }
+    public function getCiclo()
+    {
+        return $this->ciclo_act;
+    }
+    public function get_Proyecto()
+    {
+        return $this->proyecto;
+    }
+    public function getArea()
+    {
+        return $this->area;
+    }
+    public function getDepartamento()
+    {
+        return $this->departamento;
+    }
+
+
+
+    public function getPNombreTutor()
+    {
+        return $this->p_nombre_tutor;
+    }
+    public function getSNombreTutor()
+    {
+        return $this->s_nombre_tutor;
+    }
+    public function getPApellidoTutor()
+    {
+        return $this->p_apellido_tutor;
+    }
+    public function getMApellidoTutor()
+    {
+        return $this->m_apellido_tutor;
+    }
+
+    public function getCodReg()
+    {
+        return $this->codReg;
+    }
+
+
+
+
+
+
+
+
+
+
+   /*
     public function getActividad()
     {
         return $this->Actividad;
@@ -597,25 +580,13 @@ class User extends DB
     {
         return $this->stgp2;
     }
-    public function getCiclo2()
-    {
-        return $this->ciclo2;
-    }
-    public function getParalelo2()
-    {
-        return $this->paralelo2;
-    }
-    public function getNivel2()
-    {
-        return $this->nivel2;
-    }
-    public function getCedula()
-    {
-        return $this->cedula;
-    }
+    
+    
+    
+    
     public function getDependencia()
     {
         return $this->dependencia;
-    }
+    }*/
 }
 

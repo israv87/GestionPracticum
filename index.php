@@ -12,9 +12,7 @@ if(isset($_SESSION['user'])){
     
     
     $user->setUser($userSession->getCurrentUser());
-    $user->SetProyectoEstudiante($userSession->getCurrentUser());
-    $user->setInstitucionEstudainte($userSession->getCurrentUser());
-    
+ 
     
     if($user->getRol()==1){
         include_once 'Internas/Estudiantes.php';

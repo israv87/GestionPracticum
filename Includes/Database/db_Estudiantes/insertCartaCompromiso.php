@@ -13,15 +13,12 @@ $user->setUser($userSession->getCurrentUser());
 $us=$userSession->getCurrentUser();
 
 
-$sth1 = $objData->prepare('INSERT INTO cartacompromiso (CodCartaCompromiso, fk_idEstudiante_comp,Fecha) 
-SELECT (select concat("CMP00",MAX(idCartaCom)+1 ) from cartacompromiso),
-(select idEstudiante from estudiantes, usuarios where idusuario=fk_idUsuario_Est 
-and usuario= :us),:Fecha6');
-
 $Fecha6 = $_POST['Fecha6'];
+$idEst = $_POST['idEst'];
 
-$sth1->bindParam(':Fecha6', $Fecha6);
-$sth1->bindParam(':us', $us);
+$sth1 = $objData->prepare("INSERT INTO entregables (idEstudiante, fecha, tipo, nombre, descripcion, idArchivo) 
+VALUES ($idEst, $Fecha6, 'Carta Compromiso', 'Carta Compromiso', 'Carta Compromiso', '1')");
+
 $sth1->execute();
 
 

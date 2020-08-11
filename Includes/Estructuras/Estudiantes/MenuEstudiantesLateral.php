@@ -24,12 +24,8 @@
                             Asistencia</a></li>
                    <!-- <li><a id="informe"><i class="zmdi zmdi-truck zmdi-hc-fw"></i>&nbsp;&nbsp; Informe
                             Bimestral</a></li>-->
-                    <li><a id="compromiso"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Carta
-                            de Compromiso</a></li>
-                    <li><a id="asignacion"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i>&nbsp;&nbsp;
-                            Carta de Asignacion</a></li>
-                    <li><a id="incidencias"><i class="zmdi zmdi-trending-up zmdi-hc-fw"></i>&nbsp;&nbsp; Reporte
-                            de Incidencias</a></li>
+                    <li><a id="compromiso"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Entregables</a></li>
+                   
                     <li><a id="proyectos"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Postulacion a
                             Proyectos</a></li>
                 </ul>

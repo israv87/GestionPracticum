@@ -140,9 +140,8 @@ $idCom = $_GET['idCom'];
 
     $objData = new  Database();
     
-    $sth = $objData->prepare(" SELECT Fecha from cartacompromiso 
-    where idCartaCom=(select MAX(idCartaCom) from cartacompromiso,estudiantes,usuarios
-    where idusuario=fk_idUsuario_Est and usuario=:us )") ;
+    $sth = $objData->prepare(" SELECT Fecha from entregables
+    where idEntregable usuario=:us )") ;
 
     $sth->execute(['us' => $us]);
 
