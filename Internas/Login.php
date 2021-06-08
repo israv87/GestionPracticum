@@ -63,7 +63,7 @@
 
     <div class="intro-section" id="Incio">
 
-      <div class="slide-1" style="background-image: url('assets/landpage/images_landpage/hero_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="slide-1" style="background-image: url('assets/landpage/images_landpage/utpl.jpeg');" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-12">

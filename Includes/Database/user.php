@@ -21,7 +21,7 @@ class User extends DB
     private $area;
     
     
-    private $p_nombre_tutor;
+    private $TENAME;
     private $s_nombre_tutor;
     private $p_apellido_tutor;
     private $m_apellido_tutor;
@@ -66,14 +66,22 @@ class User extends DB
         }
     }
 
-    public function setUser($user)
+    public function setRolUsr($user)
     {
-        $query = $this->connect()->prepare("SELECT * from proyectos p, dependencias d,asignacion_proyecto a, estudiantes e, usuarios u
-        where p.idDependencia = d.idDependencia and p.idProyectos = a.idProyectos and e.idEstudiante = a.idEstudiante 
-        and e.idUsuario = u.idUsuario and u.usuario =:user");
+        $query = $this->connect()->prepare("SELECT * FROM usuarios WHERE usuario = :user");
+        $query->execute(['user' => $user]);
+        foreach ($query as $currentUser) {
+            $this->u_rol = $currentUser['Rol'];
+        }
+    }
+
+    public function setEstudiante($user)
+    {
+        $query = $this->connect()->prepare("SELECT * from estudiantes e, usuarios u where e.idUsuario = u.idUsuario and u.usuario =:user");
         $query->execute(['user' => $user]);
 
         foreach ($query as $currentUser) {
+            $this->id_est = $currentUser['idEstudiante'];
             $this->cedula = $currentUser['cedula'];
             $this->p_nombre = $currentUser['primerNombre'];
             $this->s_nombre = $currentUser['segundoNombre'];
@@ -84,15 +92,59 @@ class User extends DB
             $this->Nivel_GP = $currentUser['nivelGp'];
             $this->paralelo_GP = $currentUser['paralelo'];
             $this->ciclo_act = $currentUser['ciclo'];
-            $this->username = $currentUser['usuario'];
+        }
+    }
+    public function setTutorExterno($user)
+    {
+        $query = $this->connect()->prepare("SELECT * from tutor_externo t, usuarios u where t.idUsuario = u.idUsuario and u.usuario =:user");
+        $query->execute(['user' => $user]);
+
+        foreach ($query as $currentUser) {
+            $this->id_est = $currentUser['idTutorExterno'];
+            $this->p_nombre = $currentUser['primerNombre'];
+            $this->s_nombre = $currentUser['segundoNombre'];
+            $this->p_apellido = $currentUser['apellidoPaterno'];
+            $this->m_apellido = $currentUser['apellidoMaterno'];
+            $this->email = $currentUser['email'];
+            $this->cedula = $currentUser['telefono'];
+            $this->Nivel_GP = $currentUser['idDependencia'];
+            $this->paralelo_GP = $currentUser['idUsuario'];
+        }
+    }
+    public function setTutorAcademico($user)
+    {
+        $query = $this->connect()->prepare("SELECT * from tutor_academico t, usuarios u where t.idUsuario = u.idUsuario and u.usuario =:user");
+        $query->execute(['user' => $user]);
+
+        foreach ($query as $currentUser) {
+            $this->id_est = $currentUser['idTutorAcademico'];
+            $this->cedula = $currentUser['cedula'];
+            $this->p_nombre = $currentUser['pNombre'];
+            $this->s_nombre = $currentUser['sNombre'];
+            $this->p_apellido = $currentUser['aPaterno'];
+            $this->m_apellido = $currentUser['aMaterno'];
+            $this->email = $currentUser['email'];
+            $this->Nivel_GP = $currentUser['idDependencia'];
+            $this->paralelo_GP = $currentUser['idUsuario'];
+        }
+    }
+
+    public function setDatosProyecto($user)
+    {
+        $query = $this->connect()->prepare(" SELECT nombreProyecto ,departamento, Area_utpl 
+        FROM asignacion_proyecto a, estudiantes e, proyectos p, usuarios u, dependencias d
+        WHERE a.idProyectos=p.idProyectos AND p.idDependencia = d.idDependencia AND a.idEstudiante = e.idEstudiante 
+        AND e.idUsuario = u.idUsuario AND u.usuario=:user");
+        $query->execute(['user' => $user]);
+
+        foreach ($query as $currentUser) {
             $this->proyecto = $currentUser['nombreProyecto'];
-            $this->area = $currentUser['Area_utpl'];
             $this->departamento = $currentUser['departamento'];
-            $this->id_est = $currentUser['idEstudiante'];
-            $this->u_rol = $currentUser['Rol'];
+            $this->area = $currentUser['Area_utpl'];
         }
     }
     
+
     function SetActividadesEstudiante($user, $c = 0, $i = 0)
     {
         $query2 = $this->connect()->prepare('SELECT * from actividadesproyecto a, proyectos p, asignacion_proyecto g, estudiantes e, usuarios u
@@ -558,11 +610,22 @@ class User extends DB
         return $this->codReg;
     }
 
-
-
-
-
-
+    public function setTEName($user)
+    {
+        $query17 = $this->connect()->prepare("SELECT concat(primerNombreTE,' ', segundoNombreTE,' ', apellidoPaternoTE,' ',apellidoMaternoTE,' ') as 'te' 
+    FROM dependencias d, tutor_externo t, proyectos p, asignacion_proyecto a, estudiantes e, usuarios u 
+    where t.idDependencia = d.idDependencia and p.idDependencia = d.idDependencia and a.idProyectos = p.idProyectos 
+    and a.idEstudiante = e.idEstudiante and e.idUsuario = u.idUsuario and usuario =:user ") ;
+       
+       $query17->execute(['user' => $user]);
+       foreach ($query17 as $currentUser) {
+        $this->TENAME = $currentUser['te'];
+    }
+    }
+    public function getTEName()
+    {
+        return $this->TENAME;
+    }
 
 
 

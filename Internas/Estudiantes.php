@@ -72,7 +72,7 @@
                                                     <th>Ciclo:</th>
                                                     <td>
                                                         <?php echo $user->getCiclo()?> Ciclo
-                                                        <?php $user->SetTutorExternoEstudiante($userSession->getCurrentUser()); ?>
+                                                        <?php $user->setDatosProyecto($userSession->getCurrentUser()); ?>
                                                     </td>
                                                 </tr>
 
@@ -116,8 +116,14 @@
                                                     <li>
                                                         <a href="#">Actividades Completadas
                                                             <span class="pull-right badge bg-blue">
-                                                                <?php $user->ContActividadesFaltantes($userSession->getCurrentUser()); ?>
                                                                 <?php $user->ContActividadesCompletadas($userSession->getCurrentUser()); ?>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Actividades Faltantes
+                                                            <span class="pull-right badge bg-yellow">
+                                                                <?php $user->ContActividadesFaltantes($userSession->getCurrentUser()); ?>
                                                             </span>
                                                         </a>
                                                     </li>
@@ -202,6 +208,78 @@
                                         </tr>
                                     </tbody>
                                 </table> <!-- /.box-header -->
+                                <script type="text/javascript">
+                                $(document).ready(function() {
+                                    var form_count = 1,
+                                        previous_form, next_form, total_forms;
+                                    total_forms = $("fieldset").length;
+                                    $(".next-form").click(function() {
+                                        previous_form = $(this).parent();
+                                        next_form = $(this).parent().next();
+                                        next_form.show();
+                                        previous_form.hide();
+                                        setProgressBarValue(++form_count);
+                                    });
+                                    $(".previous-form").click(function() {
+                                        previous_form = $(this).parent();
+                                        next_form = $(this).parent().prev();
+                                        next_form.show();
+                                        previous_form.hide();
+                                        setProgressBarValue(--form_count);
+                                    });
+                                    setProgressBarValue(form_count);
+
+                                    function setProgressBarValue(value) {
+                                        var percent = parseFloat(100 / total_forms) * value;
+                                        percent = percent.toFixed();
+                                        $(".progress-bar1")
+                                            .css("width", percent + "%")
+                                            .html(percent + "%");
+                                    }
+                                    // Handle form submit and validation
+
+                                });
+                                </script>
+                                 <script type="text/javascript">
+                                $(document).ready(function() {
+                                    var maxField = 10; //Input fields increment limitation
+                                    var addButton = $('.add_button'); //Add button selector
+                                    var x = 0; //Initial field counter is 1
+                                    var wrapper = $('.field_wrapper'); //Input field wrapper
+
+
+                                    //Once add button is clicked
+                                    $(addButton).click(function() {
+                                        //Check maximum number of input fields
+                                        if (x < maxField) {
+                                            x++; //Increment field counter
+                                            $(wrapper).append(
+                                                '<div><div class="col-sm-3"><input type="text" class="form-control"placeholder="Actividad ..." name="Actividad_' +
+                                                x +
+                                                '"></div><div class="col-sm-2"><div class="input-group input-append date" id="datePicker' +
+                                                x +
+                                                '"><input type="text" class="form-control" name="Fecha_Act_' +
+                                                x +
+                                                '" /><span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span></div></div><div class="col-sm-2"><div class="clearfix"><div class="input-group clockpicker " data-autoclose="true"><input type="text" class="form-control"value="12:00" name="HIn_' +
+                                                x +
+                                                '"><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span></div></div></div><div class="col-sm-2"><div class="clearfix"><div class="input-group clockpicker " data-autoclose="true"><input type="text" class="form-control" value="12:00" name="Hout_' +
+                                                x +
+                                                '"><span class="input-group-addon"><span  class="glyphicon glyphicon-time"></span></div></div></div><div class="col-sm-2"><input type="text" class="form-control" placeholder="# Horas" name="horas_' +
+                                                x +
+                                                '"></div><div class="col-sm-1"><a href="javascript:void(0);" class="remove_button"><button class="btn btn-block btn-default bg-red"type="button" "id="next">Borrar</button></a></div></div>'
+                                                ); //Add field html
+                                        }
+                                    });
+
+                                    //Once remove button is clicked
+                                    $(wrapper).on('click', '.remove_button', function(e) {
+                                        e.preventDefault();
+                                        $(this).parent('div').parent('div')
+                                    .remove(); //Remove field html
+                                        x--; //Decrement field counter
+                                    });
+                                });
+                                </script>
                                 <div class="box-body">
                                     <!-- /.box-header < method="post" action="Includes/Database/db_Estudiantes/insert.php">-->
                                     <style type="text/css">
@@ -238,8 +316,9 @@
                                                     <input type="text" class="form-control"
                                                         placeholder=".<?php echo $user->getDepartamento()?>." readonly>
                                                     <label>Tutor Externo :</label>
+                                                    <?php $user->setTEName($userSession->getCurrentUser()); ?>
                                                     <input type="text" class="form-control"
-                                                        placeholder=".<?php echo $user->getPNombreTutor()?> <?php echo $user->getSNombreTutor()?> <?php echo $user->getPApellidoTutor()?> <?php echo $user->getMApellidoTutor()?>. "
+                                                        placeholder=".<?php echo $user->getTEName()?>. "
                                                         readonly>
                                                 </div>
                                                 <div class="col-sm-12">.</div>
@@ -247,9 +326,6 @@
                                                 <input type="button"
                                                     class="next-form btn btn-block btn-default  bg-light-blue"
                                                     style="width:20%; margin:20px;" value="Siguiente" />
-
-
-
                                             </fieldset>
                                             <fieldset>
                                                 <div class="box-header">
@@ -331,87 +407,18 @@
 
                                     </div>
 
+                                    
+                                    </fieldset>
                                     <style>
                                     .bt1,
                                     .previous-form {
                                         display: inline-block;
                                     }
                                     </style>
-                                    </fieldset>
                                     </form>
                                 </div>
-                                <script type="text/javascript">
-                                $(document).ready(function() {
-                                    var form_count = 1,
-                                        previous_form, next_form, total_forms;
-                                    total_forms = $("fieldset").length;
-                                    $(".next-form").click(function() {
-                                        previous_form = $(this).parent();
-                                        next_form = $(this).parent().next();
-                                        next_form.show();
-                                        previous_form.hide();
-                                        setProgressBarValue(++form_count);
-                                    });
-                                    $(".previous-form").click(function() {
-                                        previous_form = $(this).parent();
-                                        next_form = $(this).parent().prev();
-                                        next_form.show();
-                                        previous_form.hide();
-                                        setProgressBarValue(--form_count);
-                                    });
-                                    setProgressBarValue(form_count);
-
-                                    function setProgressBarValue(value) {
-                                        var percent = parseFloat(100 / total_forms) * value;
-                                        percent = percent.toFixed();
-                                        $(".progress-bar1")
-                                            .css("width", percent + "%")
-                                            .html(percent + "%");
-                                    }
-                                    // Handle form submit and validation
-
-                                });
-                                </script>
-                                <script type="text/javascript">
-                                $(document).ready(function() {
-                                    var maxField = 10; //Input fields increment limitation
-                                    var addButton = $('.add_button'); //Add button selector
-                                    var x = 0; //Initial field counter is 1
-                                    var wrapper = $('.field_wrapper'); //Input field wrapper
-
-
-                                    //Once add button is clicked
-                                    $(addButton).click(function() {
-                                        //Check maximum number of input fields
-                                        if (x < maxField) {
-                                            x++; //Increment field counter
-                                            $(wrapper).append(
-                                                '<div><div class="col-sm-3"><input type="text" class="form-control"placeholder="Actividad ..." name="Actividad_' +
-                                                x +
-                                                '"></div><div class="col-sm-2"><div class="input-group input-append date" id="datePicker' +
-                                                x +
-                                                '"><input type="text" class="form-control" name="Fecha_Act_' +
-                                                x +
-                                                '" /><span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span></div></div><div class="col-sm-2"><div class="clearfix"><div class="input-group clockpicker " data-autoclose="true"><input type="text" class="form-control"value="12:00" name="HIn_' +
-                                                x +
-                                                '"><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span></div></div></div><div class="col-sm-2"><div class="clearfix"><div class="input-group clockpicker " data-autoclose="true"><input type="text" class="form-control" value="12:00" name="Hout_' +
-                                                x +
-                                                '"><span class="input-group-addon"><span  class="glyphicon glyphicon-time"></span></div></div></div><div class="col-sm-2"><input type="text" class="form-control" placeholder="# Horas" name="horas_' +
-                                                x +
-                                                '"></div><div class="col-sm-1"><a href="javascript:void(0);" class="remove_button"><button class="btn btn-block btn-default bg-red"type="button" "id="next">Borrar</button></a></div></div>'
-                                                ); //Add field html
-                                        }
-                                    });
-
-                                    //Once remove button is clicked
-                                    $(wrapper).on('click', '.remove_button', function(e) {
-                                        e.preventDefault();
-                                        $(this).parent('div').parent('div')
-                                    .remove(); //Remove field html
-                                        x--; //Decrement field counter
-                                    });
-                                });
-                                </script>
+                                
+                               
                             </div>
                             <div class="progress">
                                 <div class="progress-bar1 progress-bar1-striped active" role="progressbar"
@@ -441,7 +448,7 @@
                                     </div>
                                     <!-- /.box-header -->
                                     <div class="box-body table-responsive no-padding">
-                                        <?php  $user->RegistrosEntregados($userSession->getCurrentUser()); ?>
+                                        <?php $user->RegistrosEntregados($userSession->getCurrentUser()); ?>
                                     </div>
                                     <!-- /.box-body -->
                                 </div>

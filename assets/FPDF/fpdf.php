@@ -1040,8 +1040,8 @@ protected function _dochecks()
 	if(ini_get('mbstring.func_overload') & 2)
 		$this->Error('mbstring overloading must be disabled');
 	// Ensure runtime magic quotes are disabled
-	if(get_magic_quotes_runtime())
-		@set_magic_quotes_runtime(0);
+/*	if(get_magic_quotes_runtime())
+		@set_magic_quotes_runtime(0);*/
 }
 
 protected function _checkoutput()
@@ -1095,7 +1095,7 @@ protected function _beginpage($orientation, $size, $rotation)
 	if($orientation=='')
 		$orientation = $this->DefOrientation;
 	else
-		$orientation = strtoupper($orientation[0]);
+	//	$orientation = strtoupper($orientation[0]);
 	if($size=='')
 		$size = $this->DefPageSize;
 	else

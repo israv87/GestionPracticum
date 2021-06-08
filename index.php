@@ -9,16 +9,15 @@ $user = new User();
 
 if(isset($_SESSION['user'])){
     //echo "hay sesion";
-    
-    
-    $user->setUser($userSession->getCurrentUser());
- 
-    
+    $user->setRolUsr($userSession->getCurrentUser());
     if($user->getRol()==1){
+        $user->setEstudiante($userSession->getCurrentUser());
         include_once 'Internas/Estudiantes.php';
     }else if($user->getRol()==2){
+        $user->setTutorExterno($userForm);
         include_once 'Internas/TutorExterno.php';
     }else if($user->getRol()==3){
+        $user->setTutorAcademico($userForm);
         include_once 'Internas/TutorAcademico.php';
     }else if($user->getRol()==4){
         include_once 'Internas/CoordinadorTitulacion.php';
@@ -36,15 +35,16 @@ if(isset($_SESSION['user'])){
     $user = new User();
     if($user->userExists($userForm, $passForm)){
         //echo "Existe el usuario";
-        
-        $userSession->setCurrentUser($userForm);
-        $user->setUser($userForm);
-
+        $userSession->setCurrentUser($userForm); 
+        $user->setRolUsr($userForm);
         if($user->getRol()==1){
+            $user->setEstudiante($userForm);
             include_once 'Internas/Estudiantes.php';
         }else if($user->getRol()==2){
+            $user->setTutorExterno($userForm);
             include_once 'Internas/TutorExterno.php';
         }else if($user->getRol()==3){
+            $user->setTutorAcademico($userForm);
             include_once 'Internas/TutorAcademico.php';
         }else if($user->getRol()==4){
             include_once 'Internas/CoordinadorTitulacion.php';
